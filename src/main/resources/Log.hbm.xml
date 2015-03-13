@@ -6,5 +6,6 @@
       <generator class="increment"/>
     </id>
     <many-to-one class="Subscriber" column="id_subscriber" lazy="false" name="subscriber"/>
+    <many-to-one class="User" column="id_user" lazy="false" name="user"/>
   </class>
 </hibernate-mapping>
