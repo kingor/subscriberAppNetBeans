@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="by.telecom.subscriberapp.model.Phone" table="phone">
+  <class name="by.telecom.subscriberapp.model.Log" table="log">
     <id column="id" name="id">
       <generator class="increment"/>
-      <many-to-one class="Subscriber" column="id_subscriber" lazy="false" name="subscriber"/>
     </id>
+    <many-to-one class="Subscriber" column="id_subscriber" lazy="false" name="subscriber"/>
   </class>
 </hibernate-mapping>
