@@ -36,7 +36,8 @@ public class LoginServlet extends HttpServlet {
     String password = request.getParameter("password");
     String ResultPage;
     int flag = 0;
-    
+    User user_auto = null;
+    ResultPage = "/login.jsp";
     List<User> listUser = null;
     listUser = DaoFactory.getUserDao().getByLogin(login);
     
@@ -49,8 +50,10 @@ public class LoginServlet extends HttpServlet {
     
     if (!listUser.equals(null)) {
         for (User user : listUser) 
-            if (user.getPassword().equals(password))
+            if (user.getPassword().equals(password)) {
+                user_auto = user;
                 flag = 1;
+            }
     }
     else    {
       ResultPage = "/login.jsp";
@@ -61,8 +64,13 @@ public class LoginServlet extends HttpServlet {
     if (flag == 1)
     {
       User.Login(login);
-      ResultPage = "/index.jsp";
       session.setAttribute("user", User);
+      if (user_auto.getCategory()==0)
+          ResultPage = "/index.jsp";
+      else if (user_auto.getCategory()==1)
+          ResultPage = "/index_1.jsp";
+      else if (user_auto.getCategory()==2)
+          ResultPage = "/index_2.jsp";
     }
     else
     {

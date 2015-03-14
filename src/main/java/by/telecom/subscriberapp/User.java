@@ -15,7 +15,7 @@ public class User {
     private String login;
     private String password;
     private String name;
-    private String category;
+    private Integer category;
     
     private String UserName  = "";
     private String ErrorText  = "";
@@ -57,11 +57,11 @@ public class User {
         name = aName;
     }
     
-    public String getCategory(){
+    public Integer getCategory(){
         return category;
     }
     
-    public void setCategory(String aCategory){
+    public void setCategory(Integer aCategory){
         category = aCategory;
     }
     
