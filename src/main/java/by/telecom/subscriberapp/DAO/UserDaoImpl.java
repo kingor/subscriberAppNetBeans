@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.telecom.subscriberapp.model.DAO;
+package by.telecom.subscriberapp.DAO;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -13,22 +13,22 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-import by.telecom.subscriberapp.model.Subscriber;
-import by.telecom.subscriberapp.model.HibernateUtil;
+import by.telecom.subscriberapp.User;
+import by.telecom.subscriberapp.HibernateUtil;
 
 /**
  *
  * @author ASUP8
  */
-public class SubscriberDaoImpl implements SubscriberDao{
+public class UserDaoImpl implements UserDao{
 
     @Override
-    public List<Subscriber> findByName(String name) {
+    public List<User> findByName(String name) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Long create(Subscriber newInstance) {
+    public Long create(User newInstance) {
         Session session = null;
         Long id = null;
         try {
@@ -52,13 +52,13 @@ public class SubscriberDaoImpl implements SubscriberDao{
     }
 
     @Override
-    public Subscriber read(Long id) {
+    public User read(Long id) {
         Session session = null;
-        Subscriber subscriber = new Subscriber();
+        User customer = new User();
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            subscriber = (Subscriber) session.createCriteria(Subscriber.class)
+            customer = (User) session.createCriteria(User.class)
                     .add(Restrictions.eq("id", id)).uniqueResult();
             session.getTransaction().commit();
         } catch (HibernateException e) {
@@ -71,11 +71,11 @@ public class SubscriberDaoImpl implements SubscriberDao{
                 session.close();
             }
         }
-        return subscriber;
+        return customer;
     }
 
     @Override
-    public void update(Subscriber transientObject) {
+    public void update(User transientObject) {
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
@@ -93,7 +93,7 @@ public class SubscriberDaoImpl implements SubscriberDao{
     }
 
     @Override
-    public void delete(Subscriber persistentObject) {
+    public void delete(User persistentObject) {
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
@@ -111,13 +111,13 @@ public class SubscriberDaoImpl implements SubscriberDao{
     }
 
     @Override
-    public List<Subscriber> getAll() {
+    public List<User> getAll() {
         Session session = null;
-        List<Subscriber> all = null;
+        List<User> all = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            all = session.createCriteria(Subscriber.class).list();
+            all = session.createCriteria(User.class).list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();

@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
-package by.telecom.subscriberapp.model;
+package by.telecom.subscriberapp;
+
+import by.telecom.subscriberapp.Subscriber;
 
 /**
  *

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.telecom.subscriberapp.model;
+package by.telecom.subscriberapp;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

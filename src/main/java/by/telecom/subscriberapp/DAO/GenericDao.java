@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.telecom.subscriberapp.model.DAO;
+package by.telecom.subscriberapp.DAO;
 
 import java.io.Serializable;
 import java.util.Collection;

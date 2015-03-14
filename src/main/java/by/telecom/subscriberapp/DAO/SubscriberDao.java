@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 
-package by.telecom.subscriberapp.model.DAO;
+package by.telecom.subscriberapp.DAO;
 
 import java.util.Collection;
-import by.telecom.subscriberapp.model.Subscriber;
+import by.telecom.subscriberapp.Subscriber;
 
 /**
  *

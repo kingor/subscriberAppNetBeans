@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package by.telecom.subscriberapp.model.DAO;
+package by.telecom.subscriberapp.DAO;
 
 import java.util.List;
-import by.telecom.subscriberapp.model.Subscriber;
-import by.telecom.subscriberapp.model.Phone;
+import by.telecom.subscriberapp.Subscriber;
+import by.telecom.subscriberapp.Phone;
 
 /**
  *

@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 
-package by.telecom.subscriberapp.model;
+package by.telecom.subscriberapp;
+
+import java.io.Serializable;
 
 /**
  *
  * @author Family_P
  */
-public class Subscriber {
+public class Subscriber implements Serializable{
     private Long id;
     private String name;
     private String address;

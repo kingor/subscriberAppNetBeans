@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.telecom.subscriberapp.model.DAO;
+package by.telecom.subscriberapp.DAO;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -20,6 +20,7 @@ public class DaoFactory {
     private static DaoFactory instance = null;
     private static SubscriberDao subscriberDao = null;
     private static PhoneDao phoneDao = null;
+    private static UserDao userDao = null;
     
     public static synchronized DaoFactory getInstance() {
         if (instance == null) {
@@ -40,6 +41,13 @@ public class DaoFactory {
             phoneDao = new PhoneDaoImpl();
         }
         return phoneDao;
+    }
+    
+    public static synchronized UserDao getUserDao() {
+        if (userDao == null) {
+            userDao = new UserDaoImpl();
+        }
+        return userDao;
     }
    
 }
