@@ -27,15 +27,19 @@
                             out.println("<h2>Customers in database:</h2>");
                             out.println("<table border='1'>");
                             out.println("<tr>");
-                            out.println("<th>Customer id</th>");
-                            out.println("<th>Customer Name</th>");
+                            out.println("<th>Имя пользователя</th>");
+                            out.println("<th>Логин</th>");
+                            out.println("<th>Пароль</th>");
+                            out.println("<th>Категория</th>");
                             out.println("</tr>");
                             Iterator itCust = users.iterator();
                             while (itCust.hasNext()) {
                                 User user = (User) itCust.next();
                                 out.println("<tr>");
-                                out.println("<td>" + user.getId() + "</td>");
-                                out.println("<td>" + user.getName() + "</td>");
+                                out.println("<td>" + user.getName()+ "</td>");
+                                out.println("<td>" + user.getLogin()+ "</td>");
+                                out.println("<td>" + user.getPassword()+ "</td>");
+                                out.println("<td>" + user.getCategory()+ "</td>");
                                 out.println("</tr>");
                             }
                             out.println("</table>");

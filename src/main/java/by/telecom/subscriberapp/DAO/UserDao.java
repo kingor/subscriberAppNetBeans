@@ -8,6 +8,7 @@ package by.telecom.subscriberapp.DAO;
 
 import java.util.Collection;
 import by.telecom.subscriberapp.User;
+import java.util.List;
 
 /**
  *
@@ -15,4 +16,5 @@ import by.telecom.subscriberapp.User;
  */
 public interface UserDao  extends GenericDao<User, Long>{
     Collection<User> findByName(String name);
+    public List<User> getByLogin(String login);
 }

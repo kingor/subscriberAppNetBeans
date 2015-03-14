@@ -15,7 +15,11 @@ public class User {
     private String login;
     private String password;
     private String name;
-    private Integer category;
+    private String category;
+    
+    private String UserName  = "";
+    private String ErrorText  = "";
+    private boolean LoginFlag = false;
     
     public User() {
     
@@ -53,7 +57,47 @@ public class User {
         name = aName;
     }
     
-    public Integer getCategory(){
+    public String getCategory(){
         return category;
+    }
+    
+    public void setCategory(String aCategory){
+        category = aCategory;
+    }
+    
+    public String GetUser()
+    {
+        return UserName;
+    }
+    
+    public void Login(String TheUser)
+    {
+        LoginFlag = true;
+        ErrorText = "";
+        UserName = TheUser;
+    }
+  
+    public void SetError(String TheText)
+    {
+        ErrorText = TheText;
+    }
+  
+    public String GetError()
+    {
+        return ErrorText;
+    }
+  
+    public String IsLogin()
+    {
+        if (LoginFlag)
+            return "true";
+        return "false";
+    }
+  
+    public void Logout()
+    {
+        LoginFlag = false;
+        UserName = "";
+        ErrorText = "";
     }
 }

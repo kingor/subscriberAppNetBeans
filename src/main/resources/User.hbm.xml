@@ -5,5 +5,9 @@
     <id column="id" name="id">
       <generator class="increment"/>
     </id>
-  </class>
+    <property column="name" name="name"/>
+    <property column="login" name="login"/>
+    <property column="password" name="password"/>
+    <property column="category" name="category"/>
+   </class>
 </hibernate-mapping>

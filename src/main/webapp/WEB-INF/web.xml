@@ -20,6 +20,10 @@
         <servlet-name>Users</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.Users</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.LoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Subscribers</servlet-name>
         <url-pattern>/subscribers</url-pattern>
@@ -28,9 +32,16 @@
         <servlet-name>Users</servlet-name>
         <url-pattern>/users</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -24,18 +24,18 @@
                     <%
                         Collection<Subscriber> subscribers = (Collection<Subscriber>) request.getAttribute("subscribers");
                         if (subscribers.size() > 0) {
-                            out.println("<h2>Subscriber in database:</h2>");
+                            out.println("<h2>Все абоненты в базе данных:</h2>");
                             out.println("<table border='1'>");
                             out.println("<tr>");
-                            out.println("<th>Subscriber id</th>");
-                            out.println("<th>Subscriber Name</th>");
+                            out.println("<th>ФИО абонента</th>");
+                            out.println("<th>Адрес абонента</th>");
                             out.println("</tr>");
                             Iterator itSubs = subscribers.iterator();
                             while (itSubs.hasNext()) {
                                 Subscriber subscriber = (Subscriber) itSubs.next();
                                 out.println("<tr>");
-                                out.println("<td>" + subscriber.getId() + "</td>");
                                 out.println("<td>" + subscriber.getName() + "</td>");
+                                out.println("<td>" + subscriber.getAddress() + "</td>");
                                 out.println("</tr>");
                             }
                             out.println("</table>");
