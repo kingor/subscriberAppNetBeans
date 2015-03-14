@@ -1,0 +1,32 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<a href="index.jsp">Главная</a>
+<br>
+<a href="manager">Менеджер событий</a>
+<br>
+<br>
+<i><b>Работа с абонентов</b></i>
+<br>
+<a href="subscribers">Просмотр всех абонентов</a>
+<br>
+<a href="users">Просмотр всех пользователей</a>
+<br>
+<a href="createSubscriber.jsp">Новый абонентов</a>
+<br>
+<a href="updateSubscriber.jsp">Обновление абонентов</a>
+<br>
+<a href="deleteSubscriber.jsp">Удаление абонентов</a>
+<br>
+<br>
+<i><b>Работа с задачами</b></i>
+<br>
+<a href="tasks">Просмотр всех задач</a>
+<br>
+<a href="createTask.jsp">Новая задача</a>
+<br>
+<a href="deleteCustomer.jsp">Удаление пользователя</a>
+<br>
+<a href="customerTask.jsp">Просмотр задач по пользователю</a>
+<br>
+<a href="customerTaskByMonth.jsp">Просмотр задач по месяцу</a>
+<br>
