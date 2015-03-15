@@ -1,0 +1,47 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<td width=210>
+    <table width=210 cellspacing=1 cellpadding=0 border=0>
+        <tr>
+            <td bgcolor="#aaaaaa">
+                <table width=210 border=0 cellpadding=0>
+                    <TR>
+                        <TD class=nav >&nbsp;
+                            <SPAN class=BigPrint >
+                                <b>Меню пользователя:</b>
+                            </SPAN>
+                        </TD>
+                    </TR>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width=210 border=0 cellpadding=0>
+        <tr>
+            <td bgcolor="#aaaaaa">
+                <table width=210 border=0 cellpadding=5>
+                    <tr>
+                        <td class="login">
+                            <table>
+                                <tr>
+                                    <td width="56">
+                                        <form name="form5" method="post" action="subscribers">
+                                            <INPUT type="submit" name="submit" value="Просмотр всех абонентов">
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="56">
+                                        <form name="form6" method="post" action="subscriberSearch">
+                                        <INPUT type="submit" name="submit" value="    Поиск абонентов    " size="30">
+                                        </form>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</td>

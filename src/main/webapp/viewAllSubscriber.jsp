@@ -1,27 +1,40 @@
 <%-- 
-    Document   : allCustomer
-    Created on : 24.09.2014, 11:33:27
-    Author     : ASUP8
+    Document   : Login
+    Created on : 14.03.2015, 13:24:46
+    Author     : Family_P
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.Collection"%>
 <%@page import="by.telecom.subscriberapp.Subscriber"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Все абоненты</title>
+        <title></title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
+        <LINK href="main3.css" type=text/css 
+              rel=stylesheet>
     </head>
-    <body>
-        <table >
-            <tr>
-                <td valign = "top">
-                    <%@include file="Menu.jspf" %>
-                </td>
-                <td valign = "top">
-                    <%
+    <body bgcolor="#e4e8ea">
+        <div align="center">
+            <%@include file="Header.jspf" %>
+
+            <table width=760 cellspacing=0 cellpadding=0 border=0>
+                <tr>
+                    <%@include file="menu_user.jspf" %>
+
+                    <td width=7 bgcolor="#e4e8ea"></td>
+                    <td width=543  align="center">
+                        <table width=543 cellspacing=0 cellpadding=1 border=0>
+                            <tr>
+                                <td bgcolor="#aaaaaa">
+                                    <table width=543 cellspacing=0 cellpadding=20 border=0>
+                                        <tr>
+                                            <td class="content">
+                                                <center>
+ <%
                         Collection<Subscriber> subscribers = (Collection<Subscriber>) request.getAttribute("subscribers");
                         if (subscribers.size() > 0) {
                             out.println("<h2>Все абоненты в базе данных:</h2>");
@@ -41,8 +54,16 @@
                             out.println("</table>");
                         }   
                     %>
-                </td>
-            </tr>
-        </table>
+</center>
+                                            </td>
+                                        </tr>
+
+                                    </table></td></tr></table>
+                    </td>
+                </tr>
+            </table>
+            <%@include file="Footer.jspf" %>
+        </div>
+        <br> 
     </body>
 </html>
