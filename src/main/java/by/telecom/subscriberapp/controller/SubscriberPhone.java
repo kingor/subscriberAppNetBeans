@@ -13,7 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import by.telecom.subscriberapp.Subscriber;
+import by.telecom.subscriberapp.Phone;
 import by.telecom.subscriberapp.DAO.DaoFactory;
 /**import by.telecom.subscriberapp.model.Phone;
 
@@ -21,7 +21,7 @@ import by.telecom.subscriberapp.DAO.DaoFactory;
  *
  * @author ASUP8
  */
-public class SubscriberSearch extends HttpServlet {
+public class SubscriberPhone extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +35,10 @@ public class SubscriberSearch extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String search = request.getParameter("search");
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().findByName(search);
-            request.setAttribute("subscriberSearch", listSubscriber);
-            RequestDispatcher view = request.getRequestDispatcher("viewSubscriberSearch.jsp");
+           
+            Collection<Phone> listSubscriber = DaoFactory.getPhoneDao().getAll();
+            request.setAttribute("subscriberPhone", listSubscriber);
+            RequestDispatcher view = request.getRequestDispatcher("viewSubscriberPhone.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

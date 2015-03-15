@@ -16,6 +16,7 @@ public class Phone {
     private Long id;
     private Subscriber subscriber;
     private String number;
+    private String band;
     private String security;
     private String adsl;
     
@@ -33,6 +34,14 @@ public class Phone {
     
     public void setNumber(String aNumber){
         number= aNumber;
+    }
+    
+    public String getBand(){
+        return band;
+    }
+    
+    public void setBand(String aBand){
+        band = aBand;
     }
     
     public String getSecurity(){

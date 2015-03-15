@@ -7,6 +7,7 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.Collection"%>
 <%@page import="by.telecom.subscriberapp.Subscriber"%>
+<%@page import="by.telecom.subscriberapp.Phone"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
     <head>
@@ -30,49 +31,26 @@
                         <table width=543 cellspacing=0 cellpadding=1 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=543 cellspacing=0 cellpadding=20 border=0>
-                                        
-                                        <tr>
-                                            <td class="content">
-                                                <form name="form5" method="post" action="subscriberSearch">
-                                                    <center>
-                                                        <table width="300">
-                                                            <tr>
-                                                                <td colspan="4">
-                                                                    <h2>Поиск по фамилии:</h2>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <p>Поиск:</p>
-                                                                </td>
-                                                                <td> <INPUT type="text" name="search" size="20">
-                                                                </td>
-                                                                <td>
-                                                                    <INPUT type="submit" name="submit" value="Искать!">
-                                                                </td>
-                                                            </tr>
-                                                        </table>     
-                                                </form>
-                                            </td>
-                                        </tr>
+                                    <table width=543 cellspacing=0 cellpadding=20 border=0>                          
                                         <tr>
                                             <td class="content">
                                                 <center>
                                                     <%
-                                                        Collection<Subscriber> subscribers = (Collection<Subscriber>) request.getAttribute("subscriberSearch");
-                                                        if (subscribers.size() > 0) {
+                                                        Collection<Phone> phones = (Collection<Phone>) request.getAttribute("subscriberPhone");
+                                                        if (phones.size() > 0) {
                                                             out.println("<table border='1'>");
                                                             out.println("<tr>");
                                                             out.println("<th>ФИО абонента</th>");
                                                             out.println("<th>Адрес абонента</th>");
                                                             out.println("</tr>");
-                                                            Iterator itSubs = subscribers.iterator();
+                                                            Iterator itSubs = phones.iterator();
                                                             while (itSubs.hasNext()) {
-                                                                Subscriber subscriber = (Subscriber) itSubs.next();
+                                                                Phone phone = (Phone) itSubs.next();
                                                                 out.println("<tr>");
-                                                                out.println("<td>" + subscriber.getName() + "</td>");
-                                                                out.println("<td>" + subscriber.getAddress() + "</td>");
+                                                                //out.println("<td>" + phone.getSubscriber().getName()+ "</td>");
+                                                                out.println("<td>" + phone.getNumber()+ "</td>");
+                                                                out.println("<td>" + phone.getBand()+ "</td>");
+                                                                out.println("<td>" + phone.getSecurity()+ "</td>");
                                                                 out.println("</tr>");
                                                             }
                                                             out.println("</table>");

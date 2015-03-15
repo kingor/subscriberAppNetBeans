@@ -37,6 +37,13 @@
                                         </form>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td width="56">
+                                        <form name="form6" method="post" action="subscriberPhone">
+                                        <INPUT type="submit" name="submit" value="Просмотр тех. данных" size="30">
+                                        </form>
+                                    </td>
+                                </tr>
                             </table>
                         </td>
                     </tr>

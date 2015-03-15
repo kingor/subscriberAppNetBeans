@@ -15,6 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.HibernateUtil;
+import org.hibernate.criterion.Expression;
 
 /**
  *
@@ -24,7 +25,22 @@ public class SubscriberDaoImpl implements SubscriberDao{
 
     @Override
     public List<Subscriber> findByName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         Session session = null;
+        List<Subscriber> all = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            all = session.createCriteria(Subscriber.class)
+                    .add( Restrictions.like("name", "%"+name+"%")).list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return all;
     }
 
     @Override
