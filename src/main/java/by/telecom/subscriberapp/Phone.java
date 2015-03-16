@@ -7,12 +7,13 @@
 package by.telecom.subscriberapp;
 
 import by.telecom.subscriberapp.Subscriber;
+import java.io.Serializable;
 
 /**
  *
  * @author Family_P
  */
-public class Phone {
+public class Phone implements Serializable{
     private Long id;
     private Subscriber subscriber;
     private String number;

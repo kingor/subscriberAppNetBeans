@@ -39,7 +39,14 @@
                                                         <table width="300">
                                                             <tr>
                                                                 <td colspan="4">
+                                                                    <center>
                                                                     <h2>Поиск по фамилии:</h2>
+                                                                    </center>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                <br>
                                                                 </td>
                                                             </tr>
                                                             <tr>

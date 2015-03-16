@@ -38,6 +38,7 @@
                                                     <%
                                                         Collection<Phone> phones = (Collection<Phone>) request.getAttribute("subscriberPhone");
                                                         if (phones.size() > 0) {
+                                                            out.println("<h2>Технические параметры абонентов:</h2>");
                                                             out.println("<table border='1'>");
                                                             out.println("<tr>");
                                                             out.println("<th>ФИО абонента</th>");
@@ -47,7 +48,7 @@
                                                             while (itSubs.hasNext()) {
                                                                 Phone phone = (Phone) itSubs.next();
                                                                 out.println("<tr>");
-                                                                //out.println("<td>" + phone.getSubscriber().getName()+ "</td>");
+                                                                out.println("<td>" + phone.getSubscriber().getName()+ "</td>");
                                                                 out.println("<td>" + phone.getNumber()+ "</td>");
                                                                 out.println("<td>" + phone.getBand()+ "</td>");
                                                                 out.println("<td>" + phone.getSecurity()+ "</td>");
