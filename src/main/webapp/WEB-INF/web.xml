@@ -40,6 +40,22 @@
         <servlet-name>SubscriberPhoneSearch</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.SubscriberPhoneSearch</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateSubscriber</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.CreateSubscriber</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreatePhone</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.CreatePhone</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SubscriberSearchEdit</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.SubscriberSearchEdit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteSubscriber</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.DeleteSubscriber</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Subscribers</servlet-name>
         <url-pattern>/subscribers</url-pattern>
@@ -67,6 +83,22 @@
     <servlet-mapping>
         <servlet-name>SubscriberPhoneSearch</servlet-name>
         <url-pattern>/subscriberPhoneSearch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateSubscriber</servlet-name>
+        <url-pattern>/createSubscriber</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreatePhone</servlet-name>
+        <url-pattern>/createPhone</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubscriberSearchEdit</servlet-name>
+        <url-pattern>/subscriberSearchEdit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteSubscriber</servlet-name>
+        <url-pattern>/deleteSubscriber</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

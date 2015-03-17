@@ -15,7 +15,6 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.HibernateUtil;
-import org.hibernate.criterion.Expression;
 
 /**
  *

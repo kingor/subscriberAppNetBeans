@@ -16,7 +16,7 @@
     </head>
     <body bgcolor="#e4e8ea">
         <div align="center">
-            <%@include file="Header.jspf" %>
+            <%@include file="include/Header.jspf" %>
 
             <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
@@ -94,7 +94,7 @@
                     </td>
                 </tr>
             </table>
-            <%@include file="Footer.jspf" %>
+            <%@include file="include/Footer.jspf" %>
         </div>
         <br> 
     </body>

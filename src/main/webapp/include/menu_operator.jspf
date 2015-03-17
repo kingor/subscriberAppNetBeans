@@ -1,6 +1,6 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<td width=210>
+   
     <table width=210 cellspacing=1 cellpadding=0 border=0>
         <tr>
             <td bgcolor="#aaaaaa">
@@ -8,7 +8,7 @@
                     <TR>
                         <TD class=nav >&nbsp;
                             <SPAN class=BigPrint >
-                                <b>Меню пользователя:</b>
+                                <b>Меню оператора:</b>
                             </SPAN>
                         </TD>
                     </TR>
@@ -25,15 +25,15 @@
                             <table width="100%">
                                 <tr >
                                     <td>
-                                        <form name="form5" method="post" action="subscribers">
-                                            <INPUT type="submit" name="submit" value="Просмотр всех абонентов" style="width:100%">
+                                        <form name="form5" method="post" action="createSubscriber.jsp">
+                                            <INPUT type="submit" name="submit" value="Новый абонент" style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td >
-                                        <form name="form6" method="post" action="subscriberSearch">
-                                        <INPUT type="submit" name="submit" value="    Поиск абонентов    " style="width:100%">
+                                        <form name="form6" method="post" action="viewSubscriberEdit.jsp">
+                                        <INPUT type="submit" name="submit" value="Редактор абонентов" style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
@@ -58,6 +58,4 @@
             </td>
         </tr>
     </table>
-    <%@include file="menu_operator.jspf" %>
-</td>
     
