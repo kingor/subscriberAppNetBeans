@@ -36,6 +36,10 @@
         <servlet-name>SubscriberFull</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.SubscriberFull</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SubscriberPhoneSearch</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.SubscriberPhoneSearch</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Subscribers</servlet-name>
         <url-pattern>/subscribers</url-pattern>
@@ -59,6 +63,10 @@
     <servlet-mapping>
         <servlet-name>SubscriberFull</servlet-name>
         <url-pattern>/subscriberFull</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubscriberPhoneSearch</servlet-name>
+        <url-pattern>/subscriberPhoneSearch</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

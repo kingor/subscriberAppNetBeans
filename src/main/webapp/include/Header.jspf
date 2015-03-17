@@ -6,7 +6,7 @@
             <table width=860 cellspacing=1 cellpadding=0 border=0>
                 <tr>
                     <td class="nav">
-                        <img src="vline.gif" width=30 height=25 align="middle">
+                        <img src="style/vline.gif" width=30 height=25 align="middle">
                     </td>
                 </tr>
             </table>
@@ -16,12 +16,12 @@
 <table width=860 cellspacing=0 cellpadding=0 border=0>
     <tr>
         <td class="backgroundlogo">
-            <img src="vline.gif" width=50 height=70>
+            <img src="style/vline.gif" width=50 height=70>
             <span class="textLogoWhite">
                 <b>Учет абонентов</b>
             </span>
             <span class="textLogo"> </span><br>
-            <img src="vline.gif" width=50 height=20>
+            <img src="style/vline.gif" width=50 height=20>
         </td>
     </tr>
 </table>
@@ -33,7 +33,7 @@
 </table>
 <table width=860 cellspacing=0 cellpadding=0 border=0>
     <tr>
-        <td bgcolor="#e4e8ea"><img src="vline.gif" height=7>
+        <td bgcolor="#e4e8ea"><img src="style/vline.gif" height=7>
         </td>
     </tr>
 </table>

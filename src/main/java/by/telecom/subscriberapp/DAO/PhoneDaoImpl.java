@@ -105,10 +105,10 @@ public class PhoneDaoImpl implements PhoneDao {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             phones = session.createCriteria(Phone.class)
-                    .add(Restrictions.like("number", "%"+number))
-                    .add(Restrictions.like("band", "%"+band))
-                    .add(Restrictions.like("security", "%"+security))
-                    .add(Restrictions.like("adsl", "%"+adsl)).list();
+                    .add(Restrictions.like("number", number + "%"))
+                    .add(Restrictions.like("band", band + "%"))
+                    .add(Restrictions.like("security", security + "%"))
+                    .add(Restrictions.like("adsl", adsl + "%")).list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace(System.out);

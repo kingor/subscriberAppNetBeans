@@ -11,7 +11,7 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
-        <LINK href="main3.css" type=text/css 
+        <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
     </head>
     <body bgcolor="#e4e8ea">
@@ -20,50 +20,8 @@
 
             <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
-                    <td width=210>
-                        <table width=210 cellspacing=1 cellpadding=0 border=0>
-                            <tr>
-                                <td bgcolor="#aaaaaa">
-                                    <table width=210 border=0 cellpadding=0>
-                                        <TR>
-                                            <TD class=nav >&nbsp;
-                                                <SPAN class=BigPrint >
-                                                    <b>Меню пользователя:</b>
-                                                </SPAN>
-                                            </TD>
-                                        </TR>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                        <table width=210 border=0 cellpadding=0>
-                            <tr>
-                                <td bgcolor="#aaaaaa">
-                                    <table width=210 border=0 cellpadding=5>
-                                        <tr>
-                                            <td class="login">
-                                                <table>
-                                                    <tr>
-                                                        <td width="56">
-							<form name="form5" method="post" action="subscribers">
-                                                            <INPUT type="submit" name="submit" value="Просмотр всех абонентов">
-							</form>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td width="56">
-                                                            <INPUT type="submit" name="submit" value="    Поиск абонентов    " size="30">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-
+                    <%@include file="menu_user.jspf" %>
+                    
                     <td width=7 bgcolor="#e4e8ea"></td>
                     <td width=643  align="center">
                         <table width=643 cellspacing=0 cellpadding=1 border=0>
@@ -72,7 +30,7 @@
                                     <table width=643 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
-                                                <center><img src="telecom1.jpg" height=320></center>
+                                                <center><img src="style/telecom1.jpg" height=320></center>
                                             </td>
                                         </tr>
 
@@ -80,7 +38,7 @@
                     </td>
                 </tr>
             </table>
-            <%@include file="Footer.jspf" %>
+            <%@include file="include/Footer.jspf" %>
         </div>
         <br> 
     </body>

@@ -11,7 +11,7 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
-        <LINK href="main3.css" type=text/css 
+        <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
     </head>
     <body bgcolor="#e4e8ea">

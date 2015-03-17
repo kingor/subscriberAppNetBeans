@@ -39,8 +39,6 @@ public class SubscriberSearch extends HttpServlet {
             System.out.println(search);
             Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().findByName(search);
             request.setAttribute("subscriberSearch", listSubscriber);
-            for (Subscriber s :listSubscriber)
-                System.out.println(s.getName());
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberSearch.jsp");
             view.forward(request, response);
         } catch (IOException e) {

@@ -16,16 +16,16 @@
         <meta name="keywords" content="">
         <meta name="description" content="">
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
-        <LINK href="main3.css" type=text/css 
+        <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
     </head>
     <body bgcolor="#e4e8ea">
         <div align="center">
-            <%@include file="Header.jspf" %>
+            <%@include file="include/Header.jspf" %>
 
             <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
-                    <%@include file="menu_user.jspf" %>
+                    <%@include file="include/menu_user.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
                     <td width=643  align="center">
@@ -64,7 +64,7 @@
                     </td>
                 </tr>
             </table>
-            <%@include file="Footer.jspf" %>
+            <%@include file="include/Footer.jspf" %>
         </div>
         <br> 
     </body>

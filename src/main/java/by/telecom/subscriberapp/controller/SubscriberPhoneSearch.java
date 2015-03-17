@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Phone;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import java.util.List;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
@@ -35,9 +36,13 @@ public class SubscriberPhoneSearch extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-           
-            Collection<Phone> listSubscriber = DaoFactory.getPhoneDao().getAll();
-            request.setAttribute("subscriberPhone", listSubscriber);
+           String number = request.getParameter("number");
+           String band = request.getParameter("band");
+           String security = request.getParameter("security");
+           String adsl = request.getParameter("adsl");
+            List<Phone> listPhone;
+            listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl);
+            request.setAttribute("subscriberPhoneSearch", listPhone);
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberPhoneSearch.jsp");
             view.forward(request, response);
         } catch (IOException e) {
