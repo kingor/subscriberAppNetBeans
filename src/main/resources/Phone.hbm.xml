@@ -7,7 +7,8 @@
     </id>
     <property column="number" name="number"/>
     <property column="band" name="band"/>
-    <property column="security" name="security"/>
+    <property column="security" name="adsl"/>
+    <property column="adsl" name="security"/>
     <many-to-one class="Subscriber" column="id_subscriber" lazy="false" name="subscriber"/>
   </class>
 </hibernate-mapping>

@@ -15,13 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Phone;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
  *
  * @author ASUP8
  */
-public class SubscriberSearch extends HttpServlet {
+public class SubscriberFull extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,13 +36,14 @@ public class SubscriberSearch extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String search = request.getParameter("search");
-            System.out.println(search);
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().findByName(search);
-            request.setAttribute("subscriberSearch", listSubscriber);
-            for (Subscriber s :listSubscriber)
-                System.out.println(s.getName());
-            RequestDispatcher view = request.getRequestDispatcher("viewSubscriberSearch.jsp");
+            Long id = Long.parseLong(request.getParameter("subscriberSelect"));
+            Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
+
+            Collection<Phone> listPhones = DaoFactory.getPhoneDao().getBySubscriber(subscriber);
+            request.setAttribute("subscriber", subscriber);
+            request.setAttribute("phones", listPhones);
+            System.out.println(request.getParameter("subscriberSelect"));
+            RequestDispatcher view = request.getRequestDispatcher("viewSubscriberFull.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

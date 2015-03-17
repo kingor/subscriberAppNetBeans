@@ -7,6 +7,7 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.Collection"%>
 <%@page import="by.telecom.subscriberapp.Subscriber"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
     <head>
@@ -21,22 +22,21 @@
         <div align="center">
             <%@include file="Header.jspf" %>
 
-            <table width=760 cellspacing=0 cellpadding=0 border=0>
+            <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
                     <%@include file="menu_user.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
-                    <td width=543  align="center">
-                        <table width=543 cellspacing=0 cellpadding=1 border=0>
+                    <td width=643  align="center">
+                        <table width=643 cellspacing=0 cellpadding=1 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=543 cellspacing=0 cellpadding=20 border=0>
-                                        
+                                    <table width=643 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
                                                 <form name="form5" method="post" action="subscriberSearch">
                                                     <center>
-                                                        <table width="300">
+                                                        <table width="500">
                                                             <tr>
                                                                 <td colspan="4">
                                                                     <center>
@@ -49,6 +49,8 @@
                                                                 <br>
                                                                 </td>
                                                             </tr>
+                                                        </table>
+                                                        <table width="300">
                                                             <tr>
                                                                 <td>
                                                                     <p>Поиск:</p>
@@ -66,25 +68,27 @@
                                         <tr>
                                             <td class="content">
                                                 <center>
-                                                    <%
-                                                        Collection<Subscriber> subscribers = (Collection<Subscriber>) request.getAttribute("subscriberSearch");
-                                                        if (subscribers.size() > 0) {
-                                                            out.println("<table border='1'>");
-                                                            out.println("<tr>");
-                                                            out.println("<th>ФИО абонента</th>");
-                                                            out.println("<th>Адрес абонента</th>");
-                                                            out.println("</tr>");
-                                                            Iterator itSubs = subscribers.iterator();
-                                                            while (itSubs.hasNext()) {
-                                                                Subscriber subscriber = (Subscriber) itSubs.next();
-                                                                out.println("<tr>");
-                                                                out.println("<td>" + subscriber.getName() + "</td>");
-                                                                out.println("<td>" + subscriber.getAddress() + "</td>");
-                                                                out.println("</tr>");
-                                                            }
-                                                            out.println("</table>");
-                                                        }
-                                                    %>
+                                                    <c:if test="${!subscriberSearch.isEmpty()}">
+                                                        <table class="AllWidth" border="1">
+                                                            <tr>
+                                                                <th width="40%">ФИО абонента</th>
+                                                                <th>Адрес абонента</th>
+                                                                <th width="5%">Подробнее</th>
+                                                            </tr>
+                                                            <c:forEach var="subscriber" items="${subscriberSearch}">
+                                                                <tr>
+                                                                    <td>${subscriber.name}</td>
+                                                                    <td>${subscriber.address}</td>
+                                                                    <td>
+                                                                        <form name="form5" method="post" action="subscriberFull">
+                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
+                                                                            <INPUT type="submit" name="submit" value="Подробнее">
+                                                                        </form>
+                                                                    </td>
+                                                                </tr>
+                                                            </c:forEach>
+                                                        </table>
+                                                    </c:if>
                                                 </center>
                                             </td>
                                         </tr>

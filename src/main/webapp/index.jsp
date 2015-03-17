@@ -18,7 +18,7 @@
         <div align="center">
             <%@include file="Header.jspf" %>
 
-            <table width=760 cellspacing=0 cellpadding=0 border=0>
+            <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
                     <td width=210>
                         <table width=210 cellspacing=1 cellpadding=0 border=0>
@@ -65,11 +65,11 @@
                     </td>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
-                    <td width=543  align="center">
-                        <table width=543 cellspacing=0 cellpadding=1 border=0>
+                    <td width=643  align="center">
+                        <table width=643 cellspacing=0 cellpadding=1 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=543 cellspacing=0 cellpadding=20 border=0>
+                                    <table width=643 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
                                                 <center><img src="telecom1.jpg" height=320></center>

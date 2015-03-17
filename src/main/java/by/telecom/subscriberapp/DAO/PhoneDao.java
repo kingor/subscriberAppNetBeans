@@ -14,5 +14,6 @@ import by.telecom.subscriberapp.Phone;
  * @author ASUP8
  */
 public interface PhoneDao extends GenericDao<Phone, Long> {
-    public List<Phone> getByCustomer(Subscriber subscriber);
+    public List<Phone> getBySubscriber(Subscriber subscriber);
+    public List<Phone> getByParameter(String number, String band, String security, String adsl);
 }

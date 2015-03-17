@@ -16,31 +16,38 @@
             </td>
         </tr>
     </table>
-    <table width=210 border=0 cellpadding=0>
+    <table width=210 border=0 cellspacing=1 cellpadding=0>
         <tr>
             <td bgcolor="#aaaaaa">
-                <table width=210 border=0 cellpadding=5>
+                <table width=210 border=0 cellpadding=5 >
                     <tr>
                         <td class="login">
-                            <table>
-                                <tr>
-                                    <td width="56">
+                            <table width="100%">
+                                <tr >
+                                    <td>
                                         <form name="form5" method="post" action="subscribers">
-                                            <INPUT type="submit" name="submit" value="Просмотр всех абонентов">
+                                            <INPUT type="submit" name="submit" value="Просмотр всех абонентов" style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="56">
+                                    <td >
                                         <form name="form6" method="post" action="subscriberSearch">
-                                        <INPUT type="submit" name="submit" value="    Поиск абонентов    " size="30">
+                                        <INPUT type="submit" name="submit" value="    Поиск абонентов    " style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td width="56">
+                                    <td>
                                         <form name="form6" method="post" action="subscriberPhone">
-                                        <INPUT type="submit" name="submit" value="Просмотр тех. данных" size="30">
+                                        <INPUT type="submit" name="submit" value="Просмотр тех. данных" style="width:100%">
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form name="form6" method="post" action="subscriberPhoneSearch">
+                                        <INPUT type="submit" name="submit" value="Поиск по тех. данным" style="width:100%">
                                         </form>
                                     </td>
                                 </tr>

@@ -78,7 +78,7 @@ public class PhoneDaoImpl implements PhoneDao {
     }
 
     @Override
-    public List<Phone> getByCustomer(Subscriber subscriber) {
+    public List<Phone> getBySubscriber(Subscriber subscriber) {
         Session session = null;
         List<Phone> phones = new ArrayList<Phone>();
         try {
@@ -95,6 +95,29 @@ public class PhoneDaoImpl implements PhoneDao {
             }
         }
         return phones;
+    }
+
+    @Override
+    public List<Phone> getByParameter(String number, String band, String security, String adsl) {
+        Session session = null;
+        List<Phone> phones = new ArrayList<Phone>();
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            phones = session.createCriteria(Phone.class)
+                    .add(Restrictions.like("number", "%"+number))
+                    .add(Restrictions.like("band", "%"+band))
+                    .add(Restrictions.like("security", "%"+security))
+                    .add(Restrictions.like("adsl", "%"+adsl)).list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return phones;    
     }
 
 }

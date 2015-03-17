@@ -144,3 +144,16 @@ body A:visited {
 body A:hover {
          COLOR: #ff6600
 }
+form {
+         margin: 0px; /* Убираем отступы */
+}
+
+.AllWidth {
+         width: 100%; /* Убираем отступы */
+}
+
+.textBold {
+        font-style: italic;
+        font-weight: bold;
+        font-size: large
+}

@@ -18,13 +18,13 @@
         <div align="center">
             <%@include file="Header.jspf" %>
 
-            <table width=760 cellspacing=0 cellpadding=0 border=0>
+            <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
-                    <td width=760>
-                        <table width=760 cellspacing=1 cellpadding=0 border=0>
+                    <td width=860>
+                        <table width=860 cellspacing=1 cellpadding=0 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=760 border=0 cellpadding=0>
+                                    <table width=860 border=0 cellpadding=0>
                                         <TR>
                                             <TD class=nav >&nbsp;</TD>
                                         </TR>
@@ -32,13 +32,13 @@
                                 </td>
                             </tr>
                         </table>
-                        <table width=760 border=0 cellpadding=0><tr><td bgcolor="#aaaaaa">
-                                    <table width=760 border=0 cellpadding=5>
+                        <table width=860 border=0 cellpadding=0><tr><td bgcolor="#aaaaaa">
+                                    <table width=860 border=0 cellpadding=5>
                                         <tr>
                                             <td class="login">
                                                 <table>
                                                     <tr>
-                                                        <td width="230">&nbsp;</td>
+                                                        <td width="270">&nbsp;</td>
                                                         <td width="300">&nbsp;</td>
                                                     </tr>
                                                     <tr>
@@ -64,8 +64,13 @@
                                                                             <td> <INPUT type="password" name="password" size="30">
                                                                             </td>
                                                                         </tr>
+                                                                        <tr>
+                                                                            <td colspan="2" >
+                                                                               <center><INPUT type="submit" name="submit" value="Войти"></center>
+                                                                            </td>
+                                                                        </tr>
                                                                     </table>
-                                                                    <center><INPUT type="submit" name="submit" value="Войти"></center>
+                                                                    
                                                             </form>
                                                         </td>
                                                     </tr>
@@ -80,10 +85,10 @@
                 </tr>
             </table>
 
-            <table width=760 cellspacing=1 cellpadding=0 border=0>
+            <table width=860 cellspacing=1 cellpadding=0 border=0>
                 <tr>
                     <td bgcolor="#aaaaaa">
-                        <table width=760 border=0 cellpadding=0>
+                        <table width=860 border=0 cellpadding=0>
                             <TR><TD class=nav >&nbsp;</TD>
                             </TR></table>
                     </td>
