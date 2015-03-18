@@ -56,6 +56,14 @@
         <servlet-name>DeleteSubscriber</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.DeleteSubscriber</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditSubscriberView</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.EditSubscriberView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditSubscriber</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.EditSubscriber</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Subscribers</servlet-name>
         <url-pattern>/subscribers</url-pattern>
@@ -99,6 +107,14 @@
     <servlet-mapping>
         <servlet-name>DeleteSubscriber</servlet-name>
         <url-pattern>/deleteSubscriber</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSubscriberView</servlet-name>
+        <url-pattern>/editSubscriberView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSubscriber</servlet-name>
+        <url-pattern>/editSubscriber</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
 import by.telecom.subscriberapp.Phone;
+import javax.swing.JOptionPane;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
@@ -40,7 +41,7 @@ public class DeleteSubscriber extends HttpServlet {
             id = Long.parseLong(request.getParameter("subscriberSelect"));
             
             Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
-            
+            //JOptionPane.showMessageDialog(, "Eggs are not supposed to be green.");
             DaoFactory.getSubscriberDao().delete(subscriber);
             //request.setAttribute("subscriber", subscriber);
             

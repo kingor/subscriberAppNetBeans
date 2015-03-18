@@ -15,13 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Phone;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
  *
  * @author ASUP8
  */
-public class SubscriberSearchEdit extends HttpServlet {
+public class EditSubscriberView extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,11 +36,11 @@ public class SubscriberSearchEdit extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String search = request.getParameter("search");
-            System.out.println(search);
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().findByName(search);
-            request.setAttribute("subscriberSearchEdit", listSubscriber);
-            RequestDispatcher view = request.getRequestDispatcher("viewSubscriberEdit.jsp");
+            Long id = Long.parseLong(request.getParameter("subscriberSelect"));
+            Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
+
+            request.setAttribute("subscriber", subscriber);
+            RequestDispatcher view = request.getRequestDispatcher("editSubscriber.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

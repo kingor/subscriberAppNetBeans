@@ -15,13 +15,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Log;
+import by.telecom.subscriberapp.Phone;
+import by.telecom.subscriberapp.User;
+import java.util.Date;
+import javax.swing.JOptionPane;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
  *
  * @author ASUP8
  */
-public class SubscriberSearchEdit extends HttpServlet {
+public class EditSubscriber extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,12 +39,32 @@ public class SubscriberSearchEdit extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Long id;
+        String name;
+        String address;
+        String comment = "";
         try {
-            String search = request.getParameter("search");
-            System.out.println(search);
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().findByName(search);
-            request.setAttribute("subscriberSearchEdit", listSubscriber);
-            RequestDispatcher view = request.getRequestDispatcher("viewSubscriberEdit.jsp");
+            id = Long.parseLong(request.getParameter("id"));
+            name = request.getParameter("name");
+            address = request.getParameter("address");
+            
+            Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
+            
+           // 
+            Log log = new Log();
+            User user = new User();
+            user.setId(1L);
+            log.setUser(user);
+            log.setDate(new Date());
+            log.setComment(comment);
+            log.setType("Update");
+            log.updateSubscriber(subscriber.getName(), name, subscriber.getAddress(), address);
+            DaoFactory.getLogDao().create(log);
+            subscriber.setName(name);
+            subscriber.setAddress(address);
+            DaoFactory.getSubscriberDao().update(subscriber);
+           
+            RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

@@ -7,15 +7,15 @@
 package by.telecom.subscriberapp;
 
 import by.telecom.subscriberapp.Subscriber;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author ASUP8
  */
-public class Log {
+public class Log implements Serializable {
     private Long id;
-    private Subscriber subscriber;
     private User user;
     private Date date;
     private String type;
@@ -27,16 +27,8 @@ public class Log {
     
     public void setId(Long aId){
         id = aId;
-    }
-    
-    public Subscriber getSubscriber(){
-        return subscriber;
-    }
-    
-    public void setSubscriber(Subscriber aSubscriber){
-        subscriber = aSubscriber;
-    }
-    
+    }  
+ 
     public User getUser(){
         return user;
     }
@@ -67,5 +59,25 @@ public class Log {
     
     public void setComment(String aComment){
         comment = aComment;
+    }
+    
+    public void updateSubscriber(String aName, String aNameNew, String aAddress, String aAddressNew){
+        if(!aName.equals(aNameNew))
+            {
+                comment = comment.concat("ФИО: ")
+                        .concat(aName)
+                        .concat("--->")
+                        .concat(aNameNew)
+                        .concat("   ");
+
+            }
+            if(!aAddress.equals(aAddressNew))
+            {
+                comment = comment.concat("Адрес: ")
+                        .concat(aAddress)
+                        .concat("--->")
+                        .concat(aAddressNew)
+                        .concat("   ");
+            }
     }
 }

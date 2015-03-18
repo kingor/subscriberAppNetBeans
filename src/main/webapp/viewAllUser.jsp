@@ -18,7 +18,7 @@
         <table >
             <tr>
                 <td valign = "top">
-                    <%@include file="Menu.jspf" %>
+                    <%@include file="include/menu.jspf" %>
                 </td>
                 <td valign = "top">
                     <%

@@ -3,6 +3,8 @@
     Created on : 14.03.2015, 13:24:46
     Author     : Family_P
 --%>
+<%@page import="java.util.List"%>
+<%@page import="by.telecom.subscriberapp.Phone"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.Collection"%>
@@ -17,7 +19,6 @@
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
         <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
-  </style>
     </head>
     <body bgcolor="#e4e8ea">
         <div align="center">
@@ -36,30 +37,32 @@
                                         <tr>
                                             <td class="content">
                                                 <center>
-                                                    <h2>Новый абонент:</h2>
-                                                    <form name="form5" method="post" action="createSubscriber">
-                                                    <table width="500" >
+                                                    <h2>Подробные данные:</h2>
+                                                    <form name="form5" method="post" action="editSubscriber">
+                                                        <INPUT type="hidden" name="id" value="${subscriber.id}">
+                                                    <table class=AllWidth>
                                                         <tr>
-                                                            <td width="25%">ФИО абонента:</th>
-                                                            <td ><INPUT type="text" name="name" style="width:100%"></td>
+                                                            <td width="20%">ФИО абонента:</td> 
+                                                            <td class="textBold"><INPUT type="text" name="name" value="${subscriber.name}" style="width:100%" ></td>
                                                         </tr>
                                                         <tr>
-                                                            <td >Адрес:</th>
-                                                            <td><INPUT type="text" name="address" style="width:100%"></td>
+                                                            <td>Адрес абонента:</td> 
+                                                            <td class="textBold"><INPUT type="text" name="address" value="${subscriber.address}" style="width:100%" ></td>
                                                         </tr>
-                                                        <tr>
-                                                            <th colspan="2" width="5%">
+                                                        <th colspan="2" width="5%">
                                                                 <br>
                                                                 <INPUT type="submit" name="submit" value="Сохранить" style="width:20%">
-                                                            </th>
-                                                            
-                                                        </tr>
+                                                        </th>
                                                     </table>
+                                                    </form>
                                                 </center>
                                             </td>
                                         </tr>
 
-                                    </table></td></tr></table>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>

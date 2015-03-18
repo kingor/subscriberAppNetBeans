@@ -21,6 +21,7 @@ public class DaoFactory {
     private static SubscriberDao subscriberDao = null;
     private static PhoneDao phoneDao = null;
     private static UserDao userDao = null;
+    private static LogDao logDao = null;
     
     public static synchronized DaoFactory getInstance() {
         if (instance == null) {
@@ -48,6 +49,13 @@ public class DaoFactory {
             userDao = new UserDaoImpl();
         }
         return userDao;
+    }
+    
+    public static synchronized LogDao getLogDao() {
+        if (logDao == null) {
+            logDao = new LogDaoImpl();
+        }
+        return logDao;
     }
    
 }

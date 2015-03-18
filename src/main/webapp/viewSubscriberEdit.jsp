@@ -24,7 +24,7 @@
 
             <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
-                    <%@include file="include/menu_user.jspf" %>
+                    <%@include file="include/menu.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
                     <td width=643  align="center">
@@ -40,9 +40,9 @@
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th width="40%">ФИО Абонента</th>
-                                                            <th width="43%">Адрес</th>
-                                                            <th width="17%"></th>
+                                                            <th width="37%">ФИО Абонента</th>
+                                                            <th width="40%">Адрес</th>
+                                                            <th width="23%"></th>
                                                         </tr>
                                                         <tr>        
                                                             <td><INPUT type="text" name="search" style="width:100%"></td>
@@ -52,20 +52,20 @@
                                                     </table>     
                                                 </form>
                                                 <center>
-                                                    <c:if test="${!subscriberSearch.isEmpty()}">
+                                                    <c:if test="${!subscriberSearchEdit.isEmpty()}">
                                                         <table class="AllWidth" border="1">
                                                             <tr>
-                                                                <th width="40%">ФИО абонента</th>
-                                                                <th width="43%">Адрес абонента</th>
-                                                                <th colspan="2" width="17%">Редактор</th>
+                                                                <th width="37%">ФИО абонента</th>
+                                                                <th width="40%">Адрес абонента</th>
+                                                                <th colspan="2" width="23%">Редактор</th>
                                                                 
                                                             </tr>
-                                                            <c:forEach var="subscriber" items="${subscriberSearch}">
+                                                            <c:forEach var="subscriber" items="${subscriberSearchEdit}">
                                                                 <tr>
                                                                     <td>${subscriber.name}</td>
                                                                     <td>${subscriber.address}</td>
                                                                     <td>
-                                                                        <form name="form5" method="post" action="subscriberFull">
+                                                                        <form name="form5" method="post" action="editSubscriberView">
                                                                             <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
                                                                             <INPUT type="submit" name="submit" value="Редактор" style="width:100%">
                                                                         </form>

@@ -42,7 +42,6 @@ public class SubscriberFull extends HttpServlet {
             Collection<Phone> listPhones = DaoFactory.getPhoneDao().getBySubscriber(subscriber);
             request.setAttribute("subscriber", subscriber);
             request.setAttribute("phones", listPhones);
-            System.out.println(request.getParameter("subscriberSelect"));
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberFull.jsp");
             view.forward(request, response);
         } catch (IOException e) {
