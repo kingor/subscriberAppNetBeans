@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Log;
+import by.telecom.subscriberapp.User;
+import java.util.Date;
+import javax.servlet.http.HttpSession;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
@@ -38,11 +42,22 @@ public class CreateSubscriber extends HttpServlet {
         String name;
         String address;
         try {
+            HttpSession session = request.getSession();
+            User user = new User();
+            user = (User)session.getAttribute("user");
+                                 
             name = request.getParameter("name");
             address = request.getParameter("address");
             Subscriber subscriber = new Subscriber();
             subscriber.setName(name);
             subscriber.setAddress(address);
+            
+        
+            String comment = "";
+             //user.setId(1L);
+            
+            DaoFactory.getLogDao().create(Log.createSubscriber(user,subscriber.getName(), subscriber.getAddress()));
+            
             id = DaoFactory.getSubscriberDao().create(subscriber);
             request.setAttribute("subscriber", subscriber);
             

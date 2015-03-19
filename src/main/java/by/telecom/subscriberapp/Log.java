@@ -61,23 +61,95 @@ public class Log implements Serializable {
         comment = aComment;
     }
     
-    public void updateSubscriber(String aName, String aNameNew, String aAddress, String aAddressNew){
-        if(!aName.equals(aNameNew))
-            {
-                comment = comment.concat("ФИО: ")
-                        .concat(aName)
-                        .concat("--->")
-                        .concat(aNameNew)
-                        .concat("   ");
+    public static Log updateSubscriber(User user, String aName, String aNameNew, String aAddress, String aAddressNew) {
+        String comment = "";
+        Log log = new Log();
+        log.createLog(log, user, "Update");
+        if (!aName.equals(aNameNew)) {
+            comment = comment.concat("ФИО: ")
+                    .concat(aName)
+                    .concat("--->")
+                    .concat(aNameNew)
+                    .concat("   ");
 
-            }
-            if(!aAddress.equals(aAddressNew))
-            {
-                comment = comment.concat("Адрес: ")
-                        .concat(aAddress)
-                        .concat("--->")
-                        .concat(aAddressNew)
-                        .concat("   ");
-            }
+        }
+        if (!aAddress.equals(aAddressNew)) {
+            comment = comment.concat("Адрес: ")
+                    .concat(aAddress)
+                    .concat("--->")
+                    .concat(aAddressNew)
+                    .concat("   ");
+        }
+        log.setComment(comment);
+        return log;
+    }
+    
+    public static Log createSubscriber(User user, String aName, String aAddress) {
+        String comment = "";
+        Log log = new Log();
+        log.createLog(log, user, "Create");
+        comment = comment.concat("ФИО: ")
+                .concat(aName)
+                .concat("   ");
+
+        comment = comment.concat("Адрес: ")
+                .concat(aAddress)
+                .concat("   ");
+        log.setComment(comment);
+        return log;
+    }
+    
+    public static Log createUser(User user, String aLogin, String aName, Integer aCategory) {
+        String comment = "";
+        Log log = new Log();
+        log.createLog(log, user, "Create");
+        comment = comment.concat("Логин: ")
+                .concat(aLogin)
+                .concat("   ");
+
+        comment = comment.concat("Имя: ")
+                .concat(aName)
+                .concat("   ");
+        
+        comment = comment.concat("Категория: ")
+                .concat(aCategory.toString())
+                .concat("   ");
+        log.setComment(comment);
+        return log;
+    }
+    
+    public static Log updateUser(User user, 
+            String aLogin, String aLoginNew, 
+            String aPassword, String aPasswordNew,
+            String aName, String aNameNew,
+            Integer aCategory, Integer aCategoryNew) {
+        String comment = "";
+        Log log = new Log();
+        log.createLog(log, user, "Update");
+        comment = log.commentConcat(comment, "Логин: ", aLogin, aLoginNew);
+        comment = log.commentConcat(comment, "Пароль: ", aPassword, aPasswordNew);
+        comment = log.commentConcat(comment, "Имя: ", aName, aNameNew);
+        comment = log.commentConcat(comment, "Категория: ", aCategory.toString(), aCategoryNew.toString());
+        
+        log.setComment(comment);
+        return log;
+    }
+    
+    private String commentConcat(String aComment, String aType, String aName, String aNameNew){
+        if (!aName.equals(aNameNew)) {
+            aComment = aComment.concat(aType)
+                    .concat(aName)
+                    .concat("--->")
+                    .concat(aNameNew)
+                    .concat("   ");
+        }
+        return aComment;
+    }
+    
+    public Log createLog(Log log, User user, String type){
+        log.setUser(user);
+        log.setDate(new Date());
+        log.setType(type);
+        return log;
     }
 }

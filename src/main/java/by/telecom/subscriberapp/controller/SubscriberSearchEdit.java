@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.User;
+import javax.servlet.http.HttpSession;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
@@ -35,8 +37,16 @@ public class SubscriberSearchEdit extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            HttpSession session = request.getSession();
+            User user = new User();
+           user = (User)session.getAttribute("user");
+            //if(user.equals(null))
+           // {
+           //     RequestDispatcher view = request.getRequestDispatcher("login.jsp");
+           //     view.forward(request, response);
+           // }
             String search = request.getParameter("search");
-            System.out.println(search);
+            //System.out.println(search);
             Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().findByName(search);
             request.setAttribute("subscriberSearchEdit", listSubscriber);
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberEdit.jsp");

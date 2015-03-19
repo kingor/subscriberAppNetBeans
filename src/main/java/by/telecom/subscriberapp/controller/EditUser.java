@@ -28,7 +28,7 @@ import sun.security.pkcs11.wrapper.Functions;
  *
  * @author ASUP8
  */
-public class EditSubscriber extends HttpServlet {
+public class EditUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,9 +42,10 @@ public class EditSubscriber extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Long id;
+        String login;
+        String password;
         String name;
-        String address;
-        String comment = "";
+        Integer category;
         try {
             HttpSession session = request.getSession();
             User user = new User();
@@ -55,20 +56,26 @@ public class EditSubscriber extends HttpServlet {
             //    view.forward(request, response);
             //}
             id = Long.parseLong(request.getParameter("id"));
+            login = request.getParameter("login");
+            password = request.getParameter("password");
             name = request.getParameter("name");
-            address = request.getParameter("address");
+            category = Integer.parseInt(request.getParameter("category"));
             
-            Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
+            User userEdit = DaoFactory.getUserDao().read(id);
 
             DaoFactory.getLogDao()
                     .create(Log
-                            .updateSubscriber(user, subscriber.getName(), name,
-                                              subscriber.getAddress(), address));
+                            .updateUser(user, userEdit.getLogin(), login,
+                                        userEdit.getPassword(), password,
+                                        userEdit.getName(), name,
+                                        userEdit.getCategory(),category));
             
             
-            subscriber.setName(name);
-            subscriber.setAddress(address);
-            DaoFactory.getSubscriberDao().update(subscriber);
+            userEdit.setLogin(login);
+            userEdit.setPassword(password);
+            userEdit.setName(name);
+            userEdit.setCategory(category);
+            DaoFactory.getUserDao().update(userEdit);
            
             RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit");
             view.forward(request, response);

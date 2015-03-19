@@ -36,47 +36,49 @@ public class LoginServlet extends HttpServlet {
     String password = request.getParameter("password");
     String ResultPage;
     int flag = 0;
-    User user_auto = null;
+   // User user_auto = null;
     ResultPage = "/login.jsp";
     List<User> listUser = null;
     listUser = DaoFactory.getUserDao().getByLogin(login);
     
     HttpSession session = request.getSession();
     
-    User User = (User) session.getAttribute("user");
+    User user = (User) session.getAttribute("user");
     
-    if (User == null)
-      User = new User();
+    if (user == null)
+      user = new User();
+    user.setName("Аноним");
+    user.setCategory(3);
     
     if (!listUser.equals(null)) {
-        for (User user : listUser) 
-            if (user.getPassword().equals(password)) {
-                user_auto = user;
+        for (User user_each : listUser) 
+            if (user_each.getPassword().equals(password)) {
+                user = user_each;
                 flag = 1;
             }
     }
     else    {
       ResultPage = "/login.jsp";
-      User.SetError("Incorrect user name - " + login);
-      session.setAttribute("user", User);
+      user.SetError("Incorrect user name - " + login);
+      session.setAttribute("user", user);
     }
     
     if (flag == 1)
     {
-      User.Login(login);
-      session.setAttribute("user", User);
-      if (user_auto.getCategory()==0)
+      user.Login(login);
+      session.setAttribute("user", user);
+      if (user.getCategory()==0)
           ResultPage = "/index.jsp";
-      else if (user_auto.getCategory()==1)
-          ResultPage = "/index_1.jsp";
-      else if (user_auto.getCategory()==2)
-          ResultPage = "/index_2.jsp";
+      else if (user.getCategory()==1)
+          ResultPage = "/index.jsp";
+      else if (user.getCategory()==2)
+          ResultPage = "/index.jsp";
     }
     else
     {
       ResultPage = "/login.jsp";
-      User.SetError("Incorrect user name - " + login);
-      session.setAttribute("user", User);
+      user.SetError("Incorrect user name - " + login);
+      session.setAttribute("user", user);
     } 
     
     ServletContext SC = getServletContext();

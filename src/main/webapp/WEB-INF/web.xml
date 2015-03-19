@@ -64,6 +64,22 @@
         <servlet-name>EditSubscriber</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.EditSubscriber</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateUser</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.CreateUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserSearchEdit</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.UserSearchEdit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditUserView</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.EditUserView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditUser</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.EditUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Subscribers</servlet-name>
         <url-pattern>/subscribers</url-pattern>
@@ -115,6 +131,22 @@
     <servlet-mapping>
         <servlet-name>EditSubscriber</servlet-name>
         <url-pattern>/editSubscriber</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateUser</servlet-name>
+        <url-pattern>/createUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserSearchEdit</servlet-name>
+        <url-pattern>/userSearchEdit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditUserView</servlet-name>
+        <url-pattern>/editUserView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditUser</servlet-name>
+        <url-pattern>/editUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
