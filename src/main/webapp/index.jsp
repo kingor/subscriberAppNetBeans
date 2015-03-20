@@ -17,7 +17,6 @@
     <body bgcolor="#e4e8ea">
         <div align="center">
             <%@include file="include/Header.jspf" %>
-
             <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
                     <%@include file="include/menu.jspf" %>

@@ -9,6 +9,7 @@ import by.telecom.subscriberapp.Log;
 import java.util.List;
 import by.telecom.subscriberapp.User;
 import by.telecom.subscriberapp.Phone;
+import java.util.Date;
 
 /**
  *
@@ -16,4 +17,5 @@ import by.telecom.subscriberapp.Phone;
  */
 public interface LogDao extends GenericDao<Log, Long> {
     public List<Log> getByUser(User user);
+    public List<Log> getByParameter(String name, Date dateStart, Date dateEnd, String type, String comment);
 }

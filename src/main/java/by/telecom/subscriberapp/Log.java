@@ -99,7 +99,8 @@ public class Log implements Serializable {
         return log;
     }
     
-    public static Log createUser(User user, String aLogin, String aName, Integer aCategory) {
+    public static Log createUser(User user, String aLogin, 
+                                String aName, Integer aCategory) {
         String comment = "";
         Log log = new Log();
         log.createLog(log, user, "Create");
@@ -130,6 +131,19 @@ public class Log implements Serializable {
         comment = log.commentConcat(comment, "Пароль: ", aPassword, aPasswordNew);
         comment = log.commentConcat(comment, "Имя: ", aName, aNameNew);
         comment = log.commentConcat(comment, "Категория: ", aCategory.toString(), aCategoryNew.toString());
+        
+        log.setComment(comment);
+        return log;
+    }
+    
+    public static Log deleteUser(User user, String aLogin, 
+                                String aName, Integer aCategory) {
+        String comment = "";
+        Log log = new Log();
+        log.createLog(log, user, "Delete");
+        comment = log.commentConcat(comment, "Логин: ", aLogin, "");
+        comment = log.commentConcat(comment, "Имя: ", aName, "");
+        comment = log.commentConcat(comment, "Категория: ", aCategory.toString(), "");
         
         log.setComment(comment);
         return log;

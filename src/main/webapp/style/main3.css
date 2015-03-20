@@ -1,77 +1,75 @@
 
 .backgroundlogo{
-	MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #026cc4; BACKGROUND-IMAGE: url(backgroundlogo2.jpg)
+    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #026cc4; BACKGROUND-IMAGE: url(backgroundlogo2.jpg)
 }
 .content {
-	MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #d9e1e7; 
+    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #d9e1e7; 
 }
 
 .nav{
-	MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #dddddd; BACKGROUND-IMAGE: url(nav6.jpg)
+    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #dddddd; BACKGROUND-IMAGE: url(nav6.jpg)
 }
 .vline{
-    
+
 }
 
 .nav {text-align: middle
 }
 .nav A:link {
-	COLOR: #ffffff
+    COLOR: #ffffff
 }
 .nav A:visited {
-	COLOR: #026cc4
+    COLOR: #026cc4
 }
 .nav A:hover {
-         COLOR: #000000
+    COLOR: #000000
 }
 .nav A:link {text-decoration: none
 }
 .nav A:visited {
-	text-decoration: none
+    text-decoration: none
 }
 .nav A:hover {
-         text-decoration: none
+    text-decoration: none
 }
 .navText  {
-	FONT-SIZE: 12px; FONT-FAMILY:  arial, verdana, sans-serif
+    FONT-SIZE: 12px; FONT-FAMILY:  arial, verdana, sans-serif
 }
 .navText {line-height: 10px
 }
 
 
 .navi{
-	MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #dddddd; BACKGROUND-IMAGE: url(nav.jpg)
+    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #dddddd; BACKGROUND-IMAGE: url(nav.jpg)
 }
 
 .navi {text-align: middle
 }
 .navi A:link {
-	COLOR: #ffffff
+    COLOR: #ffffff
 }
 .navi A:visited {
-	COLOR: #026cc4
+    COLOR: #026cc4
 }
 .navi A:hover {
-         COLOR: #000000
+    COLOR: #000000
 }
 .navi A:link {text-decoration: none
 }
 .navi A:visited {
-	text-decoration: none
+    text-decoration: none
 }
 .navi A:hover {
-         text-decoration: none
+    text-decoration: none
 }
 .naviText  {
-	FONT-SIZE: 12px; FONT-FAMILY:  arial, verdana, sans-serif
+    FONT-SIZE: 12px; FONT-FAMILY:  arial, verdana, sans-serif
 }
 .naviText {line-height: 10px
 }
 
-
-
 .textLogo {
-	FONT-SIZE: 25px; FONT-FAMILY:  verdana, arial, sans-serif
+    FONT-SIZE: 25px; FONT-FAMILY:  verdana, arial, sans-serif
 }
 .textLogo{color: #ffffff
 }
@@ -81,47 +79,47 @@
 .textLogoWhite  {color: #45565f
 }
 .BigPrint {
-	FONT-FAMILY: arial, helvetica, sans-serif
+    FONT-FAMILY: arial, helvetica, sans-serif
 }
 .BigPrint {
-	FONT-SIZE: 14px
+    FONT-SIZE: 14px
 }
 .BigPrint {
-	COLOR: #026cc4
+    COLOR: #026cc4
 }
 .news{
-	MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #d9e1e7
+    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #d9e1e7
 }
 
 .news {text-align: middle
 }
 .news A:link {
-	COLOR: #0000ff
+    COLOR: #0000ff
 }
 .news A:visited {
-	COLOR: #0000ff
+    COLOR: #0000ff
 }
 .news A:hover {
-         COLOR: #026cc4
+    COLOR: #026cc4
 }
 
 
 .login{
-	BACKGROUND-COLOR: #d9e1e7
+    BACKGROUND-COLOR: #d9e1e7
 }
 
 
 .Copyright {
-	FONT-FAMILY: verdana, arial, sans-serif
+    FONT-FAMILY: verdana, arial, sans-serif
 }
 .Copyright {
-	FONT-SIZE: 10px
+    FONT-SIZE: 10px
 }
 .Copyright {
-	COLOR: #000000
+    COLOR: #000000
 }
 .contentText1 {
-	FONT-SIZE: 17px; FONT-FAMILY: verdana, arial, sans-serif
+    FONT-SIZE: 17px; FONT-FAMILY: verdana, arial, sans-serif
 }
 
 .contentText1 {color: #0000ff
@@ -130,7 +128,7 @@
 
 
 .textCopy {
-	FONT-SIZE: 11px; FONT-FAMILY: verdana, arial, verdana, sans-serif
+    FONT-SIZE: 11px; FONT-FAMILY: verdana, arial, verdana, sans-serif
 }
 .textCopy {color: #000
 }
@@ -139,24 +137,28 @@
 TD {vertical-align: top 
 }
 body A:link {
-	COLOR: #333366
+    COLOR: #333366
 }
 body A:visited {
-	COLOR: #333366
+    COLOR: #333366
 }
 body A:hover {
-         COLOR: #ff6600
+    COLOR: #ff6600
 }
 form {
-         margin: 0px; /* Убираем отступы */
+    margin: 0px; /* Убираем отступы */
 }
 
 .AllWidth {
-         width: 100%; /* Убираем отступы */
+    width: 100%; /* Убираем отступы */
 }
 
 .textBold {
-        font-style: italic;
-        font-weight: bold;
-        font-size: large
+    font-style: italic;
+    font-weight: bold;
+    font-size: large
+}
+.AllHeight{
+    width: 100%; /* Убираем отступы */
+    height: 100%; /* Убираем отступы */
 }

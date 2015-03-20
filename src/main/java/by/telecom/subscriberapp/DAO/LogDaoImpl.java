@@ -14,6 +14,7 @@ import by.telecom.subscriberapp.HibernateUtil;
 import by.telecom.subscriberapp.Log;
 import by.telecom.subscriberapp.User;
 import by.telecom.subscriberapp.Phone;
+import java.util.Date;
 
 /**
  *
@@ -85,8 +86,34 @@ public class LogDaoImpl implements LogDao {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            logs = session.createCriteria(Phone.class)
+            logs = session.createCriteria(Log.class)
                     .add(Restrictions.eq("user", user)).list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return logs;
+    }
+
+    @Override
+    public List<Log> getByParameter(String name, Date dateStart, Date dateEnd, String type,String comment) {
+        Session session = null;
+        List<Log> logs = new ArrayList<Log>();
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            logs = session.createCriteria(Log.class)
+                    .add(Restrictions.ge("date", dateStart))
+                    .add(Restrictions.le("date", dateEnd))
+                    .add(Restrictions.like("type", "%"+type+"%"))
+                    .add(Restrictions.like("comment", "%"+comment+"%"))
+                    .createCriteria("user")
+                    .add(Restrictions.like("name","%"+name+"%"))
+                    .list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace(System.out);

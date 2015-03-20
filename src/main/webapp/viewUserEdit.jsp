@@ -40,11 +40,11 @@
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th width="17%">Логин</th>
+                                                            <th width="25%">Логин</th>
                                                             
-                                                            <th width="20%">Имя</th>
-                                                            <th width="20%">Категория</th>
-                                                            <th width="23%"></th>
+                                                            <th width="25%">Имя</th>
+                                                            <th width="25%">Категория</th>
+                                                            <th width="25%"></th>
                                                         </tr>
                                                         <tr>        
                                                             <td><INPUT type="text" name="login" style="width:100%"></td>
@@ -58,17 +58,15 @@
                                                     <c:if test="${!userSearchEdit.isEmpty()}">
                                                         <table class="AllWidth" border="1">
                                                             <tr>
-                                                                <th width="17%">Логин</th>
-                                                                <th width="20%">Пароль</th>
-                                                                <th width="20%">Имя</th>
-                                                                <th width="20%">Категория</th>
-                                                                <th colspan="2" width="23%">Редактор</th>
+                                                                <th width="25%">Логин</th>
+                                                                <th width="25%">Имя</th>
+                                                                <th width="25%">Категория</th>
+                                                                <th colspan="2" width="25%">Редактор</th>
                                                                 
                                                             </tr>
                                                             <c:forEach var="userEdit" items="${userSearchEdit}">
                                                                 <tr>
                                                                     <td>${userEdit.login}</td>
-                                                                    <td>${userEdit.password}</td>
                                                                     <td>${userEdit.name}</td>
                                                                     <td>${userEdit.category}</td>
                                                                     <td>

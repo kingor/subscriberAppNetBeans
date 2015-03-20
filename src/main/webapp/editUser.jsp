@@ -38,41 +38,50 @@
                                             <td class="content">
                                                 <center>
                                                     <h2>Редактор пользователей:</h2>
-                                                    <form name="form5" method="post" action="editUser">
-                                                        <INPUT type="hidden" name="id" value="${userEdit.id}">
+                                                    <INPUT type="hidden" name="id" value="${userEdit.id}">
                                                     <table class=AllWidth>
-                                                        <tr>
-                                                            <td width="25%">Login:</th>
-                                                            <td class="textBold"><INPUT type="text" name="login" value="${userEdit.login}" style="width:100%" ></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >Пароль:</th>
-                                                            <td class="textBold"><INPUT type="text" name="password" value="${userEdit.password}" style="width:100%" ></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >Имя:</th>
-                                                            <td class="textBold"><INPUT type="text" name="name" value="${userEdit.name}" style="width:100%" ></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >Категория:</th>
-                                                            <td>
-                                                                <select name="category" style="width:100%" >                 
-                                                                    <option value="2">Пользователь</option>
-                                                                    <option value="1">Оператор</option>
-                                                                    <option value="0">Администратор</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                        <th colspan="2" width="5%">
-                                                                <br>
-                                                                <INPUT type="submit" name="submit" value="Сохранить" style="width:20%">
-                                                        </th>
+                                                        <form name="form5" method="post" action="editUser">
+                                                            <tr>
+                                                                <td width="25%">Login:</th>
+                                                                <td width="75%" class="textBold"><INPUT type="text" name="login" value="${userEdit.login}" style="width:100%" ></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >Пароль:</th>
+                                                                <td class="textBold"><INPUT type="text" name="password" value="${userEdit.password}" style="width:100%" ></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >Имя:</th>
+                                                                <td class="textBold"><INPUT type="text" name="name" value="${userEdit.name}" style="width:100%" ></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >Категория:</th>
+                                                                <td>
+                                                                    <select name="category" style="width:100%" >                 
+                                                                        <option value="2">Пользователь</option>
+                                                                        <option value="1">Оператор</option>
+                                                                        <option value="0">Администратор</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
                                                     </table>
-                                                    </form>
+                                                            <br>
+                                                            <table width="30%">
+                                                                <tr>
+                                                                    <td width="50%">
+                                                                        <INPUT type="submit" name="submit" value="Сохранить" class="AllWidth">
+                                                                    </td>
+                                                                    </form>
+
+                                                                <form name="form5" method="post" action="userSearchEdit">
+                                                                    <td width="50%">                                                                      
+                                                                        <INPUT type="submit" name="submit" value="Отмена" class="AllWidth">                                                                               
+                                                                    </td>
+                                                                </form>
+                                                                </tr>
+                                                            </table>
                                                 </center>
                                             </td>
                                         </tr>
-
                                     </table>
                                 </td>
                             </tr>
