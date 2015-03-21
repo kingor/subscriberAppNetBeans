@@ -39,7 +39,7 @@
                                                     <h2>Параметры для абонента:</h2>
                                                     <table width="500">
                                                         <tr>
-                                                            <td width="25%">ФИО абонента:</td> 
+                                                            <td class="width25">ФИО абонента:</td> 
                                                             <td class="textBold">${subscriber.name}</td>
                                                         <input type="hidden" name="id" value="${subscriber.id}">
                                                         </tr>

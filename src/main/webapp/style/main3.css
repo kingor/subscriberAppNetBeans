@@ -1,13 +1,25 @@
 
 .backgroundlogo{
-    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #026cc4; BACKGROUND-IMAGE: url(backgroundlogo2.jpg)
+    MARGIN: 2px 2px 10px; 
+    COLOR: #000;  
+    BACKGROUND-COLOR: #026cc4; 
+    BACKGROUND-IMAGE: url(backgroundlogo.jpg)
 }
 .content {
-    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #d9e1e7; 
+    MARGIN: 2px 2px 10px; 
+    COLOR: #000; 
+    BACKGROUND-COLOR: #d9e1e7; 
+    text-align: center;
+    
 }
-
+.center {
+    text-align: center;
+}
 .nav{
-    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #dddddd; BACKGROUND-IMAGE: url(nav6.jpg)
+    MARGIN: 2px 2px 10px; 
+    COLOR: #000;  
+    BACKGROUND-COLOR: #dddddd; 
+    BACKGROUND-IMAGE: url(nav.jpg)
 }
 .vline{
 
@@ -16,83 +28,76 @@
 .nav {text-align: middle
 }
 .nav A:link {
-    COLOR: #ffffff
+    COLOR: #ffffff;
+    text-decoration: none;
 }
 .nav A:visited {
-    COLOR: #026cc4
+    COLOR: #026cc4;
+    text-decoration: none;
 }
 .nav A:hover {
-    COLOR: #000000
-}
-.nav A:link {text-decoration: none
-}
-.nav A:visited {
-    text-decoration: none
-}
-.nav A:hover {
-    text-decoration: none
+    COLOR: #000000;
+    text-decoration: none;
 }
 .navText  {
-    FONT-SIZE: 12px; FONT-FAMILY:  arial, verdana, sans-serif
+    FONT-SIZE: 12px; 
+    FONT-FAMILY:  arial, verdana, sans-serif;
+    line-height: 10px
 }
-.navText {line-height: 10px
-}
-
 
 .navi{
-    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #dddddd; BACKGROUND-IMAGE: url(nav.jpg)
+    MARGIN: 2px 2px 10px; 
+    COLOR: #000;  
+    BACKGROUND-COLOR: #dddddd; 
+    BACKGROUND-IMAGE: url(nav.jpg);
+    text-align: middle;
 }
 
-.navi {text-align: middle
-}
 .navi A:link {
-    COLOR: #ffffff
+    COLOR: #ffffff;
+    text-decoration: none;
 }
 .navi A:visited {
-    COLOR: #026cc4
+    COLOR: #026cc4;
+    text-decoration: none;
 }
 .navi A:hover {
-    COLOR: #000000
-}
-.navi A:link {text-decoration: none
-}
-.navi A:visited {
-    text-decoration: none
-}
-.navi A:hover {
-    text-decoration: none
+    COLOR: #000000;
+    text-decoration: none;
 }
 .naviText  {
-    FONT-SIZE: 12px; FONT-FAMILY:  arial, verdana, sans-serif
+    FONT-SIZE: 12px; 
+    FONT-FAMILY:  arial, verdana, sans-serif
 }
-.naviText {line-height: 10px
+.naviText {
+    line-height: 10px
 }
 
 .textLogo {
-    FONT-SIZE: 25px; FONT-FAMILY:  verdana, arial, sans-serif
-}
-.textLogo{color: #ffffff
+    FONT-SIZE: 25px; 
+    FONT-FAMILY:  verdana, arial, sans-serif;
+    color: #ffffff;
 }
 
-.textLogoWhite {FONT-SIZE: 20px; FONT-FAMILY: verdana, arial, sans-serif
+.textLogoWhite {
+    FONT-SIZE: 20px; 
+    FONT-FAMILY: verdana, arial, sans-serif;
+    color: #45565f
 }
-.textLogoWhite  {color: #45565f
-}
+
 .BigPrint {
-    FONT-FAMILY: arial, helvetica, sans-serif
+    FONT-FAMILY: arial, helvetica, sans-serif;
+    FONT-SIZE: 14px;
+    COLOR: #026cc4;
 }
-.BigPrint {
-    FONT-SIZE: 14px
-}
-.BigPrint {
-    COLOR: #026cc4
-}
+
 .news{
-    MARGIN: 2px 2px 10px; COLOR: #000;  BACKGROUND-COLOR: #d9e1e7
+    MARGIN: 2px 2px 10px; 
+    COLOR: #000;  
+    BACKGROUND-COLOR: #d9e1e7;
+    text-align: middle
 }
 
-.news {text-align: middle
-}
 .news A:link {
     COLOR: #0000ff
 }
@@ -110,28 +115,23 @@
 
 
 .Copyright {
-    FONT-FAMILY: verdana, arial, sans-serif
+    FONT-FAMILY: verdana, arial, sans-serif;
+    FONT-SIZE: 10px;
+    COLOR: #000000;
 }
-.Copyright {
-    FONT-SIZE: 10px
-}
-.Copyright {
-    COLOR: #000000
-}
+
 .contentText1 {
-    FONT-SIZE: 17px; FONT-FAMILY: verdana, arial, sans-serif
+    FONT-SIZE: 17px; 
+    FONT-FAMILY: verdana, arial, sans-serif;
+    color: #0000ff;
 }
-
-.contentText1 {color: #0000ff
-}
-
-
 
 .textCopy {
-    FONT-SIZE: 11px; FONT-FAMILY: verdana, arial, verdana, sans-serif
+    FONT-SIZE: 11px; 
+    FONT-FAMILY: verdana, arial, verdana, sans-serif;
+    color: #000;
 }
-.textCopy {color: #000
-}
+
 
 
 TD {vertical-align: top 
@@ -151,6 +151,27 @@ form {
 
 .AllWidth {
     width: 100%; /* Убираем отступы */
+}
+
+.border {
+    width: 100%; /* Убираем отступы */
+    border: 1px;
+}
+
+.width10 {
+    width: 10%; /* Убираем отступы */
+}
+.width15 {
+    width: 15%; /* Убираем отступы */
+}
+.width20 {
+    width: 20%; /* Убираем отступы */
+}
+.width25 {
+    width: 25%; /* Убираем отступы */
+}
+.width40 {
+    width: 40%; /* Убираем отступы */
 }
 
 .textBold {

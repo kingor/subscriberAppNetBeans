@@ -36,37 +36,33 @@
                                             <td class="content">
                                                 <form name="form5" method="post" action="subscriberSearch">
                                                     <center>
-                                                        <h2>Поиск по фамилии:</h2>
+                                                        <h2>Поиск абонентов:</h2>
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th width="40%">ФИО Абонента</th>
-                                                            <th width="43%">Адрес</th>
-                                                            <th width="17%"></th>
+                                                            <th class="width40">ФИО абонента</th>
+                                                            <th class="width40">Адрес абонента</th>
+                                                            <th class="width20"></th>
                                                         </tr>
                                                         <tr>        
-                                                            <td><INPUT type="text" name="search" style="width:100%"></td>
-                                                            <td><INPUT type="text" name="address" style="width:100%"></td>
-                                                            <td><INPUT type="submit" name="submit" value="Искать!" style="width:100%"></td>
+                                                            <td><INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
+                                                            <td><INPUT type="text" name="address" value="${address}" class="AllWidth"></td>
+                                                            <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
                                                         </tr>
                                                     </table>     
                                                 </form>
                                                 <center>
                                                     <c:if test="${!subscriberSearch.isEmpty()}">
                                                         <table class="AllWidth" border="1">
-                                                            <tr>
-                                                                <th width="40%">ФИО абонента</th>
-                                                                <th width="43%">Адрес абонента</th>
-                                                                <th width="17%">Подробнее</th>
-                                                            </tr>
+                                                            
                                                             <c:forEach var="subscriber" items="${subscriberSearch}">
                                                                 <tr>
-                                                                    <td>${subscriber.name}</td>
-                                                                    <td>${subscriber.address}</td>
-                                                                    <td>
+                                                                    <td class="width40">${subscriber.name}</td>
+                                                                    <td class="width40">${subscriber.address}</td>
+                                                                    <td class="width20">
                                                                         <form name="form5" method="post" action="subscriberFull">
                                                                             <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
-                                                                            <INPUT type="submit" name="submit" value="Подробнее" style="width:100%">
+                                                                            <INPUT type="submit" name="submit" value="Подробнее" class="AllWidth">
                                                                         </form>
                                                                     </td>
                                                                 </tr>

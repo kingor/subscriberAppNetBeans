@@ -15,4 +15,5 @@ import by.telecom.subscriberapp.Subscriber;
  */
 public interface SubscriberDao  extends GenericDao<Subscriber, Long>{
     Collection<Subscriber> findByName(String name);
+    Collection<Subscriber> getByParameter(String name, String address);
 }

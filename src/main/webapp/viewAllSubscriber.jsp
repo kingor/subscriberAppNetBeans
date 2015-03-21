@@ -22,27 +22,25 @@
     <body bgcolor="#e4e8ea">
         <div align="center">
             <%@include file="include/Header.jspf" %>
-
             <table width=860 cellspacing=0 cellpadding=0 border=0>
                 <tr>
                     <%@include file="include/menu.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
                     <td width=643  align="center">
-                        <table width=643 cellspacing=0 cellpadding=1 border=0>
+                        <table width=643 cellspacing=0 cellpadding=1>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=643 cellspacing=0 cellpadding=20 border=0>
+                                    <table width=643 cellspacing=0 cellpadding=20>
                                         <tr>
-                                            <td class="content">
-                                                <center>
+                                            <td class="content">                                               
                                                     <h2>Все абоненты в базе данных:</h2>
                                                     <table class="AllWidth" border="1">
                                                         <tr>
-                                                                <th width="40%">ФИО абонента</th>
-                                                                <th>Адрес абонента</th>
-                                                                <th width="5%">Подробнее</th>
-                                                            </tr>
+                                                            <th width="40%">ФИО абонента</th>
+                                                            <th>Адрес абонента</th>
+                                                            <th width="5%">Подробнее</th>
+                                                        </tr>
                                                         <c:forEach var="subscriber" items="${subscribers}">
                                                             <tr>
                                                                 <td>${subscriber.name}</td>
@@ -53,14 +51,15 @@
                                                                         <INPUT type="submit" name="submit" value="Подробнее">
                                                                     </form>
                                                                 </td>
-                                                            </tr>
+                                                            </tr>    
                                                         </c:forEach>
-                                                    </table>
-                                                </center>
+                                                    </table>    
                                             </td>
                                         </tr>
-
-                                    </table></td></tr></table>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>

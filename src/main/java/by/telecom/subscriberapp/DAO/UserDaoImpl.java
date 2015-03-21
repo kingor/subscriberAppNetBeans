@@ -146,7 +146,29 @@ public class UserDaoImpl implements UserDao{
                 session.close();
             }
         }
-        return all; //To change body of generated methods, choose Tools | Templates.
+        return all; 
+    }
+
+    @Override
+    public List<User> getByParameter(String login, String name, Integer category) {
+        Session session = null;
+        List<User> all = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            all = session.createCriteria(User.class)
+                    .add(Restrictions.like("login", "%"+login+"%"))
+                    .add(Restrictions.like("name", "%"+name+"%"))
+                    .add(Restrictions.ge("category", category)).list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return all; 
     }
 
     

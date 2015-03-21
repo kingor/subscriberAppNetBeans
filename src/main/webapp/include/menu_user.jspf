@@ -22,7 +22,14 @@
                 <table width=210 border=0 cellpadding=5 >
                     <tr>
                         <td class="login">
-                            <table width="100%">
+                            <table class="AllWidth">
+                                <tr >
+                                    <td>
+                                        <form name="form5" method="post" action="index.jsp">
+                                            <INPUT type="submit" name="submit" value="Главная страница" style="width:100%">
+                                        </form>
+                                    </td>
+                                </tr>
                                 <tr >
                                     <td>
                                         <form name="form5" method="post" action="subscribers">

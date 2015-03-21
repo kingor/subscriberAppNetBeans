@@ -40,9 +40,15 @@ public class SubscriberPhoneSearch extends HttpServlet {
            String band = request.getParameter("band");
            String security = request.getParameter("security");
            String adsl = request.getParameter("adsl");
-            List<Phone> listPhone;
-            listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl);
+           String name = request.getParameter("name");
+            List<Phone> listPhone = null;
+            listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name);
             request.setAttribute("subscriberPhoneSearch", listPhone);
+            request.setAttribute("number", number);
+            request.setAttribute("band", band);
+            request.setAttribute("security", security);
+            request.setAttribute("adsl", adsl);
+            request.setAttribute("name", name);
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberPhoneSearch.jsp");
             view.forward(request, response);
         } catch (IOException e) {

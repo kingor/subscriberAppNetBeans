@@ -41,37 +41,32 @@
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th width="15%">Номер</th>
-                                                            <th width="20%">Гром полоса</th>
-                                                            <th width="15%">Защита</th>
-                                                            <th width="10%">Adsl</th>
-                                                            <th width="40%"></th>
+                                                            <th class="width15">Номер</th>
+                                                            <th class="width20">Гром полоса</th>
+                                                            <th class="width15">Защита</th>
+                                                            <th class="width10">Adsl</th>
+                                                            <th class="width25">ФИО</th>
+                                                            <th class="width15"></th>
                                                         </tr>
                                                         <tr>
-                                                            <td width="15%"> <INPUT type="text" name="number" style="width:100%"></td>
-                                                            <td width="20%"> <INPUT type="text" name="band" style="width:100%"></td>
-                                                            <td width="15%"> <INPUT type="text" name="security" style="width:100%"></td>
-                                                            <td width="10%"> <INPUT type="text" name="adsl" style="width:100%"></td>
-                                                            <td width="40%"><INPUT type="submit" name="submit" value="Искать!" style="width:100%"></td>
+                                                            <td > <INPUT type="text" name="number" value="${number}" class="AllWidth"></td>
+                                                            <td > <INPUT type="text" name="band" value="${band}" class="AllWidth"></td>
+                                                            <td > <INPUT type="text" name="security" value="${security}" class="AllWidth"></td>
+                                                            <td > <INPUT type="text" name="adsl" value="${adsl}" class="AllWidth"></td>
+                                                            <td > <INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
+                                                            <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
                                                         </tr>
                                                     </table> 
                                                 </form>
                                                     <c:if test="${!subscriberPhoneSearch.isEmpty()}">
                                                         <table class="AllWidth" border="1">
-                                                            <tr>
-                                                                <th width="15%">Номер</th>
-                                                                <th width="20%">Гром полоса</th>
-                                                                <th width="15%">Защитная полоса</th>
-                                                                <th width="10%">ADSL</th>
-                                                                <th width="40%">ФИО абонента</th>
-                                                            </tr>
                                                             <c:forEach var="phone" items="${subscriberPhoneSearch}">
                                                                 <tr>
-                                                                    <td>${phone.number}</td>
-                                                                    <td>${phone.band}</td>
-                                                                    <td>${phone.security}</td>
-                                                                    <td>${phone.adsl}</td>
-                                                                    <td>${phone.subscriber.name}</td>
+                                                                    <td class="width15">${phone.number}</td>
+                                                                    <td class="width20">${phone.band}</td>
+                                                                    <td class="width15">${phone.security}</td>
+                                                                    <td class="width10">${phone.adsl}</td>
+                                                                    <td class="width40">${phone.subscriber.name}</td>
                                                                 </tr>
                                                             </c:forEach>
                                                         </table>

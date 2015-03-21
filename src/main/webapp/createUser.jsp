@@ -37,10 +37,11 @@
                                             <td class="content">
                                                 <center>
                                                     <h2>Новый абонент:</h2>
-                                                    <form name="form5" method="post" action="createUser">
+                                                    
                                                     <table width="500" >
+                                                        <form name="form5" method="post" action="createUser">
                                                         <tr>
-                                                            <td width="25%">Login:</th>
+                                                            <td width="25%">Логин:</th>
                                                             <td ><INPUT type="text" name="login" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
@@ -61,19 +62,30 @@
                                                                 </select>
                                                             </td>
                                                         </tr>
+                                                        </table>
+                                                    <br>
+                                                    <table>
                                                         <tr>
-                                                            <th colspan="2" width="5%">
-                                                                <br>
-                                                                <INPUT type="submit" name="submit" value="Сохранить" style="width:20%">
-                                                            </th>
-                                                            
-                                                        </tr>
+                                                            <td width="50%">
+
+                                                                <INPUT type="submit" name="submit" value="Сохранить" class="AllWidth">
+                                                            </td>
+                                                            </form>
+                                                            <form name="form5" method="post" action="index.jsp">
+                                                                <td width="50%">
+                                                                    <INPUT type="submit" name="submit" value="Отмена" class="AllWidth">
+                                                                </td>
+                                                            </form>
+                                                        </tr>                                                    
                                                     </table>
                                                 </center>
                                             </td>
                                         </tr>
 
-                                    </table></td></tr></table>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>

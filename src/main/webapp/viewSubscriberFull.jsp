@@ -40,7 +40,7 @@
                                                     <h2>Подробные данные:</h2>
                                                     <table class=AllWidth>
                                                         <tr>
-                                                            <td width="20%">ФИО абонента:</td> 
+                                                            <td class="width20">ФИО абонента:</td> 
                                                             <td class="textBold">${subscriber.name}</td>
                                                         </tr>
                                                         <tr><td>Адрес абонента:</td> 
@@ -68,11 +68,21 @@
                                                     <c:if test="${phones.isEmpty()}">
                                                         <h1>Данных для текущего пользователя нет!</h1>
                                                     </c:if>
+                                                    <table class="width20">
+                                                        <tr>
+                                                            <td>
+                                                                <form name="form5" method="post" action="subscribers">
+                                                                    <INPUT class="AllWidth" type="submit" name="submit" value="Назад">
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
                                                 </center>
                                             </td>
                                         </tr>
 
                                     </table>
+                                    
                                 </td>
                             </tr>
                         </table>

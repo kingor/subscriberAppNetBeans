@@ -6,7 +6,7 @@
     <%User user = (User) session.getAttribute("user");%>
     
     <c:if test="${user.category>1}">
-        <jsp:forward page="Footer.jspf"/>
+        <jsp:forward page="login.jsp"/>
     </c:if>
 
 </td>

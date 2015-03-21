@@ -8,6 +8,7 @@
     <%@include file="menu_user.jspf" %>
     <c:if test="${user.category<3}">
         <%@include file="menu_operator.jspf" %>
+        
     </c:if>
     <c:if test="${user.category<2}">
         <%@include file="menu_admin.jspf" %>

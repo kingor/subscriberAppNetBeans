@@ -98,7 +98,7 @@ public class PhoneDaoImpl implements PhoneDao {
     }
 
     @Override
-    public List<Phone> getByParameter(String number, String band, String security, String adsl) {
+    public List<Phone> getByParameter(String number, String band, String security, String adsl, String name) {
         Session session = null;
         List<Phone> phones = new ArrayList<Phone>();
         try {
@@ -108,7 +108,10 @@ public class PhoneDaoImpl implements PhoneDao {
                     .add(Restrictions.like("number", number + "%"))
                     .add(Restrictions.like("band", band + "%"))
                     .add(Restrictions.like("security", security + "%"))
-                    .add(Restrictions.like("adsl", adsl + "%")).list();
+                    .add(Restrictions.like("adsl", adsl + "%"))
+                    .createCriteria("subscriber")
+                    .add(Restrictions.like("name", "%" + name+ "%"))
+                    .list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace(System.out);

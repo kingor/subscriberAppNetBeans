@@ -39,19 +39,21 @@
                                                     <h2>Технические параметры абонентов:</h2>
                                                     <table class="AllWidth" border="1">
                                                         <tr>
-                                                            <th width="40%">ФИО абонента</th>
-                                                           <th>Номер</th>
-                                                            <th>Гром полоса</th>
-                                                            <th>Защитная полоса</th>
-                                                            <th>ADSL</th>
+                                                            <th class="width15">Номер</th>
+                                                            <th class="width20">Гром полоса</th>
+                                                            <th class="width15">Защита</th>
+                                                            <th class="width10">Adsl</th>
+                                                            <th class="width40">ФИО</th>
+                                                            
                                                             </tr>
                                                         <c:forEach var="phone" items="${subscriberPhone}">
                                                             <tr>
-                                                                <td>${phone.subscriber.name}</td>
+                                                                
                                                                 <td>${phone.number}</td>
                                                                 <td>${phone.band}</td>
                                                                 <td>${phone.security}</td>
                                                                 <td>${phone.adsl}</td>
+                                                                <td>${phone.subscriber.name}</td>
                          
                                                             </tr>
                                                         </c:forEach>

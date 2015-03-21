@@ -34,8 +34,7 @@
                                     <table width=643 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
-                                                <form name="form5" method="post" action="userSearchEdit">
-                                                    <center>
+                                                <center>
                                                         <h2>Редактор пользователей:</h2>
                                                     </center>
                                                     <table class="AllWidth">
@@ -46,14 +45,16 @@
                                                             <th width="25%">Категория</th>
                                                             <th width="25%"></th>
                                                         </tr>
-                                                        <tr>        
-                                                            <td><INPUT type="text" name="login" style="width:100%"></td>
-                                                            <td><INPUT type="text" name="name" style="width:100%"></td>
-                                                            <td><INPUT type="text" name="category" style="width:100%"></td>
-                                                            <td><INPUT type="submit" name="submit" value="Искать!" style="width:100%"></td>
+                                                        <tr> 
+                                                        <form name="form5" method="post" action="userSearchEdit">
+                                                            <td><INPUT type="text" name="login" value="${login}" class="AllWidth"></td>
+                                                            <td><INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
+                                                            <td><INPUT type="text" name="category" value="${category}" class="AllWidth"></td>
+                                                            <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
+                                                        </form>
                                                         </tr>
                                                     </table>     
-                                                </form>
+                                                
                                                 <center>
                                                     <c:if test="${!userSearchEdit.isEmpty()}">
                                                         <table class="AllWidth" border="1">

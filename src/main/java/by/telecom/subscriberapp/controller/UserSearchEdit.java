@@ -40,16 +40,16 @@ public class UserSearchEdit extends HttpServlet {
             HttpSession session = request.getSession();
             User user = new User();
             user = (User)session.getAttribute("user");
-            //if(user.equals(null))
-           // {
-           //     RequestDispatcher view = request.getRequestDispatcher("login.jsp");
-           //     view.forward(request, response);
-           // }
-            String login = request.getParameter("login");
+
+            String login = "";
+                login = request.getParameter("login");
             String name = request.getParameter("name");
             String category = request.getParameter("category");
-            Collection<User> listUser = DaoFactory.getUserDao().getByLogin(login);
+            Collection<User> listUser = DaoFactory.getUserDao().getByParameter(login, name, 0);
             request.setAttribute("userSearchEdit", listUser);
+            request.setAttribute("name", name);
+            request.setAttribute("login", login);
+            request.setAttribute("category", category);
             RequestDispatcher view = request.getRequestDispatcher("viewUserEdit.jsp");
             view.forward(request, response);
         } catch (IOException e) {

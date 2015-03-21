@@ -65,7 +65,7 @@
                                                             </tr>
                                                     </table>
                                                             <br>
-                                                            <table width="30%">
+                                                            <table>
                                                                 <tr>
                                                                     <td width="50%">
                                                                         <INPUT type="submit" name="submit" value="Сохранить" class="AllWidth">

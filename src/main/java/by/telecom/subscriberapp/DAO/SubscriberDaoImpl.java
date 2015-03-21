@@ -144,5 +144,26 @@ public class SubscriberDaoImpl implements SubscriberDao{
         return all;
     }
 
+    @Override
+    public Collection<Subscriber> getByParameter(String name, String address) {
+        Session session = null;
+        List<Subscriber> all = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            all = session.createCriteria(Subscriber.class)
+                    .add( Restrictions.like("name", "%"+name+"%"))
+                    .add( Restrictions.like("address", "%"+address+"%")).list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return all;
+    }
+
     
 }

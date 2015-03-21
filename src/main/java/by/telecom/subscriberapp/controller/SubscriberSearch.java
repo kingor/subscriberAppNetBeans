@@ -35,10 +35,12 @@ public class SubscriberSearch extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String search = request.getParameter("search");
-            System.out.println(search);
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().findByName(search);
+            String name = request.getParameter("name");
+            String address = request.getParameter("address");
+            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getByParameter(name,address);
             request.setAttribute("subscriberSearch", listSubscriber);
+            request.setAttribute("name", name);
+            request.setAttribute("address", address);
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberSearch.jsp");
             view.forward(request, response);
         } catch (IOException e) {
