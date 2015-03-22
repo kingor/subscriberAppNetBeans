@@ -13,6 +13,8 @@ import org.hibernate.criterion.Restrictions;
 import by.telecom.subscriberapp.HibernateUtil;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.Phone;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 
 /**
  *
@@ -60,13 +62,20 @@ public class PhoneDaoImpl implements PhoneDao {
     }
 
     @Override
-    public List<Phone> getAll() {
+    public List<Phone> getAll(String sort, String orderType) {
         Session session = null;
         List<Phone> all = new ArrayList<Phone>();
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            all = session.createCriteria(Phone.class).list();
+            Criteria criteria = session.createCriteria(Phone.class);
+            Order order = Order.asc(sort);
+            if (sort.equals("name"))
+                criteria = criteria.createCriteria("subscriber");
+            if(orderType.equals("desc"))
+                order = Order.desc(sort);
+            all = criteria
+                    .addOrder(order).list();
         } catch (Exception e) {
             e.printStackTrace(System.out);
         } finally {
@@ -98,20 +107,26 @@ public class PhoneDaoImpl implements PhoneDao {
     }
 
     @Override
-    public List<Phone> getByParameter(String number, String band, String security, String adsl, String name) {
+    public List<Phone> getByParameter(String number, String band, 
+            String security, String adsl, String name, String sort, String orderType) {
         Session session = null;
         List<Phone> phones = new ArrayList<Phone>();
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            phones = session.createCriteria(Phone.class)
+            Criteria criteria = session.createCriteria(Phone.class)
                     .add(Restrictions.like("number", number + "%"))
                     .add(Restrictions.like("band", band + "%"))
                     .add(Restrictions.like("security", security + "%"))
-                    .add(Restrictions.like("adsl", adsl + "%"))
-                    .createCriteria("subscriber")
-                    .add(Restrictions.like("name", "%" + name+ "%"))
-                    .list();
+                    .add(Restrictions.like("adsl", adsl + "%"));
+            Order order = Order.asc(sort);
+            if (sort.equals("name"))
+                criteria = criteria.createCriteria("subscriber")
+                        .add(Restrictions.like("name", "%" + name+ "%"));
+            if(orderType.equals("desc"))
+                order = Order.desc(sort);
+            phones = criteria
+                    .addOrder(order).list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -121,6 +136,11 @@ public class PhoneDaoImpl implements PhoneDao {
             }
         }
         return phones;    
+    }
+
+    @Override
+    public List<Phone> getAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

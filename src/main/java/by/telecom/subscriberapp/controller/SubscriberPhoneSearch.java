@@ -36,13 +36,22 @@ public class SubscriberPhoneSearch extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            String sort = "";
+            String order = "";
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+            if(!"number".equals(sort) && !"band".equals(sort) 
+                    && !"security".equals(sort) && !"adsl".equals(sort) && !"name".equals(sort))
+                sort = "number";
+            if(!"asc".equals(order) && !"desc".equals(order))
+                order = "asc";
            String number = request.getParameter("number");
            String band = request.getParameter("band");
            String security = request.getParameter("security");
            String adsl = request.getParameter("adsl");
            String name = request.getParameter("name");
             List<Phone> listPhone = null;
-            listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name);
+            listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name, sort, order);
             request.setAttribute("subscriberPhoneSearch", listPhone);
             request.setAttribute("number", number);
             request.setAttribute("band", band);

@@ -41,12 +41,32 @@
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th class="width15">Номер</th>
-                                                            <th class="width20">Гром полоса</th>
-                                                            <th class="width15">Защита</th>
-                                                            <th class="width10">Adsl</th>
-                                                            <th class="width25">ФИО</th>
-                                                            <th class="width15"></th>
+                                                            <th class="navu width15">
+                                                                <a href="subscriberPhoneSearch?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                Номер
+                                                                <a href="subscriberPhoneSearch?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                            </th>
+                                                            <th class="navu width25">
+                                                                <a href="subscriberPhoneSearch?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                Гром полоса
+                                                                <a href="subscriberPhoneSearch?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                            </th>
+                                                            <th class="navu width15">
+                                                                <a href="subscriberPhoneSearch?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                Защита
+                                                                <a href="subscriberPhoneSearch?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                            </th>
+                                                            <th class="navu width15">
+                                                                <a href="subscriberPhoneSearch?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                Adsl
+                                                                <a href="subscriberPhoneSearch?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                            </th>
+                                                            <th class="navu width30">
+                                                                <a href="subscriberPhoneSearch?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                ФИО
+                                                                <a href="subscriberPhoneSearch?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                            </th>
+                                                            <th class="navu width15"></th>
                                                         </tr>
                                                         <tr>
                                                             <td > <INPUT type="text" name="number" value="${number}" class="AllWidth"></td>
@@ -63,10 +83,10 @@
                                                             <c:forEach var="phone" items="${subscriberPhoneSearch}">
                                                                 <tr>
                                                                     <td class="width15">${phone.number}</td>
-                                                                    <td class="width20">${phone.band}</td>
+                                                                    <td class="width25">${phone.band}</td>
                                                                     <td class="width15">${phone.security}</td>
-                                                                    <td class="width10">${phone.adsl}</td>
-                                                                    <td class="width40">${phone.subscriber.name}</td>
+                                                                    <td class="width15">${phone.adsl}</td>
+                                                                    <td class="width30">${phone.subscriber.name}</td>
                                                                 </tr>
                                                             </c:forEach>
                                                         </table>

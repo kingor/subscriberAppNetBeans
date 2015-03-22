@@ -150,15 +150,19 @@ public class SubscriberDaoImpl implements SubscriberDao{
     }
 
     @Override
-    public Collection<Subscriber> getByParameter(String name, String address) {
+    public Collection<Subscriber> getByParameter(String name, String address,String sort, String orderType) {
         Session session = null;
         List<Subscriber> all = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
+            Order order = Order.asc(sort);
+            if(orderType.equals("desc"))
+                order = Order.desc(sort);
             all = session.createCriteria(Subscriber.class)
                     .add( Restrictions.like("name", "%"+name+"%"))
-                    .add( Restrictions.like("address", "%"+address+"%")).list();
+                    .add( Restrictions.like("address", "%"+address+"%"))
+                    .addOrder(order).list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();

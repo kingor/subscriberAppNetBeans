@@ -35,8 +35,16 @@ public class SubscriberPhone extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-           
-            Collection<Phone> listSubscriber = DaoFactory.getPhoneDao().getAll();
+            String sort = "";
+            String order = "";
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+            if(!"number".equals(sort) && !"band".equals(sort) 
+                    && !"security".equals(sort) && !"adsl".equals(sort) && !"name".equals(sort))
+                sort = "number";
+            if(!"asc".equals(order) && !"desc".equals(order))
+                order = "asc";
+            Collection<Phone> listSubscriber = DaoFactory.getPhoneDao().getAll(sort, order);
             request.setAttribute("subscriberPhone", listSubscriber);
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberPhone.jsp");
             view.forward(request, response);

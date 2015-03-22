@@ -39,13 +39,33 @@
                                                     <h2>Технические параметры абонентов:</h2>
                                                     <table class="AllWidth" border="1">
                                                         <tr>
-                                                            <th class="width15">Номер</th>
-                                                            <th class="width20">Гром полоса</th>
-                                                            <th class="width15">Защита</th>
-                                                            <th class="width10">Adsl</th>
-                                                            <th class="width40">ФИО</th>
-                                                            
-                                                            </tr>
+                                                            <th class="navi width15">
+                                                                <a href="subscriberPhone?sort=number&order=desc">↓</a>
+                                                                Номер
+                                                                <a href="subscriberPhone?sort=number&order=asc">↑</a>
+                                                            </th>
+                                                            <th class="navi width25">
+                                                                <a href="subscriberPhone?sort=band&order=desc">↓</a>
+                                                                Гром полоса
+                                                                <a href="subscriberPhone?sort=band&order=asc">↑</a>
+                                                            </th>
+                                                            <th class="navi width15">
+                                                                <a href="subscriberPhone?sort=security&order=desc">↓</a>
+                                                                Защита
+                                                                <a href="subscriberPhone?sort=security&order=asc">↑</a>
+                                                            </th>                                                          
+                                                            <th class="navi width15">
+                                                                <a href="subscriberPhone?sort=adsl&order=desc">↓</a>
+                                                                Adsl
+                                                                <a href="subscriberPhone?sort=adsl&order=asc">↑</a>
+                                                            </th>
+                                                            <th class="navi width30">
+                                                                <a href="subscriberPhone?sort=name&order=desc">↓</a>
+                                                                ФИО
+                                                                <a href="subscriberPhone?sort=name&order=asc">↑</a>
+                                                            </th>
+
+                                                        </tr>
                                                         <c:forEach var="phone" items="${subscriberPhone}">
                                                             <tr>
                                                                 

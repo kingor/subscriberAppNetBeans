@@ -41,11 +41,15 @@
                                                     <table class="AllWidth">
                                                         <tr>
                                                             <th class="navu width40">
-                                                                <a href="subscriberSearch?sort=name&order=desc">↓</a>
+                                                                <a href="subscriberSearch?sort=name&order=desc&name=${name}&address=${address}">↓</a>
                                                                 ФИО абонента
-                                                                <a href="subscriberSearch?sort=name&order=asc">↑</a>
+                                                                <a href="subscriberSearch?sort=name&order=asc&name=${name}&address=${address}">↑</a>
                                                             </th>
-                                                            <th class="width40">Адрес абонента</th>
+                                                            <th class="navu width40">
+                                                                <a href="subscriberSearch?sort=address&order=desc&name=${name}&address=${address}">↓</a>
+                                                                Адрес абонента
+                                                                <a href="subscriberSearch?sort=address&order=asc&name=${name}&address=${address}">↑</a>
+                                                            </th>
                                                             <th class="width20"></th>
                                                         </tr>
                                                         <tr>        

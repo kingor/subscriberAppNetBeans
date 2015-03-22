@@ -35,9 +35,17 @@ public class SubscriberSearch extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            String sort = "";
+            String order = "";
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+            if(!"name".equals(sort) && !"address".equals(sort))
+                sort = "name";
+            if(!"asc".equals(order) && !"desc".equals(order))
+                order = "asc";
             String name = request.getParameter("name");
             String address = request.getParameter("address");
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getByParameter(name,address);
+            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getByParameter(name, address, sort, order);
             request.setAttribute("subscriberSearch", listSubscriber);
             request.setAttribute("name", name);
             request.setAttribute("address", address);

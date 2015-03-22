@@ -43,9 +43,9 @@
                                                                 <a href="subscribers?sort=name&order=asc">↑</a>
                                                             </th>
                                                             <th class="navi">
-                                                                <a href="subscribers?sort=address&type=desc">↓</a>
+                                                                <a href="subscribers?sort=address&order=desc">↓</a>
                                                                 Адрес абонента
-                                                                <a href="subscribers?sort=address&type=asc">↑</a>
+                                                                <a href="subscribers?sort=address&order=asc">↑</a>
                                                             </th>
                                                             <th class="navi width10">Подробнее</th>
                                                         </tr>
