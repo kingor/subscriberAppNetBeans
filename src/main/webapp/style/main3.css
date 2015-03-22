@@ -45,6 +45,25 @@
     line-height: 10px
 }
 
+.navu{
+    MARGIN: 2px 2px 10px; 
+    BACKGROUND-COLOR: #d9e1e7; 
+    text-align: middle;
+}
+
+.navu A:link {
+    COLOR: #ffffff;
+    text-decoration: none;
+}
+.navu A:visited {
+    COLOR: #026cc4;
+    text-decoration: none;
+}
+.navu A:hover {
+    COLOR: #000000;
+    text-decoration: none;
+}
+
 .navi{
     MARGIN: 2px 2px 10px; 
     COLOR: #000;  
@@ -65,6 +84,7 @@
     COLOR: #000000;
     text-decoration: none;
 }
+
 .naviText  {
     FONT-SIZE: 12px; 
     FONT-FAMILY:  arial, verdana, sans-serif
@@ -134,8 +154,10 @@
 
 
 
-TD {vertical-align: top 
+TD {vertical-align: top; 
 }
+
+
 body A:link {
     COLOR: #333366
 }
@@ -183,3 +205,4 @@ form {
     width: 100%; /* Убираем отступы */
     height: 100%; /* Убираем отступы */
 }
+

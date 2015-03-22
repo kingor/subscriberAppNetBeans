@@ -40,7 +40,11 @@
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th class="width40">ФИО абонента</th>
+                                                            <th class="navu width40">
+                                                                <a href="subscriberSearch?sort=name&order=desc">↓</a>
+                                                                ФИО абонента
+                                                                <a href="subscriberSearch?sort=name&order=asc">↑</a>
+                                                            </th>
                                                             <th class="width40">Адрес абонента</th>
                                                             <th class="width20"></th>
                                                         </tr>

@@ -15,6 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.HibernateUtil;
+import org.hibernate.criterion.Order;
 
 /**
  *
@@ -126,13 +127,17 @@ public class SubscriberDaoImpl implements SubscriberDao{
     }
 
     @Override
-    public List<Subscriber> getAll() {
+    public List<Subscriber> getAll(String sort, String orderType) {
         Session session = null;
         List<Subscriber> all = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            all = session.createCriteria(Subscriber.class).list();
+            Order order = Order.asc(sort);
+            if(orderType.equals("desc"))
+                order = Order.desc(sort);
+            all = session.createCriteria(Subscriber.class)
+                    .addOrder(order).list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -163,6 +168,11 @@ public class SubscriberDaoImpl implements SubscriberDao{
             }
         }
         return all;
+    }
+
+    @Override
+    public List<Subscriber> getAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

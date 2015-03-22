@@ -37,9 +37,17 @@
                                                     <h2>Все абоненты в базе данных:</h2>
                                                     <table class="AllWidth" border="1">
                                                         <tr>
-                                                            <th width="40%">ФИО абонента</th>
-                                                            <th>Адрес абонента</th>
-                                                            <th width="5%">Подробнее</th>
+                                                            <th class="navi width40">
+                                                                <a href="subscribers?sort=name&order=desc">↓</a>
+                                                                ФИО абонента
+                                                                <a href="subscribers?sort=name&order=asc">↑</a>
+                                                            </th>
+                                                            <th class="navi">
+                                                                <a href="subscribers?sort=address&type=desc">↓</a>
+                                                                Адрес абонента
+                                                                <a href="subscribers?sort=address&type=asc">↑</a>
+                                                            </th>
+                                                            <th class="navi width10">Подробнее</th>
                                                         </tr>
                                                         <c:forEach var="subscriber" items="${subscribers}">
                                                             <tr>
