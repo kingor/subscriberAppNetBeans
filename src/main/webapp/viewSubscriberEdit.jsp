@@ -40,30 +40,33 @@
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th width="37%">ФИО Абонента</th>
-                                                            <th width="40%">Адрес</th>
-                                                            <th width="23%"></th>
+                                                            <th class="navu width30">
+                                                                <a href="subscriberSearchEdit?sort=name&order=desc&name=${name}&address=${address}">↓</a>
+                                                                ФИО абонента
+                                                                <a href="subscriberSearchEdit?sort=name&order=asc&name=${name}&address=${address}">↑</a>
+                                                            </th>
+                                                            <th class="navu width40">
+                                                                <a href="subscriberSearchEdit?sort=address&order=desc&name=${name}&address=${address}">↓</a>            
+                                                                Адрес
+                                                                <a href="subscriberSearchEdit?sort=address&order=asc&name=${name}&address=${address}">↑</a>
+                                                            </th>
+                                                            <th class="navu width25"></th>
                                                         </tr>
                                                         <tr>        
-                                                            <td><INPUT type="text" name="search" style="width:100%"></td>
-                                                            <td><INPUT type="text" name="address" style="width:100%"></td>
-                                                            <td><INPUT type="submit" name="submit" value="Искать!" style="width:100%"></td>
+                                                            <td><INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
+                                                            <td><INPUT type="text" name="address" value="${address}" class="AllWidth"></td>
+                                                            <td class="navu width30"><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
                                                         </tr>
                                                     </table>     
                                                 </form>
                                                 <center>
                                                     <c:if test="${!subscriberSearchEdit.isEmpty()}">
                                                         <table class="AllWidth" border="1">
-                                                            <tr>
-                                                                <th width="37%">ФИО абонента</th>
-                                                                <th width="40%">Адрес абонента</th>
-                                                                <th colspan="2" width="23%">Редактор</th>
-                                                                
-                                                            </tr>
+                        
                                                             <c:forEach var="subscriber" items="${subscriberSearchEdit}">
                                                                 <tr>
-                                                                    <td>${subscriber.name}</td>
-                                                                    <td>${subscriber.address}</td>
+                                                                    <td class="width30">${subscriber.name}</td>
+                                                                    <td class="width40">${subscriber.address}</td>
                                                                     <td>
                                                                         <form name="form5" method="post" action="editSubscriberView">
                                                                             <input type="hidden" name="subscriberSelect" value=${subscriber.id}>

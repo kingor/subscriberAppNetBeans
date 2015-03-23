@@ -37,18 +37,25 @@ public class SubscriberSearchEdit extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            String sort = "";
+            String order = "";
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+            if(!"name".equals(sort) && !"address".equals(sort))
+                sort = "name";
+            if(!"asc".equals(order) && !"desc".equals(order))
+                order = "asc";
             HttpSession session = request.getSession();
             User user = new User();
            user = (User)session.getAttribute("user");
-            //if(user.equals(null))
-           // {
-           //     RequestDispatcher view = request.getRequestDispatcher("login.jsp");
-           //     view.forward(request, response);
-           // }
-            String search = request.getParameter("search");
+
+            String name = request.getParameter("name");
+            String address = request.getParameter("address");
             //System.out.println(search);
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().findByName(search);
+            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getByParameter(name, address, sort, order);
             request.setAttribute("subscriberSearchEdit", listSubscriber);
+            request.setAttribute("name", name);
+            request.setAttribute("address", address);
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberEdit.jsp");
             view.forward(request, response);
         } catch (IOException e) {
