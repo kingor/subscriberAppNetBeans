@@ -37,15 +37,22 @@ public class UserSearchEdit extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            String sort = "";
+            String order = "";
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+            if(!"login".equals(sort) && !"name".equals(sort) && !"category".equals(sort))
+                sort = "login";
+            if(!"asc".equals(order) && !"desc".equals(order))
+                order = "asc";
             HttpSession session = request.getSession();
             User user = new User();
             user = (User)session.getAttribute("user");
 
-            String login = "";
-                login = request.getParameter("login");
+            String login = request.getParameter("login");
             String name = request.getParameter("name");
             String category = request.getParameter("category");
-            Collection<User> listUser = DaoFactory.getUserDao().getByParameter(login, name, 0);
+            Collection<User> listUser = DaoFactory.getUserDao().getByParameter(login, name, 0, sort, order);
             request.setAttribute("userSearchEdit", listUser);
             request.setAttribute("name", name);
             request.setAttribute("login", login);

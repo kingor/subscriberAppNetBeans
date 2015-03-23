@@ -17,5 +17,6 @@ import java.util.Date;
  */
 public interface LogDao extends GenericDao<Log, Long> {
     public List<Log> getByUser(User user);
-    public List<Log> getByParameter(String name, Date dateStart, Date dateEnd, String type, String comment);
+    public List<Log> getByParameter(String name, Date dateStart, Date dateEnd, String type,
+            String comment, String sort, String orderType);
 }

@@ -15,6 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import by.telecom.subscriberapp.User;
 import by.telecom.subscriberapp.HibernateUtil;
+import org.hibernate.criterion.Order;
 
 /**
  *
@@ -150,16 +151,20 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public List<User> getByParameter(String login, String name, Integer category) {
+    public List<User> getByParameter(String login, String name, Integer category, String sort, String orderType) {
         Session session = null;
         List<User> all = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
+            Order order = Order.asc(sort);
+            if(orderType.equals("desc"))
+                order = Order.desc(sort);
             all = session.createCriteria(User.class)
                     .add(Restrictions.like("login", "%"+login+"%"))
                     .add(Restrictions.like("name", "%"+name+"%"))
-                    .add(Restrictions.ge("category", category)).list();
+                    .add(Restrictions.ge("category", category))
+                    .addOrder(order).list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();

@@ -41,52 +41,61 @@
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th width="23%">Пользователь</th>
-                                                            <th width="27%">Дата</th>
-                                                            <th width="11%">Тип</th>
-                                                            <th >Комментарий</th>
-                                                            <th width="10%"></th>
+                                                            <th class="navu width25">
+                                                                <a href="logSearch?sort=name&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
+                                                                Пользователь
+                                                                <a href="logSearch?sort=name&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
+                                                            </th>
+                                                            <th class="navu width25">
+                                                                <a href="logSearch?sort=date&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
+                                                                Дата
+                                                                <a href="logSearch?sort=date&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
+                                                            </th>
+                                                            <th class="navu width10">
+                                                                <a href="logSearch?sort=type&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
+                                                                Тип
+                                                                <a href="logSearch?sort=type&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
+                                                            </th>
+                                                            <th class="navu width25">
+                                                                <a href="logSearch?sort=comment&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
+                                                                Комментарий
+                                                                <a href="logSearch?sort=comment&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
+                                                            </th>
+                                                            <th class="navu width15"></th>
                                                         </tr>
                                                         <tr>        
-                                                            <td rowspan="2" style="vertical-align: middle">
+                                                            <td rowspan="2" >
                                                                 <INPUT type="text" name="name" value="${name}" class="AllHeight">
                                                             </td>
-                                                            <td width="27%">c :
-                                                                <INPUT type="date" name="dateStart" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />" style="width:85%">
+                                                            <td >
+                                                                <INPUT type="date" name="dateStart" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />" class="AllWidth">
                                                             </td>
-                                                            <td  rowspan="2" style="vertical-align: middle">
+                                                            <td  rowspan="2">
                                                                 <INPUT type="text" name="type" value="${type}" class="AllHeight">
                                                             </td>
-                                                            <td  rowspan="2" style="vertical-align: middle">
+                                                            <td  rowspan="2">
                                                                 <INPUT type="text" name="comment" value="${comment}" class="AllHeight">
                                                             </td>
-                                                            <td  rowspan="2" style="vertical-align: middle">
+                                                            <td  rowspan="2">
                                                                 <INPUT type="submit" name="submit" value="Искать!" class="AllHeight">
                                                             </td>
                                                         </tr>
-                                                        <tr>
-                                                            <td width="27%">до:<INPUT type="date" name="dateEnd" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />" style="width:85%"></td>
+                                                        <tr height="90%">
+                                                            <td ><INPUT type="date" name="dateEnd" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />" class="AllWidth"></td>
                                                         </tr>
                                                     </table>     
                                                 </form>
                                                 <center>
                                                     <c:if test="${!logSearch.isEmpty()}">
                                                         <table class="AllWidth" border="1">
-                                                            <tr>
-                                                                <th width="23%">Пользователь</th>
-                                                                <th width="27%">Дата</th>
-                                                                <th width="11%">Тип</th>
-                                                                <th >Комментарий</th>
-
-                                                            </tr>
                                                             <c:forEach var="log" items="${logSearch}">
                                                                 <tr>
-                                                                    <td>${log.user.name}</td>
-                                                                    <td>
+                                                                    <td class="width25">${log.user.name}</td>
+                                                                    <td class="width25">
                                                                         <fmt:formatDate pattern="dd.MM.yyyy --- hh:mm" value="${log.date}"/>
                                                                     </td>
-                                                                    <td>${log.type}</td>
-                                                                    <td>${log.comment}</td>
+                                                                    <td class="width10">${log.type}</td>
+                                                                    <td class="width40">${log.comment}</td>
                                                                 </tr>
                                                             </c:forEach>
                                                         </table>

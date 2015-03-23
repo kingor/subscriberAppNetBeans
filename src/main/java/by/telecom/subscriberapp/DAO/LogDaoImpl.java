@@ -15,6 +15,8 @@ import by.telecom.subscriberapp.Log;
 import by.telecom.subscriberapp.User;
 import by.telecom.subscriberapp.Phone;
 import java.util.Date;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 
 /**
  *
@@ -100,20 +102,26 @@ public class LogDaoImpl implements LogDao {
     }
 
     @Override
-    public List<Log> getByParameter(String name, Date dateStart, Date dateEnd, String type,String comment) {
+    public List<Log> getByParameter(String name, Date dateStart, Date dateEnd, String type,
+            String comment, String sort, String orderType) {
         Session session = null;
         List<Log> logs = new ArrayList<Log>();
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            logs = session.createCriteria(Log.class)
+             Criteria criteria = session.createCriteria(Log.class)
                     .add(Restrictions.ge("date", dateStart))
                     .add(Restrictions.le("date", dateEnd))
                     .add(Restrictions.like("type", "%"+type+"%"))
-                    .add(Restrictions.like("comment", "%"+comment+"%"))
-                    .createCriteria("user")
-                    .add(Restrictions.like("name","%"+name+"%"))
-                    .list();
+                    .add(Restrictions.like("comment", "%"+comment+"%"));
+             Order order = Order.asc(sort);
+             if (sort.equals("name"))
+                criteria = criteria.createCriteria("user")
+                        .add(Restrictions.like("name","%"+name+"%"));
+            if(orderType.equals("desc"))
+                order = Order.desc(sort);
+            logs = criteria
+                    .addOrder(order).list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace(System.out);

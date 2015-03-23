@@ -17,5 +17,5 @@ import java.util.List;
 public interface UserDao  extends GenericDao<User, Long>{
     Collection<User> findByName(String name);
     public List<User> getByLogin(String login);
-    public List<User> getByParameter(String login, String name, Integer category);
+    public List<User> getByParameter(String login, String name, Integer category, String sort, String orderType);
 }

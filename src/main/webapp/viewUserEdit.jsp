@@ -39,11 +39,22 @@
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th width="25%">Логин</th>
-                                                            
-                                                            <th width="25%">Имя</th>
-                                                            <th width="25%">Категория</th>
-                                                            <th width="25%"></th>
+                                                            <th class="navu width25">
+                                                                <a href="userSearchEdit?sort=login&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
+                                                                Логин
+                                                                <a href="userSearchEdit?sort=login&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
+                                                            </th> 
+                                                            <th class="navu width25">
+                                                                <a href="userSearchEdit?sort=name&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
+                                                                Имя
+                                                                <a href="userSearchEdit?sort=name&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
+                                                            </th>
+                                                            <th class="navu width25">
+                                                                <a href="userSearchEdit?sort=category&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
+                                                                Категория
+                                                                <a href="userSearchEdit?sort=category&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
+                                                            </th>
+                                                            <th class="width25"></th>
                                                         </tr>
                                                         <tr> 
                                                         <form name="form5" method="post" action="userSearchEdit">
@@ -58,19 +69,12 @@
                                                 <center>
                                                     <c:if test="${!userSearchEdit.isEmpty()}">
                                                         <table class="AllWidth" border="1">
-                                                            <tr>
-                                                                <th width="25%">Логин</th>
-                                                                <th width="25%">Имя</th>
-                                                                <th width="25%">Категория</th>
-                                                                <th colspan="2" width="25%">Редактор</th>
-                                                                
-                                                            </tr>
                                                             <c:forEach var="userEdit" items="${userSearchEdit}">
                                                                 <tr>
-                                                                    <td>${userEdit.login}</td>
-                                                                    <td>${userEdit.name}</td>
-                                                                    <td>${userEdit.category}</td>
-                                                                    <td>
+                                                                    <td class="width25">${userEdit.login}</td>
+                                                                    <td class="width25">${userEdit.name}</td>
+                                                                    <td class="width25">${userEdit.category}</td>
+                                                                    <td >
                                                                         <form name="form5" method="post" action="editUserView">
                                                                             <input type="hidden" name="userSelect" value=${userEdit.id}>
                                                                             <INPUT type="submit" name="submit" value="Редактор" style="width:100%">

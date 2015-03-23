@@ -41,6 +41,15 @@ public class LogSearch extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            String sort = "";
+            String order = "";
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+            if( !"name".equals(sort) && !"date".equals(sort) 
+                    && !"type".equals(sort) && !"category".equals(sort))
+                sort = "name";
+            if(!"asc".equals(order) && !"desc".equals(order))
+                order = "asc";
             String name = request.getParameter("name");
             String comment = request.getParameter("comment");
             String type = request.getParameter("type");
@@ -61,7 +70,7 @@ public class LogSearch extends HttpServlet {
                 dateEnd = new Date();
             }
 
-            Collection<Log> listLog = DaoFactory.getLogDao().getByParameter(name, dateStart, dateEnd,type, comment);
+            Collection<Log> listLog = DaoFactory.getLogDao().getByParameter(name, dateStart, dateEnd,type, comment,sort, order);
             request.setAttribute("name", name);
             request.setAttribute("logSearch", listLog);
             request.setAttribute("dateStart", dateStart);
