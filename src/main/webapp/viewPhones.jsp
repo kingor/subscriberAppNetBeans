@@ -40,34 +40,34 @@
                                                     <table class="AllWidth" border="1">
                                                         <tr>
                                                             <th class="navi width15">
-                                                                <a href="subscriberPhone?sort=number&order=desc">↓</a>
+                                                                <a href="phones?sort=number&order=desc">↓</a>
                                                                 Номер
-                                                                <a href="subscriberPhone?sort=number&order=asc">↑</a>
+                                                                <a href="phones?sort=number&order=asc">↑</a>
                                                             </th>
                                                             <th class="navi width25">
-                                                                <a href="subscriberPhone?sort=band&order=desc">↓</a>
+                                                                <a href="phones?sort=band&order=desc">↓</a>
                                                                 Гром полоса
-                                                                <a href="subscriberPhone?sort=band&order=asc">↑</a>
+                                                                <a href="phones?sort=band&order=asc">↑</a>
                                                             </th>
                                                             <th class="navi width15">
-                                                                <a href="subscriberPhone?sort=security&order=desc">↓</a>
+                                                                <a href="phones?sort=security&order=desc">↓</a>
                                                                 Защита
-                                                                <a href="subscriberPhone?sort=security&order=asc">↑</a>
+                                                                <a href="phones?sort=security&order=asc">↑</a>
                                                             </th>                                                          
                                                             <th class="navi width15">
-                                                                <a href="subscriberPhone?sort=adsl&order=desc">↓</a>
+                                                                <a href="phones?sort=adsl&order=desc">↓</a>
                                                                 Adsl
-                                                                <a href="subscriberPhone?sort=adsl&order=asc">↑</a>
+                                                                <a href="phones?sort=adsl&order=asc">↑</a>
                                                             </th>
                                                             <th class="navi width30">
-                                                                <a href="subscriberPhone?sort=name&order=desc">↓</a>
+                                                                <a href="phones?sort=name&order=desc">↓</a>
                                                                 ФИО
-                                                                <a href="subscriberPhone?sort=name&order=asc">↑</a>
+                                                                <a href="phones?sort=name&order=asc">↑</a>
                                                             </th>
                                                             
 
                                                         </tr>
-                                                        <c:forEach var="phone" items="${subscriberPhone}">
+                                                        <c:forEach var="phone" items="${phones}">
                                                             <tr>
                                                                 
                                                                 <td>${phone.number}</td>

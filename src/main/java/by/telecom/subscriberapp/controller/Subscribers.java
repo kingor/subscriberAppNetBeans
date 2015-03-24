@@ -47,7 +47,7 @@ public class Subscribers extends HttpServlet {
             System.out.println(order);
             Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getAll(sort, order);
             request.setAttribute("subscribers", listSubscriber);
-            RequestDispatcher view = request.getRequestDispatcher("viewAllSubscriber.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("viewSubscribers.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

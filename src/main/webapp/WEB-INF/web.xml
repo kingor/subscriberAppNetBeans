@@ -29,16 +29,16 @@
         <servlet-class>by.telecom.subscriberapp.controller.SubscriberSearch</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SubscriberPhone</servlet-name>
-        <servlet-class>by.telecom.subscriberapp.controller.SubscriberPhone</servlet-class>
+        <servlet-name>Phones</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.Phones</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SubscriberFull</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.SubscriberFull</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SubscriberPhoneSearch</servlet-name>
-        <servlet-class>by.telecom.subscriberapp.controller.SubscriberPhoneSearch</servlet-class>
+        <servlet-name>PhoneSearch</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.PhoneSearch</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CreateSubscriber</servlet-name>
@@ -88,6 +88,10 @@
         <servlet-name>LogSearch</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.LogSearch</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PhoneSearchEdit</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.PhoneSearchEdit</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Subscribers</servlet-name>
         <url-pattern>/subscribers</url-pattern>
@@ -105,16 +109,16 @@
         <url-pattern>/subscriberSearch</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SubscriberPhone</servlet-name>
-        <url-pattern>/subscriberPhone</url-pattern>
+        <servlet-name>Phones</servlet-name>
+        <url-pattern>/phones</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SubscriberFull</servlet-name>
         <url-pattern>/subscriberFull</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SubscriberPhoneSearch</servlet-name>
-        <url-pattern>/subscriberPhoneSearch</url-pattern>
+        <servlet-name>PhoneSearch</servlet-name>
+        <url-pattern>/phoneSearch</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreateSubscriber</servlet-name>
@@ -163,6 +167,10 @@
     <servlet-mapping>
         <servlet-name>LogSearch</servlet-name>
         <url-pattern>/logSearch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PhoneSearchEdit</servlet-name>
+        <url-pattern>/phoneSearchEdit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

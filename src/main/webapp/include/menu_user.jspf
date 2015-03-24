@@ -46,14 +46,14 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <form name="form6" method="post" action="subscriberPhone">
+                                        <form name="form6" method="post" action="phones">
                                         <INPUT type="submit" name="submit" value="Просмотр тех. данных" style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <form name="form6" method="post" action="subscriberPhoneSearch">
+                                        <form name="form6" method="post" action="phoneSearch">
                                         <INPUT type="submit" name="submit" value="Поиск по тех. данным" style="width:100%">
                                         </form>
                                     </td>

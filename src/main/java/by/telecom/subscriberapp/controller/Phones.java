@@ -21,7 +21,7 @@ import by.telecom.subscriberapp.DAO.DaoFactory;
  *
  * @author ASUP8
  */
-public class SubscriberPhone extends HttpServlet {
+public class Phones extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -45,8 +45,8 @@ public class SubscriberPhone extends HttpServlet {
             if(!"asc".equals(order) && !"desc".equals(order))
                 order = "asc";
             Collection<Phone> listSubscriber = DaoFactory.getPhoneDao().getAll(sort, order);
-            request.setAttribute("subscriberPhone", listSubscriber);
-            RequestDispatcher view = request.getRequestDispatcher("viewSubscriberPhone.jsp");
+            request.setAttribute("phones", listSubscriber);
+            RequestDispatcher view = request.getRequestDispatcher("viewPhones.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

@@ -13,15 +13,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import by.telecom.subscriberapp.User;
+import by.telecom.subscriberapp.Phone;
 import by.telecom.subscriberapp.DAO.DaoFactory;
-
+import java.util.List;
+/**import by.telecom.subscriberapp.model.Phone;
 
 /**
  *
  * @author ASUP8
  */
-public class Users extends HttpServlet {
+public class PhoneSearch extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,9 +36,28 @@ public class Users extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            Collection<User> listCustomer = DaoFactory.getUserDao().getAll();
-            request.setAttribute("users", listCustomer);
-            RequestDispatcher view = request.getRequestDispatcher("viewUsers.jsp");
+            String sort = "";
+            String order = "";
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+            if(!"number".equals(sort) && !"band".equals(sort) 
+                    && !"security".equals(sort) && !"adsl".equals(sort) && !"name".equals(sort))
+                sort = "number";
+            if(!"asc".equals(order) && !"desc".equals(order))
+                order = "asc";
+           String number = request.getParameter("number");
+           String band = request.getParameter("band");
+           String security = request.getParameter("security");
+           String adsl = request.getParameter("adsl");
+           String name = request.getParameter("name");
+            List<Phone> listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name, sort, order);
+            request.setAttribute("phoneSearch", listPhone);
+            request.setAttribute("number", number);
+            request.setAttribute("band", band);
+            request.setAttribute("security", security);
+            request.setAttribute("adsl", adsl);
+            request.setAttribute("name", name);
+            RequestDispatcher view = request.getRequestDispatcher("viewPhoneSearch.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

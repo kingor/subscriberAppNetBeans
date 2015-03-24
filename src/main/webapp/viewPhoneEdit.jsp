@@ -35,36 +35,36 @@
                                     <table width=643 cellspacing=0 cellpadding=20 border=0>                          
                                         <tr>                                          
                                             <td class="content">
-                                                <form name="form5" method="post" action="subscriberPhoneSearch">
+                                                <form name="form5" method="post" action="phoneSearchEdit">
                                                     <center>
                                                         <h2>Поиск по техническим параметрам:</h2>
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
                                                             <th class="navu width15">
-                                                                <a href="subscriberPhoneSearch?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Номер
-                                                                <a href="subscriberPhoneSearch?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="navu width25">
-                                                                <a href="subscriberPhoneSearch?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Гром полоса
-                                                                <a href="subscriberPhoneSearch?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="navu width15">
-                                                                <a href="subscriberPhoneSearch?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Защита
-                                                                <a href="subscriberPhoneSearch?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="navu width15">
-                                                                <a href="subscriberPhoneSearch?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Adsl
-                                                                <a href="subscriberPhoneSearch?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="navu width15">
-                                                                <a href="subscriberPhoneSearch?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
-                                                                <a href="subscriberPhoneSearch?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="navu width15"></th>
                                                         </tr>
@@ -75,19 +75,30 @@
                                                             <td > <INPUT type="text" name="adsl" value="${adsl}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
                                                             <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
-                                                            <td><INPUT type="reset" name="submit" value="x" class="AllWidth"></td>
                                                         </tr>
                                                     </table> 
                                                 </form>
-                                                    <c:if test="${!subscriberPhoneSearch.isEmpty()}">
+                                                    <c:if test="${!phoneSearch.isEmpty()}">
                                                         <table class="AllWidth" border="1">
-                                                            <c:forEach var="phone" items="${subscriberPhoneSearch}">
+                                                            <c:forEach var="phone" items="${phoneSearch}">
                                                                 <tr>
                                                                     <td class="width15">${phone.number}</td>
                                                                     <td class="width25">${phone.band}</td>
                                                                     <td class="width15">${phone.security}</td>
                                                                     <td class="width15">${phone.adsl}</td>
                                                                     <td class="width30">${phone.subscriber.name}</td>
+                                                                    <td>
+                                                                        <form name="form5" method="post" action="editSubscriberView">
+                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
+                                                                            <INPUT type="submit" name="submit" value="Редактор" style="width:100%">
+                                                                        </form>
+                                                                    </td>
+                                                                    <td>
+                                                                        <form name="form7" method="post" action="deleteSubscriber">
+                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
+                                                                            <INPUT type="submit" name="submit" value="Удалить" style="width:100%">
+                                                                        </form>
+                                                                    </td>
                                                                 </tr>
                                                             </c:forEach>
                                                         </table>
