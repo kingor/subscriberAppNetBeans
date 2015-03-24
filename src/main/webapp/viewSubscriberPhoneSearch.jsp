@@ -61,7 +61,7 @@
                                                                 Adsl
                                                                 <a href="subscriberPhoneSearch?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width30">
+                                                            <th class="navu width15">
                                                                 <a href="subscriberPhoneSearch?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
                                                                 <a href="subscriberPhoneSearch?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
@@ -75,6 +75,7 @@
                                                             <td > <INPUT type="text" name="adsl" value="${adsl}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
                                                             <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
+                                                            <td><INPUT type="reset" name="submit" value="x" class="AllWidth"></td>
                                                         </tr>
                                                     </table> 
                                                 </form>

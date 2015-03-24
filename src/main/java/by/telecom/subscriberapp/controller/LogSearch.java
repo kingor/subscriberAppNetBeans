@@ -46,7 +46,7 @@ public class LogSearch extends HttpServlet {
             sort = request.getParameter("sort");
             order = request.getParameter("order");
             if( !"name".equals(sort) && !"date".equals(sort) 
-                    && !"type".equals(sort) && !"category".equals(sort))
+                    && !"type".equals(sort) && !"comment".equals(sort))
                 sort = "name";
             if(!"asc".equals(order) && !"desc".equals(order))
                 order = "asc";

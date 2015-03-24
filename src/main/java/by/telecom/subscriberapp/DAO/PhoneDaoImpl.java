@@ -120,13 +120,19 @@ public class PhoneDaoImpl implements PhoneDao {
                     .add(Restrictions.like("security", security + "%"))
                     .add(Restrictions.like("adsl", adsl + "%"));
             Order order = Order.asc(sort);
-            if (sort.equals("name"))
-                criteria = criteria.createCriteria("subscriber")
-                        .add(Restrictions.like("name", "%" + name+ "%"));
             if(orderType.equals("desc"))
                 order = Order.desc(sort);
+            if (sort.equals("name"))
+                criteria = criteria.createCriteria("subscriber")
+                        .add(Restrictions.like("name", "%" + name+ "%"))
+                        .addOrder(order);
+            else 
+                criteria = criteria.addOrder(order)
+                        .createCriteria("subscriber")
+                        .add(Restrictions.like("name", "%" + name+ "%"));
+            
             phones = criteria
-                    .addOrder(order).list();
+                    .list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace(System.out);

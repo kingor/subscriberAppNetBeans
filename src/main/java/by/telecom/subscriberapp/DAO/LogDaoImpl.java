@@ -115,13 +115,18 @@ public class LogDaoImpl implements LogDao {
                     .add(Restrictions.like("type", "%"+type+"%"))
                     .add(Restrictions.like("comment", "%"+comment+"%"));
              Order order = Order.asc(sort);
+             if(orderType.equals("desc"))
+                order = Order.desc(sort);
              if (sort.equals("name"))
                 criteria = criteria.createCriteria("user")
+                        .add(Restrictions.like("name","%"+name+"%"))
+                        .addOrder(order);
+             else 
+                criteria = criteria.addOrder(order)
+                        .createCriteria("user")
                         .add(Restrictions.like("name","%"+name+"%"));
-            if(orderType.equals("desc"))
-                order = Order.desc(sort);
-            logs = criteria
-                    .addOrder(order).list();
+                        
+            logs = criteria.list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace(System.out);

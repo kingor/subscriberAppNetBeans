@@ -50,8 +50,7 @@ public class SubscriberPhoneSearch extends HttpServlet {
            String security = request.getParameter("security");
            String adsl = request.getParameter("adsl");
            String name = request.getParameter("name");
-            List<Phone> listPhone = null;
-            listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name, sort, order);
+            List<Phone> listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name, sort, order);
             request.setAttribute("subscriberPhoneSearch", listPhone);
             request.setAttribute("number", number);
             request.setAttribute("band", band);
