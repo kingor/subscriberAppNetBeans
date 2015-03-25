@@ -55,7 +55,7 @@
                                                                             <td>
                                                                                 <p  >Логин:</p>
                                                                             </td>
-                                                                            <td> <INPUT type="text" name="login" size="29">
+                                                                            <td> <INPUT type="text" name="login" size="30">
                                                                             </td></tr>
                                                                         <tr>
                                                                             <td>

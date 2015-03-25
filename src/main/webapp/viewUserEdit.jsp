@@ -27,11 +27,11 @@
                     <%@include file="include/menu.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
-                    <td width=643  align="center">
-                        <table width=643 cellspacing=0 cellpadding=1 border=0>
+                    <td width=653  align="center">
+                        <table width=653 cellspacing=0 cellpadding=1 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=643 cellspacing=0 cellpadding=20 border=0>
+                                    <table width=653 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
                                                 <center>
@@ -56,14 +56,16 @@
                                                             </th>
                                                             <th class="width25"></th>
                                                         </tr>
-                                                        <tr> 
                                                         <form name="form5" method="post" action="userSearchEdit">
+                                                        <tr> 
+                                                        
                                                             <td><INPUT type="text" name="login" value="${login}" class="AllWidth"></td>
                                                             <td><INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
                                                             <td><INPUT type="text" name="category" value="${category}" class="AllWidth"></td>
                                                             <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
-                                                        </form>
+                                                        
                                                         </tr>
+                                                        </form>
                                                     </table>     
                                                 
                                                 <center>

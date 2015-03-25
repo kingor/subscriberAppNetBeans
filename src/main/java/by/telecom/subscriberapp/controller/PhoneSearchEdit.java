@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Phone;
 import by.telecom.subscriberapp.User;
+import java.util.List;
 import javax.servlet.http.HttpSession;
 /**import by.telecom.subscriberapp.model.Phone;
 
@@ -41,21 +43,23 @@ public class PhoneSearchEdit extends HttpServlet {
             String order = "";
             sort = request.getParameter("sort");
             order = request.getParameter("order");
-            if(!"name".equals(sort) && !"address".equals(sort))
-                sort = "name";
+            if(!"number".equals(sort) && !"band".equals(sort) 
+                    && !"security".equals(sort) && !"adsl".equals(sort) && !"name".equals(sort))
+                sort = "number";
             if(!"asc".equals(order) && !"desc".equals(order))
                 order = "asc";
-            HttpSession session = request.getSession();
-            User user = new User();
-           user = (User)session.getAttribute("user");
-
-            String name = request.getParameter("name");
-            String address = request.getParameter("address");
-            //System.out.println(search);
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getByParameter(name, address, sort, order);
-            request.setAttribute("subscriberSearchEdit", listSubscriber);
+           String number = request.getParameter("number");
+           String band = request.getParameter("band");
+           String security = request.getParameter("security");
+           String adsl = request.getParameter("adsl");
+           String name = request.getParameter("name");
+            List<Phone> listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name, sort, order);
+            request.setAttribute("phoneSearchEdit", listPhone);
+            request.setAttribute("number", number);
+            request.setAttribute("band", band);
+            request.setAttribute("security", security);
+            request.setAttribute("adsl", adsl);
             request.setAttribute("name", name);
-            request.setAttribute("address", address);
             RequestDispatcher view = request.getRequestDispatcher("viewPhoneEdit.jsp");
             view.forward(request, response);
         } catch (IOException e) {

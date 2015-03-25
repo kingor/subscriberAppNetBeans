@@ -27,11 +27,11 @@
                     <%@include file="include/menu.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
-                    <td width=643  align="center">
-                        <table width=643 cellspacing=0 cellpadding=1>
+                    <td width=653  align="center">
+                        <table width=653 cellspacing=0 cellpadding=1>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=643 cellspacing=0 cellpadding=20>
+                                    <table width=653 cellspacing=0 cellpadding=20>
                                         <tr>
                                             <td class="content">                                               
                                                     <h2>Все абоненты в базе данных:</h2>
@@ -55,8 +55,8 @@
                                                                 <td>${subscriber.address}</td>
                                                                 <td>
                                                                     <form name="form5" method="post" action="subscriberFull">
-                                                                        <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
-                                                                        <INPUT type="submit" name="submit" value="Подробнее">
+                                                                        <input type="hidden" name="subscriberSelect" value=${subscriber.id}/>
+                                                                        <button><img src="info.png" style="vertical-align: middle"> Подробнее</button>
                                                                     </form>
                                                                 </td>
                                                             </tr>    

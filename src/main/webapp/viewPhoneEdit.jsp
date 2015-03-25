@@ -28,11 +28,11 @@
                     <%@include file="include/menu.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
-                    <td width=643  align="center">
-                        <table width=643 cellspacing=0 cellpadding=1 border=0>
+                    <td width=653  align="center">
+                        <table width=653 cellspacing=0 cellpadding=1 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=643 cellspacing=0 cellpadding=20 border=0>                          
+                                    <table width=653 cellspacing=0 cellpadding=20 border=0>                          
                                         <tr>                                          
                                             <td class="content">
                                                 <form name="form5" method="post" action="phoneSearchEdit">
@@ -42,31 +42,31 @@
                                                     <table class="AllWidth">
                                                         <tr>
                                                             <th class="navu width15">
-                                                                <a href="phoneSearch?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Номер
-                                                                <a href="phoneSearch?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width25">
-                                                                <a href="phoneSearch?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
-                                                                Гром полоса
-                                                                <a href="phoneSearch?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                            <th class="navu width20">
+                                                                <a href="phoneSearchEdit?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                Громпол.
+                                                                <a href="phoneSearchEdit?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="navu width15">
-                                                                <a href="phoneSearch?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Защита
-                                                                <a href="phoneSearch?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width15">
-                                                                <a href="phoneSearch?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                            <th class="navu width10">
+                                                                <a href="phoneSearchEdit?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Adsl
-                                                                <a href="phoneSearch?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width15">
-                                                                <a href="phoneSearch?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                            <th class="navu width30">
+                                                                <a href="phoneSearchEdit?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
-                                                                <a href="phoneSearch?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width15"></th>
+                                                            <th class="width10"></th>
                                                         </tr>
                                                         <tr>
                                                             <td > <INPUT type="text" name="number" value="${number}" class="AllWidth"></td>
@@ -74,29 +74,29 @@
                                                             <td > <INPUT type="text" name="security" value="${security}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="adsl" value="${adsl}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
-                                                            <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
+                                                            <td class="but24 AllHeight"> <INPUT type="image" name="submit" src="find.png" style="height: 24"></td>
                                                         </tr>
                                                     </table> 
                                                 </form>
-                                                    <c:if test="${!phoneSearch.isEmpty()}">
+                                                    <c:if test="${!phoneSearchEdit.isEmpty()}">
                                                         <table class="AllWidth" border="1">
-                                                            <c:forEach var="phone" items="${phoneSearch}">
+                                                            <c:forEach var="phone" items="${phoneSearchEdit}">
                                                                 <tr>
                                                                     <td class="width15">${phone.number}</td>
-                                                                    <td class="width25">${phone.band}</td>
+                                                                    <td class="width20">${phone.band}</td>
                                                                     <td class="width15">${phone.security}</td>
-                                                                    <td class="width15">${phone.adsl}</td>
+                                                                    <td class="width10">${phone.adsl}</td>
                                                                     <td class="width30">${phone.subscriber.name}</td>
-                                                                    <td>
+                                                                    <td class="but16 width5">
                                                                         <form name="form5" method="post" action="editSubscriberView">
-                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
-                                                                            <INPUT type="submit" name="submit" value="Редактор" style="width:100%">
+                                                                            <input type="hidden" name="subscriberSelect" value="${phone.subscriber.id}">               
+                                                                            <INPUT type="image" name="submit" value="Редактор" src="gear.png">
                                                                         </form>
                                                                     </td>
-                                                                    <td>
+                                                                    <td class="but16 width5">
                                                                         <form name="form7" method="post" action="deleteSubscriber">
-                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
-                                                                            <INPUT type="submit" name="submit" value="Удалить" style="width:100%">
+                                                                            <input type="hidden" name="subscriberSelect" value="${phone.subscriber.id}">
+                                                                            <INPUT type="image" name="submit" value="Удалить" src="delete2.png">
                                                                         </form>
                                                                     </td>
                                                                 </tr>

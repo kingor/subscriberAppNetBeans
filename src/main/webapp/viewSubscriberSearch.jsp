@@ -27,11 +27,11 @@
                     <%@include file="include/menu.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
-                    <td width=643  align="center">
-                        <table width=643 cellspacing=0 cellpadding=1 border=0>
+                    <td width=653  align="center">
+                        <table width=653 cellspacing=0 cellpadding=1 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=643 cellspacing=0 cellpadding=20 border=0>
+                                    <table width=653 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
                                                 <form name="form5" method="post" action="subscriberSearch">
@@ -69,8 +69,8 @@
                                                                     <td class="width40">${subscriber.address}</td>
                                                                     <td class="width20">
                                                                         <form name="form5" method="post" action="subscriberFull">
-                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
-                                                                            <INPUT type="submit" name="submit" value="Подробнее" class="AllWidth">
+                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}/>
+                                                                            <button class="AllWidth"><img src="info.png" style="vertical-align: middle"> Подробнее</button>
                                                                         </form>
                                                                     </td>
                                                                 </tr>

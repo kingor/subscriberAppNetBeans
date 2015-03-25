@@ -2,7 +2,7 @@
 <%@page import="by.telecom.subscriberapp.User"%>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<td width=210>
+<td width=200>
    
     <%@include file="menu_name.jspf" %>
     <%@include file="menu_user.jspf" %>

@@ -24,7 +24,39 @@
 .vline{
 
 }
-
+.button {
+    cursor:pointer;
+    display:block;
+    height:16px;
+    width:16px;
+    line-height:70px;
+    text-align:center;
+    background-image:url('gear.png');
+    background-repeat:no-repeat;
+}
+.but24 {
+    border: none;
+    padding: 1px; /* Поля в ячейках */
+    height: 40;
+    vertical-align: middle; /* Выравнивание по верхнему краю ячеек */
+    text-align:center;
+   }
+   
+.but16 {
+    border: none;
+    padding: 1px; /* Поля в ячейках */
+    height: 24;
+    vertical-align: middle; /* Выравнивание по верхнему краю ячеек */
+    text-align:center;
+   }
+   
+input.del {
+    background: url(gear.png) no-repeat;
+    height: 16;
+    width: 16;
+    border: none;
+    position: relative;
+}
 .nav {text-align: middle
 }
 .nav A:link {
@@ -46,7 +78,7 @@
 }
 
 .navu{
-    MARGIN: 2px 2px 10px; 
+    MARGIN: 0px 0px 0px; 
     BACKGROUND-COLOR: #d9e1e7; 
     text-align: middle;
 }
@@ -180,6 +212,9 @@ form {
     border: 1px;
 }
 
+.width5 {
+    width: 5%; /* Убираем отступы */
+}
 .width10 {
     width: 10%; /* Убираем отступы */
 }
@@ -197,6 +232,9 @@ form {
 }
 .width40 {
     width: 40%; /* Убираем отступы */
+}
+.width50 {
+    width: 50%; /* Убираем отступы */
 }
 
 .textBold {
