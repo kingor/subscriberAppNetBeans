@@ -35,19 +35,19 @@
                                         <tr>
                                             <td class="content">                                               
                                                     <h2>Все абоненты в базе данных:</h2>
-                                                    <table class="AllWidth" border="1">
+                                                    <table class="navi AllWidth" border="1">
                                                         <tr>
-                                                            <th class="navi width40">
+                                                            <th class="width40">
                                                                 <a href="subscribers?sort=name&order=desc">↓</a>
                                                                 ФИО абонента
                                                                 <a href="subscribers?sort=name&order=asc">↑</a>
                                                             </th>
-                                                            <th class="navi">
+                                                            <th >
                                                                 <a href="subscribers?sort=address&order=desc">↓</a>
                                                                 Адрес абонента
                                                                 <a href="subscribers?sort=address&order=asc">↑</a>
                                                             </th>
-                                                            <th class="navi width10">Подробнее</th>
+                                                            <th class="width15">Подробнее</th>
                                                         </tr>
                                                         <c:forEach var="subscriber" items="${subscribers}">
                                                             <tr>
@@ -55,8 +55,8 @@
                                                                 <td>${subscriber.address}</td>
                                                                 <td>
                                                                     <form name="form5" method="post" action="subscriberFull">
-                                                                        <input type="hidden" name="subscriberSelect" value=${subscriber.id}/>
-                                                                        <button><img src="info.png" style="vertical-align: middle"> Подробнее</button>
+                                                                        <input type="hidden" name="subscriberSelect" value="${subscriber.id}">
+                                                                        <INPUT type="submit" name="submit" value="Подробнее" class=" AllWidth">
                                                                     </form>
                                                                 </td>
                                                             </tr>    

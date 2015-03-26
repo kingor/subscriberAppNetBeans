@@ -34,18 +34,18 @@
                                     <table width=653 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
-                                                <form name="form5" method="post" action="subscriberSearch">
+                                                <form name="form3" method="post" action="subscriberSearch">
                                                     <center>
                                                         <h2>Поиск абонентов:</h2>
                                                     </center>
-                                                    <table class="AllWidth">
+                                                    <table class="navu AllWidth">
                                                         <tr>
-                                                            <th class="navu width40">
+                                                            <th class="width40">
                                                                 <a href="subscriberSearch?sort=name&order=desc&name=${name}&address=${address}">↓</a>
                                                                 ФИО абонента
                                                                 <a href="subscriberSearch?sort=name&order=asc&name=${name}&address=${address}">↑</a>
                                                             </th>
-                                                            <th class="navu width40">
+                                                            <th class="width40">
                                                                 <a href="subscriberSearch?sort=address&order=desc&name=${name}&address=${address}">↓</a>
                                                                 Адрес абонента
                                                                 <a href="subscriberSearch?sort=address&order=asc&name=${name}&address=${address}">↑</a>
@@ -55,7 +55,10 @@
                                                         <tr>        
                                                             <td><INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
                                                             <td><INPUT type="text" name="address" value="${address}" class="AllWidth"></td>
-                                                            <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
+                                                            <td class="but16"> 
+                                                                <INPUT type="submit" name="submit" value="Поиск" class="button15 AllWidth">
+
+                                                            </td>
                                                         </tr>
                                                     </table>     
                                                 </form>
@@ -64,13 +67,13 @@
                                                         <table class="AllWidth" border="1">
                                                             
                                                             <c:forEach var="subscriber" items="${subscriberSearch}">
-                                                                <tr>
+                                                                <tr >
                                                                     <td class="width40">${subscriber.name}</td>
                                                                     <td class="width40">${subscriber.address}</td>
-                                                                    <td class="width20">
-                                                                        <form name="form5" method="post" action="subscriberFull">
-                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}/>
-                                                                            <button class="AllWidth"><img src="info.png" style="vertical-align: middle"> Подробнее</button>
+                                                                    <td class="but16 width20">
+                                                                        <form name="form7" method="post" action="subscriberFull">
+                                                                            <input type="hidden" name="subscriberSelect" value="${subscriber.id}">
+                                                                            <INPUT type="submit" name="submit" value="Подробнее" class="AllWidth">
                                                                         </form>
                                                                     </td>
                                                                 </tr>
@@ -78,6 +81,7 @@
                                                         </table>
                                                     </c:if>
                                                 </center>
+     
                                             </td>
                                         </tr>
                                     </table>

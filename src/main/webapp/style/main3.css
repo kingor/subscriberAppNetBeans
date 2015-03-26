@@ -43,9 +43,8 @@
    }
    
 .but16 {
-    border: none;
     padding: 1px; /* Поля в ячейках */
-    height: 24;
+    height: 16;
     vertical-align: middle; /* Выравнивание по верхнему краю ячеек */
     text-align:center;
    }
@@ -77,7 +76,9 @@ input.del {
     line-height: 10px
 }
 
-.navu{
+table.navu th{
+    font-family: arial,sans-serif;
+    font-size: 13px;
     MARGIN: 0px 0px 0px; 
     BACKGROUND-COLOR: #d9e1e7; 
     text-align: middle;
@@ -92,11 +93,13 @@ input.del {
     text-decoration: none;
 }
 .navu A:hover {
-    COLOR: #000000;
+    COLOR: #026cc0;
     text-decoration: none;
 }
 
-.navi{
+table.navi th{
+    font-family: arial,sans-serif;
+    font-size: 13px;
     MARGIN: 2px 2px 10px; 
     COLOR: #000;  
     BACKGROUND-COLOR: #dddddd; 
@@ -113,7 +116,7 @@ input.del {
     text-decoration: none;
 }
 .navi A:hover {
-    COLOR: #000000;
+    COLOR: #026cc4;
     text-decoration: none;
 }
 
@@ -184,9 +187,8 @@ input.del {
     color: #000;
 }
 
-
-
-TD {vertical-align: top; 
+TD {
+    vertical-align: top; 
 }
 
 
@@ -217,12 +219,15 @@ form {
 }
 .width10 {
     width: 10%; /* Убираем отступы */
+    height: 100%;
 }
 .width15 {
     width: 15%; /* Убираем отступы */
+    height: 100%;
 }
 .width20 {
     width: 20%; /* Убираем отступы */
+    height: 100%;
 }
 .width25 {
     width: 25%; /* Убираем отступы */
@@ -233,6 +238,9 @@ form {
 .width40 {
     width: 40%; /* Убираем отступы */
 }
+.width45 {
+    width: 45%; /* Убираем отступы */
+}
 .width50 {
     width: 50%; /* Убираем отступы */
 }
@@ -240,10 +248,12 @@ form {
 .textBold {
     font-style: italic;
     font-weight: bold;
-    font-size: large
+    font-size: 15px;
 }
 .AllHeight{
     width: 100%; /* Убираем отступы */
     height: 100%; /* Убираем отступы */
 }
+
+
 

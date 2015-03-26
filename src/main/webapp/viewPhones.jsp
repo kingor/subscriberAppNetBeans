@@ -37,29 +37,29 @@
                                             <td class="content">
                                                 <center>
                                                     <h2>Технические параметры абонентов:</h2>
-                                                    <table class="AllWidth" border="1">
+                                                    <table class="navi AllWidth" border="1">
                                                         <tr>
-                                                            <th class="navi width15">
+                                                            <th class="width15">
                                                                 <a href="phones?sort=number&order=desc">↓</a>
                                                                 Номер
                                                                 <a href="phones?sort=number&order=asc">↑</a>
                                                             </th>
-                                                            <th class="navi width25">
+                                                            <th class="width25">
                                                                 <a href="phones?sort=band&order=desc">↓</a>
                                                                 Гром полоса
                                                                 <a href="phones?sort=band&order=asc">↑</a>
                                                             </th>
-                                                            <th class="navi width15">
+                                                            <th class="width15">
                                                                 <a href="phones?sort=security&order=desc">↓</a>
                                                                 Защита
                                                                 <a href="phones?sort=security&order=asc">↑</a>
                                                             </th>                                                          
-                                                            <th class="navi width15">
+                                                            <th class="width15">
                                                                 <a href="phones?sort=adsl&order=desc">↓</a>
                                                                 Adsl
                                                                 <a href="phones?sort=adsl&order=asc">↑</a>
                                                             </th>
-                                                            <th class="navi width30">
+                                                            <th class="width30">
                                                                 <a href="phones?sort=name&order=desc">↓</a>
                                                                 ФИО
                                                                 <a href="phones?sort=name&order=asc">↑</a>
