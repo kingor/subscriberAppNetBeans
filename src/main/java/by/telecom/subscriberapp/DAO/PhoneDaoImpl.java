@@ -48,17 +48,61 @@ public class PhoneDaoImpl implements PhoneDao {
 
     @Override
     public Phone read(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Session session = null;
+        Phone phone = new Phone();
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            phone = (Phone) session.createCriteria(Phone.class)
+                    .add(Restrictions.eq("id", id)).uniqueResult();
+            session.getTransaction().commit();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return phone;
     }
 
     @Override
     public void update(Phone transientObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       Session session = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.update(transientObject);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
 
     @Override
     public void delete(Phone persistentObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Session session = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.delete(persistentObject);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
 
     @Override

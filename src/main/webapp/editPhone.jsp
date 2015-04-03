@@ -3,6 +3,8 @@
     Created on : 14.03.2015, 13:24:46
     Author     : Family_P
 --%>
+<%@page import="java.util.List"%>
+<%@page import="by.telecom.subscriberapp.Phone"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.Collection"%>
@@ -17,7 +19,6 @@
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
         <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
-  </style>
     </head>
     <body bgcolor="#e4e8ea">
         <div align="center">
@@ -36,35 +37,34 @@
                                         <tr>
                                             <td class="content">
                                                 <center>
-                                                    <h2>Параметры для абонента:</h2>
-                                                    <table width="500">
+                                                    <h2>Подробные данные:</h2>
+                                                    <table class=AllWidth>
                                                         <tr>
-                                                            <td width="25%">ФИО абонента:</td> 
+                                                            <td class="width20">ФИО абонента:</td> 
                                                             <td class="textBold">${subscriber.name}</td>
-                                                        
                                                         </tr>
                                                         <tr><td>Адрес абонента:</td> 
                                                             <td class="textBold">${subscriber.address}</td></tr>
                                                     </table>
-                                                    <h2>Параметры:</h2>
-                                                    <form name="form5" method="post" action="createPhone">
-                                                        <input type="hidden" name="id" value="${subscriber.id}">
-                                                    <table width="500" >
+                                                        <h2>Технические параметры:</h2>
+                                                         <form name="form5" method="post" action="editPhone">
+                                                        <input type="hidden" name="id" value="${phone.id}">
+                                                    <table class="AllWidth">
                                                         <tr>
                                                             <td width="25%">Номер телефона:</td>
-                                                            <td ><INPUT type="text" name="number" style="width:100%"></td>
+                                                            <td ><INPUT type="text" name="number" value="${phone.number}" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
                                                             <td >Гром полоса:</td>
-                                                            <td ><INPUT type="text" name="band" style="width:100%"></td>
+                                                            <td ><INPUT type="text" name="band" value="${phone.band}" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
                                                             <td >Защитная полоса:</td>
-                                                            <td ><INPUT type="text" name="security" style="width:100%"></td>
+                                                            <td ><INPUT type="text" name="security" value="${phone.security}" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
                                                             <td >ADSL:</td>
-                                                            <td ><INPUT type="text" name="adsl" style="width:100%"></td>
+                                                            <td ><INPUT type="text" name="adsl" value="${phone.adsl}" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
                                                             <th colspan="2" width="5%">
@@ -78,7 +78,11 @@
                                             </td>
                                         </tr>
 
-                                    </table></td></tr></table>
+                                    </table>
+                                    
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>

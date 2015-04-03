@@ -28,7 +28,7 @@ import sun.security.pkcs11.wrapper.Functions;
  *
  * @author ASUP8
  */
-public class EditSubscriber extends HttpServlet {
+public class EditPhone extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,29 +44,35 @@ public class EditSubscriber extends HttpServlet {
         Long id;
         String name;
         String address;
-        String comment = "";
+        
         try {
             HttpSession session = request.getSession();
             User user = new User();
             user = (User)session.getAttribute("user");
-
             id = Long.parseLong(request.getParameter("id"));
-            name = request.getParameter("name");
-            address = request.getParameter("address");
             
-            Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
+            Phone phone = DaoFactory.getPhoneDao().read(id);
+            String number = request.getParameter("number");
+            String band = request.getParameter("band");
+            String security = request.getParameter("security");
+            String adsl = request.getParameter("adsl");
+            Subscriber subscriber = phone.getSubscriber();
 
             DaoFactory.getLogDao()
-                    .create(Log
-                            .updateSubscriber(user, subscriber.getName(), name,
-                                              subscriber.getAddress(), address));
+                    .create(Log.updatePhone(
+                            user, subscriber, phone.getNumber(),number,
+                            phone.getBand(), band, 
+                            phone.getSecurity(), security,
+                            phone.getAdsl(), adsl));
             
             
-            subscriber.setName(name);
-            subscriber.setAddress(address);
-            DaoFactory.getSubscriberDao().update(subscriber);
+            phone.setNumber(number);
+            phone.setBand(band);
+            phone.setSecurity(security);
+            phone.setAdsl(adsl);
+            DaoFactory.getPhoneDao().update(phone);
            
-            RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit");
+            RequestDispatcher view = request.getRequestDispatcher("phoneSearchEdit");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

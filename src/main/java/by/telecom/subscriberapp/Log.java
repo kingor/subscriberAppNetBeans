@@ -61,7 +61,8 @@ public class Log implements Serializable {
         comment = aComment;
     }
     
-    public static Log updateSubscriber(User user, String aName, String aNameNew, String aAddress, String aAddressNew) {
+    public static Log updateSubscriber(User user, String aName, 
+            String aNameNew, String aAddress, String aAddressNew) {
         String comment = "";
         Log log = new Log();
         log.createLog(log, user, "Update");
@@ -84,7 +85,26 @@ public class Log implements Serializable {
         return log;
     }
     
-    public static Log createSubscriber(User user, String aName, String aAddress) {
+    public static Log updatePhone(User user, Subscriber subscriber, 
+            String aNumber, String aNumberNew, 
+            String aBand, String aBandNew,
+            String aSecurity, String aSecurityNew,
+            String aAdsl, String aAdslNew) {
+        String comment = "Абонент: ";
+        Log log = new Log();
+        log.createLog(log, user, "Update");
+        comment = comment.concat(subscriber.getName());
+        comment = log.commentConcat(comment, "Номер: ", aNumber, aNumberNew);
+        comment = log.commentConcat(comment, "Громполоса: ", aBand, aBandNew);
+        comment = log.commentConcat(comment, "Защита: ", aSecurity, aSecurityNew);
+        comment = log.commentConcat(comment, "ADSL: ", aAdsl, aAdslNew);
+
+        log.setComment(comment);
+        return log;
+    }
+    
+    public static Log createSubscriber(User user, String aName, 
+            String aAddress) {
         String comment = "";
         Log log = new Log();
         log.createLog(log, user, "Create");
@@ -100,7 +120,7 @@ public class Log implements Serializable {
     }
     
     public static Log createUser(User user, String aLogin, 
-                                String aName, Integer aCategory) {
+            String aName, Integer aCategory) {
         String comment = "";
         Log log = new Log();
         log.createLog(log, user, "Create");
@@ -143,13 +163,15 @@ public class Log implements Serializable {
         log.createLog(log, user, "Delete");
         comment = log.commentConcat(comment, "Логин: ", aLogin, "");
         comment = log.commentConcat(comment, "Имя: ", aName, "");
-        comment = log.commentConcat(comment, "Категория: ", aCategory.toString(), "");
+        comment = log.commentConcat(comment, "Категория: ", 
+                aCategory.toString(), "");
         
         log.setComment(comment);
         return log;
     }
     
-    private String commentConcat(String aComment, String aType, String aName, String aNameNew){
+    private String commentConcat(String aComment, String aType, 
+            String aName, String aNameNew){
         if (!aName.equals(aNameNew)) {
             aComment = aComment.concat(aType)
                     .concat(aName)

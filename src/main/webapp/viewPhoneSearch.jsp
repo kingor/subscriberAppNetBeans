@@ -39,29 +39,29 @@
                                                     <center>
                                                         <h2>Поиск по техническим параметрам:</h2>
                                                     </center>
-                                                    <table class="AllWidth">
+                                                    <table class="navu AllWidth">
                                                         <tr>
-                                                            <th class="navu width15">
+                                                            <th class="width15">
                                                                 <a href="phoneSearch?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Номер
                                                                 <a href="phoneSearch?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width25">
+                                                            <th class="width15">
                                                                 <a href="phoneSearch?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
-                                                                Гром полоса
+                                                                Громпол.
                                                                 <a href="phoneSearch?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width15">
+                                                            <th class="width15">
                                                                 <a href="phoneSearch?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Защита
                                                                 <a href="phoneSearch?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width15">
+                                                            <th class="width15">
                                                                 <a href="phoneSearch?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Adsl
                                                                 <a href="phoneSearch?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width15">
+                                                            <th class="navu width35">
                                                                 <a href="phoneSearch?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
                                                                 <a href="phoneSearch?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
@@ -83,10 +83,10 @@
                                                             <c:forEach var="phone" items="${phoneSearch}">
                                                                 <tr>
                                                                     <td class="width15">${phone.number}</td>
-                                                                    <td class="width25">${phone.band}</td>
+                                                                    <td class="width15">${phone.band}</td>
                                                                     <td class="width15">${phone.security}</td>
                                                                     <td class="width15">${phone.adsl}</td>
-                                                                    <td class="width30">${phone.subscriber.name}</td>
+                                                                    <td class="width40">${phone.subscriber.name}</td>
                                                                 </tr>
                                                             </c:forEach>
                                                         </table>

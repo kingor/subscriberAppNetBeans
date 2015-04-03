@@ -15,20 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
-import by.telecom.subscriberapp.Log;
 import by.telecom.subscriberapp.Phone;
-import by.telecom.subscriberapp.User;
-import java.util.Date;
-import javax.servlet.http.HttpSession;
-import javax.swing.JOptionPane;
-import sun.security.pkcs11.wrapper.Functions;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
  *
  * @author ASUP8
  */
-public class EditSubscriber extends HttpServlet {
+public class EditPhoneView extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,32 +35,15 @@ public class EditSubscriber extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long id;
-        String name;
-        String address;
-        String comment = "";
         try {
-            HttpSession session = request.getSession();
-            User user = new User();
-            user = (User)session.getAttribute("user");
+            Long id = Long.parseLong(request.getParameter("phoneSelect"));
+            Phone phone = DaoFactory.getPhoneDao().read(id);
+            
+            Subscriber subscriber = phone.getSubscriber();
 
-            id = Long.parseLong(request.getParameter("id"));
-            name = request.getParameter("name");
-            address = request.getParameter("address");
-            
-            Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
-
-            DaoFactory.getLogDao()
-                    .create(Log
-                            .updateSubscriber(user, subscriber.getName(), name,
-                                              subscriber.getAddress(), address));
-            
-            
-            subscriber.setName(name);
-            subscriber.setAddress(address);
-            DaoFactory.getSubscriberDao().update(subscriber);
-           
-            RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit");
+            request.setAttribute("subscriber", subscriber);
+            request.setAttribute("phone", phone);
+            RequestDispatcher view = request.getRequestDispatcher("editPhone.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();
