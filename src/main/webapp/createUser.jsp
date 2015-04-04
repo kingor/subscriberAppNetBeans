@@ -17,7 +17,6 @@
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
         <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
-  </style>
     </head>
     <body bgcolor="#e4e8ea">
         <div align="center">
@@ -37,32 +36,32 @@
                                             <td class="content">
                                                 <center>
                                                     <h2>Новый абонент:</h2>
-                                                    
+
                                                     <table width="500" >
-                                                        <form name="form5" method="post" action="createUser">
-                                                        <tr>
-                                                            <td width="25%">Логин:</th>
-                                                            <td ><INPUT type="text" name="login" style="width:100%"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >Пароль:</th>
-                                                            <td><INPUT type="text" name="password" style="width:100%"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >Имя:</th>
-                                                            <td><INPUT type="text" name="name" style="width:100%"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >Категория:</th>
-                                                            <td>
-                                                                <select name="category" style="width:100%">                 
-                                                                    <option value="2">Пользователь</option>
-                                                                    <option value="1">Оператор</option>
-                                                                    <option value="0">Администратор</option>
-                                                                </select>
-                                                            </td>
-                                                        </tr>
-                                                        </table>
+                                                        <form name="form5" method="post" action="createUser.do">
+                                                            <tr>
+                                                                <td width="25%">Логин:</td>
+                                                                <td ><INPUT type="text" name="login" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >Пароль:</td>
+                                                                <td><INPUT type="text" name="password" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >Имя:</td>
+                                                                <td><INPUT type="text" name="name" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >Категория:</td>
+                                                                <td>
+                                                                    <select name="category" style="width:100%">                 
+                                                                        <option value="2">Пользователь</option>
+                                                                        <option value="1">Оператор</option>
+                                                                        <option value="0">Администратор</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                    </table>
                                                     <br>
                                                     <table>
                                                         <tr>
@@ -71,17 +70,17 @@
                                                                 <INPUT type="submit" name="submit" value="Сохранить" class="AllWidth">
                                                             </td>
                                                             </form>
-                                                            <form name="form5" method="post" action="index.jsp">
-                                                                <td width="50%">
+
+                                                            <td width="50%">
+                                                                <form name="form5" method="post" action="index.jsp">
                                                                     <INPUT type="submit" name="submit" value="Отмена" class="AllWidth">
-                                                                </td>
-                                                            </form>
+                                                                </form>
+                                                            </td>                                                          
                                                         </tr>                                                    
                                                     </table>
                                                 </center>
                                             </td>
                                         </tr>
-
                                     </table>
                                 </td>
                             </tr>

@@ -44,7 +44,7 @@ public class DeletePhone extends HttpServlet {
             DaoFactory.getPhoneDao().delete(phone);
             //request.setAttribute("subscriber", subscriber);
             
-            RequestDispatcher view = request.getRequestDispatcher("phoneSearchEdit");
+            RequestDispatcher view = request.getRequestDispatcher("phoneSearchEdit.do");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

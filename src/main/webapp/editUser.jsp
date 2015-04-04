@@ -38,23 +38,31 @@
                                             <td class="content">
                                                 <center>
                                                     <h2>Редактор пользователей:</h2>
-                                                    <INPUT type="hidden" name="id" value="${userEdit.id}">
+
                                                     <table class=AllWidth>
-                                                        <form name="form5" method="post" action="editUser">
+                                                        <form name="form5" method="post" action="editUser.do">                                                  
                                                             <tr>
-                                                                <td width="25%">Login:</th>
-                                                                <td width="75%" class="textBold"><INPUT type="text" name="login" value="${userEdit.login}" style="width:100%" ></td>
+                                                                <td width="25%">Логин:</td>
+
+                                                                <td width="75%" class="textBold">
+                                                                    <INPUT type="hidden" name="id" value="${userEdit.id}">
+                                                                    <INPUT type="text" name="login" value="${userEdit.login}" style="width:100%" >
+                                                                </td>
                                                             </tr>
                                                             <tr>
-                                                                <td >Пароль:</th>
-                                                                <td class="textBold"><INPUT type="text" name="password" value="${userEdit.password}" style="width:100%" ></td>
+                                                                <td >Пароль:</td>
+                                                                <td class="textBold">
+                                                                    <INPUT type="text" name="password" value="${userEdit.password}" style="width:100%" >
+                                                                </td>
                                                             </tr>
                                                             <tr>
-                                                                <td >Имя:</th>
-                                                                <td class="textBold"><INPUT type="text" name="name" value="${userEdit.name}" style="width:100%" ></td>
+                                                                <td >Имя:</td>
+                                                                <td class="textBold">
+                                                                    <INPUT type="text" name="name" value="${userEdit.name}" style="width:100%" >
+                                                                </td>
                                                             </tr>
                                                             <tr>
-                                                                <td >Категория:</th>
+                                                                <td >Категория:</td>
                                                                 <td>
                                                                     <select name="category" style="width:100%" >                 
                                                                         <option value="2">Пользователь</option>
@@ -64,21 +72,23 @@
                                                                 </td>
                                                             </tr>
                                                     </table>
-                                                            <br>
-                                                            <table>
-                                                                <tr>
-                                                                    <td width="50%">
-                                                                        <INPUT type="submit" name="submit" value="Сохранить" class="AllWidth">
-                                                                    </td>
-                                                                    </form>
+                                                    <br>
+                                                    <table>
+                                                        <tr>
+                                                            <td width="50%">
+                                                                <INPUT  type="submit" name="submit" value="Сохранить" class="AllWidth">
+                                                            </td>
+                                                            </form>
 
-                                                                <form name="form5" method="post" action="userSearchEdit">
-                                                                    <td width="50%">                                                                      
-                                                                        <INPUT type="submit" name="submit" value="Отмена" class="AllWidth">                                                                               
-                                                                    </td>
+
+                                                            <td width="50%">
+                                                                <form name="form5" method="post" action="userSearchEdit.do">
+                                                                    <INPUT type="submit" name="submit" value="Отмена" class="AllWidth">  
                                                                 </form>
-                                                                </tr>
-                                                            </table>
+                                                            </td>
+
+                                                        </tr>
+                                                    </table>
                                                 </center>
                                             </td>
                                         </tr>

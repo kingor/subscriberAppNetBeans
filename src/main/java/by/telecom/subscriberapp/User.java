@@ -70,11 +70,11 @@ public class User {
         return UserName;
     }
     
-    public void Login(String TheUser)
+    public void Login(String TheUserName )
     {
         LoginFlag = true;
         ErrorText = "";
-        UserName = TheUser;
+        UserName = TheUserName; 
     }
   
     public void SetError(String TheText)
@@ -87,17 +87,16 @@ public class User {
         return ErrorText;
     }
   
-    public String IsLogin()
+    public boolean IsLogin()
     {
         if (LoginFlag)
-            return "true";
-        return "false";
+            return true;
+        return false;
     }
   
     public void Logout()
     {
         LoginFlag = false;
-        UserName = "";
         ErrorText = "";
     }
 }

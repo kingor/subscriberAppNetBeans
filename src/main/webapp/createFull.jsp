@@ -17,7 +17,6 @@
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
         <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
-  </style>
     </head>
     <body bgcolor="#e4e8ea">
         <div align="center">
@@ -47,22 +46,22 @@
                                                             <td class="textBold">${subscriber.address}</td></tr>
                                                     </table>
                                                     <h2>Параметры:</h2>
-                                                    <form name="form5" method="post" action="createSubscriber">
+                                                    <form name="form5" method="post" action="createSubscriber.do">
                                                     <table width="500" >
                                                         <tr>
-                                                            <td width="25%">Номер телефона:</th>
+                                                            <td width="25%">Номер телефона:</td>
                                                             <td class="textBold">${phone.number}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td >Гром полоса:</th>
+                                                            <td >Гром полоса:</td>
                                                             <td class="textBold">${phone.band}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td >Защитная полоса:</th>
+                                                            <td >Защитная полоса:</td>
                                                             <td class="textBold">${phone.security}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td >ADSL:</th>
+                                                            <td >ADSL:</td>
                                                             <td class="textBold">${phone.adsl}</td>
                                                         </tr>
                                                     </table>

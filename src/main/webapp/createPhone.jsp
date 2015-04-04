@@ -17,7 +17,6 @@
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
         <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
-  </style>
     </head>
     <body bgcolor="#e4e8ea">
         <div align="center">
@@ -41,44 +40,46 @@
                                                         <tr>
                                                             <td width="25%">ФИО абонента:</td> 
                                                             <td class="textBold">${subscriber.name}</td>
-                                                        
+
                                                         </tr>
                                                         <tr><td>Адрес абонента:</td> 
                                                             <td class="textBold">${subscriber.address}</td></tr>
                                                     </table>
                                                     <h2>Параметры:</h2>
-                                                    <form name="form5" method="post" action="createPhone">
+                                                    <form name="form5" method="post" action="createPhone.do">
                                                         <input type="hidden" name="id" value="${subscriber.id}">
-                                                    <table width="500" >
-                                                        <tr>
-                                                            <td width="25%">Номер телефона:</td>
-                                                            <td ><INPUT type="text" name="number" style="width:100%"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >Гром полоса:</td>
-                                                            <td ><INPUT type="text" name="band" style="width:100%"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >Защитная полоса:</td>
-                                                            <td ><INPUT type="text" name="security" style="width:100%"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td >ADSL:</td>
-                                                            <td ><INPUT type="text" name="adsl" style="width:100%"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th colspan="2" width="5%">
-                                                                <br>
-                                                                <INPUT type="submit" name="submit" value="Сохранить" style="width:20%">
-                                                            </th>
-                                                            
-                                                        </tr>
-                                                    </table>
+                                                        <table width="500" >
+                                                            <tr>
+                                                                <td width="25%">Номер телефона:</td>
+                                                                <td ><INPUT type="text" name="number" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >Гром полоса:</td>
+                                                                <td ><INPUT type="text" name="band" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >Защитная полоса:</td>
+                                                                <td ><INPUT type="text" name="security" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >ADSL:</td>
+                                                                <td ><INPUT type="text" name="adsl" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th colspan="2" width="5%">
+                                                                    <br>
+                                                                    <INPUT type="submit" name="submit" value="Сохранить" style="width:20%">
+                                                                </th>
+
+                                                            </tr>
+                                                        </table>
                                                 </center>
                                             </td>
                                         </tr>
-
-                                    </table></td></tr></table>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>

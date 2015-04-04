@@ -34,21 +34,21 @@
                                     <table width=653 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
-                                                <form name="form3" method="post" action="subscriberSearch">
+                                                <form name="form3" method="post" action="subscriberSearch.do">
                                                     <center>
                                                         <h2>Поиск абонентов:</h2>
                                                     </center>
                                                     <table class="navu AllWidth">
                                                         <tr>
                                                             <th class="width40">
-                                                                <a href="subscriberSearch?sort=name&order=desc&name=${name}&address=${address}">↓</a>
+                                                                <a href="subscriberSearch.do?sort=name&order=desc&name=${name}&address=${address}">↓</a>
                                                                 ФИО абонента
-                                                                <a href="subscriberSearch?sort=name&order=asc&name=${name}&address=${address}">↑</a>
+                                                                <a href="subscriberSearch.do?sort=name&order=asc&name=${name}&address=${address}">↑</a>
                                                             </th>
                                                             <th class="width40">
-                                                                <a href="subscriberSearch?sort=address&order=desc&name=${name}&address=${address}">↓</a>
+                                                                <a href="subscriberSearch.do?sort=address&order=desc&name=${name}&address=${address}">↓</a>
                                                                 Адрес абонента
-                                                                <a href="subscriberSearch?sort=address&order=asc&name=${name}&address=${address}">↑</a>
+                                                                <a href="subscriberSearch.do?sort=address&order=asc&name=${name}&address=${address}">↑</a>
                                                             </th>
                                                             <th class="width20"></th>
                                                         </tr>
@@ -70,8 +70,8 @@
                                                                 <tr >
                                                                     <td class="width40">${subscriber.name}</td>
                                                                     <td class="width40">${subscriber.address}</td>
-                                                                    <td class="but16 width20">
-                                                                        <form name="form7" method="post" action="subscriberFull">
+                                                                    <td class="width20">
+                                                                        <form name="form7" method="post" action="subscriberFull.do">
                                                                             <input type="hidden" name="subscriberSelect" value="${subscriber.id}">
                                                                             <INPUT type="submit" name="submit" value="Подробнее" class="AllWidth">
                                                                         </form>

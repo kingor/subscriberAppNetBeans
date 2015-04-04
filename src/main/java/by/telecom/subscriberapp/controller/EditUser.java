@@ -50,11 +50,7 @@ public class EditUser extends HttpServlet {
             HttpSession session = request.getSession();
             User user = new User();
             user = (User)session.getAttribute("user");
-            //if(user.equals(null))
-            //{
-            //    RequestDispatcher view = request.getRequestDispatcher("login.jsp");
-            //    view.forward(request, response);
-            //}
+
             id = Long.parseLong(request.getParameter("id"));
             login = request.getParameter("login");
             password = request.getParameter("password");
@@ -77,7 +73,7 @@ public class EditUser extends HttpServlet {
             userEdit.setCategory(category);
             DaoFactory.getUserDao().update(userEdit);
            
-            RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit");
+            RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit.do");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

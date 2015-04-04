@@ -33,34 +33,34 @@
                                     <table width=653 cellspacing=0 cellpadding=20>
                                         <tr>
                                             <td class="content">                                               
-                                                    <h2>Все абоненты в базе данных:</h2>
-                                                    <table class="navi AllWidth" border="1">
+                                                <h2>Все абоненты в базе данных:</h2>
+                                                <table class="navi AllWidth" border="1">
+                                                    <tr>
+                                                        <th class="width40">
+                                                            <a href="subscribers.do?sort=name&order=desc">↓</a>
+                                                            ФИО абонента
+                                                            <a href="subscribers.do?sort=name&order=asc">↑</a>
+                                                        </th>
+                                                        <th >
+                                                            <a href="subscribers.do?sort=address&order=desc">↓</a>
+                                                            Адрес абонента
+                                                            <a href="subscribers.do?sort=address&order=asc">↑</a>
+                                                        </th>
+                                                        <th class="width15">Подробнее</th>
+                                                    </tr>
+                                                    <c:forEach var="subscriber" items="${subscribers}">
                                                         <tr>
-                                                            <th class="width40">
-                                                                <a href="subscribers?sort=name&order=desc">↓</a>
-                                                                ФИО абонента
-                                                                <a href="subscribers?sort=name&order=asc">↑</a>
-                                                            </th>
-                                                            <th >
-                                                                <a href="subscribers?sort=address&order=desc">↓</a>
-                                                                Адрес абонента
-                                                                <a href="subscribers?sort=address&order=asc">↑</a>
-                                                            </th>
-                                                            <th class="width15">Подробнее</th>
-                                                        </tr>
-                                                        <c:forEach var="subscriber" items="${subscribers}">
-                                                            <tr>
-                                                                <td>${subscriber.name}</td>
-                                                                <td>${subscriber.address}</td>
-                                                                <td>
-                                                                    <form name="form5" method="post" action="subscriberFull">
-                                                                        <input type="hidden" name="subscriberSelect" value="${subscriber.id}">
-                                                                        <INPUT type="submit" name="submit" value="Подробнее" class=" AllWidth">
-                                                                    </form>
-                                                                </td>
-                                                            </tr>    
-                                                        </c:forEach>
-                                                    </table>    
+                                                            <td>${subscriber.name}</td>
+                                                            <td>${subscriber.address}</td>
+                                                            <td>
+                                                                <form name="form5" method="post" action="subscriberFull.do">
+                                                                    <input type="hidden" name="subscriberSelect" value="${subscriber.id}">
+                                                                    <INPUT type="submit" name="submit" value="Подробнее" class=" AllWidth">
+                                                                </form>
+                                                            </td>
+                                                        </tr>    
+                                                    </c:forEach>
+                                                </table>    
                                             </td>
                                         </tr>
                                     </table>

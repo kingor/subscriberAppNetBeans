@@ -59,7 +59,7 @@ public class CreatePhone extends HttpServlet {
             request.setAttribute("subscriber", subscriber);
             request.setAttribute("phone", phone);
             
-            RequestDispatcher view = request.getRequestDispatcher("createFull.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("createFull.do.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

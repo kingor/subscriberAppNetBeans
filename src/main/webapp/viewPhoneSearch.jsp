@@ -35,36 +35,36 @@
                                     <table width=653 cellspacing=0 cellpadding=20 border=0>                          
                                         <tr>                                          
                                             <td class="content">
-                                                <form name="form5" method="post" action="phoneSearch">
+                                                <form name="form5" method="post" action="phoneSearch.do">
                                                     <center>
                                                         <h2>Поиск по техническим параметрам:</h2>
                                                     </center>
                                                     <table class="navu AllWidth">
                                                         <tr>
                                                             <th class="width15">
-                                                                <a href="phoneSearch?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch.do?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Номер
-                                                                <a href="phoneSearch?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phoneSearch?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch.do?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Громпол.
-                                                                <a href="phoneSearch?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phoneSearch?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch.do?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Защита
-                                                                <a href="phoneSearch?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phoneSearch?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch.do?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Adsl
-                                                                <a href="phoneSearch?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="navu width35">
-                                                                <a href="phoneSearch?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch.do?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
-                                                                <a href="phoneSearch?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="navu width15"></th>
                                                         </tr>

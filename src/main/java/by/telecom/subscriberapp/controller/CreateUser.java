@@ -57,10 +57,10 @@ public class CreateUser extends HttpServlet {
             userNew.setPassword(password);
             userNew.setName(name);
             userNew.setCategory(category);         
-         
-            DaoFactory.getLogDao()
-                    .create(Log.createUser(user, userNew.getLogin(),
-                                            userNew.getName(),userNew.getCategory()));
+            Log log = new Log();
+            log.createUser(user, userNew.getLogin(),
+                           userNew.getName(),userNew.getCategory());
+            DaoFactory.getLogDao().create(log);
             
             id = DaoFactory.getUserDao().create(userNew);
             request.setAttribute("userNew", userNew);

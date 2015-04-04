@@ -48,11 +48,9 @@ public class DeleteUser extends HttpServlet {
             id = Long.parseLong(request.getParameter("userSelect"));
             
             User userDelete = DaoFactory.getUserDao().read(id);
-            
-            DaoFactory.getLogDao()
-                    .create(Log.deleteUser(user, userDelete.getLogin(),
-                                            userDelete.getName(),userDelete.getCategory()));
-
+            Log log = new Log();
+            log.deleteUser(user, userDelete.getLogin(), userDelete.getName(), userDelete.getCategory());
+            DaoFactory.getLogDao().create(log);
             DaoFactory.getUserDao().delete(userDelete);
             
             RequestDispatcher view = request.getRequestDispatcher("index.jsp");

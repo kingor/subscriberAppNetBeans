@@ -6,12 +6,12 @@
    
     <%@include file="menu_name.jspf" %>
     <%@include file="menu_user.jspf" %>
-  <%--  <c:if test="${user.category<3}">--%>
+    <c:if test="${user.category<3}">
         <%@include file="menu_operator.jspf" %>
         
- <%--   </c:if>--%>
- <%--   <c:if test="${user.category<2}">--%>
+    </c:if>
+    <c:if test="${user.category<2}">
         <%@include file="menu_admin.jspf" %>
- <%--  </c:if>--%>
+   </c:if>
 </td>
     

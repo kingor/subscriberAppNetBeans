@@ -32,28 +32,28 @@
                                 </tr>
                                 <tr >
                                     <td>
-                                        <form name="form5" method="post" action="subscribers">
+                                        <form name="form5" method="post" action="subscribers.do">
                                             <INPUT type="submit" name="submit" value="Просмотр всех абонентов" style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td >
-                                        <form name="form6" method="post" action="subscriberSearch">
+                                        <form name="form6" method="post" action="subscriberSearch.do">
                                         <INPUT type="submit" name="submit" value="    Поиск абонентов    " style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <form name="form6" method="post" action="phones">
+                                        <form name="form6" method="post" action="phones.do">
                                         <INPUT type="submit" name="submit" value="Просмотр тех. данных" style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <form name="form6" method="post" action="phoneSearch">
+                                        <form name="form6" method="post" action="phoneSearch.do">
                                         <INPUT type="submit" name="submit" value="Поиск по тех. данным" style="width:100%">
                                         </form>
                                     </td>

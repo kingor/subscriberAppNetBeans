@@ -34,21 +34,21 @@
                                     <table width=653 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
-                                                <form name="form5" method="post" action="subscriberSearchEdit">
+                                                <form name="form5" method="post" action="subscriberSearchEdit.do">
                                                     <center>
                                                         <h2>Поиск по фамилии:</h2>
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
                                                             <th class="navu width30">
-                                                                <a href="subscriberSearchEdit?sort=name&order=desc&name=${name}&address=${address}">↓</a>
+                                                                <a href="subscriberSearchEdit.do?sort=name&order=desc&name=${name}&address=${address}">↓</a>
                                                                 ФИО абонента
-                                                                <a href="subscriberSearchEdit?sort=name&order=asc&name=${name}&address=${address}">↑</a>
+                                                                <a href="subscriberSearchEdit.do?sort=name&order=asc&name=${name}&address=${address}">↑</a>
                                                             </th>
                                                             <th class="navu width40">
-                                                                <a href="subscriberSearchEdit?sort=address&order=desc&name=${name}&address=${address}">↓</a>            
+                                                                <a href="subscriberSearchEdit.do?sort=address&order=desc&name=${name}&address=${address}">↓</a>            
                                                                 Адрес
-                                                                <a href="subscriberSearchEdit?sort=address&order=asc&name=${name}&address=${address}">↑</a>
+                                                                <a href="subscriberSearchEdit.do?sort=address&order=asc&name=${name}&address=${address}">↑</a>
                                                             </th>
                                                             <th class="navu width25"></th>
                                                         </tr>
@@ -68,14 +68,14 @@
                                                                     <td class="width30">${subscriber.name}</td>
                                                                     <td class="width40">${subscriber.address}</td>
                                                                     <td>
-                                                                        <form name="form5" method="post" action="editSubscriberView">
-                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
+                                                                        <form name="form5" method="post" action="editSubscriberView.do">
+                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}/>
                                                                             <INPUT type="submit" name="submit" value="Редактор" style="width:100%">
                                                                         </form>
                                                                     </td>
                                                                     <td>
-                                                                        <form name="form7" method="post" action="deleteSubscriber">
-                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}>
+                                                                        <form name="form7" method="post" action="deleteSubscriber.do">
+                                                                            <input type="hidden" name="subscriberSelect" value=${subscriber.id}/>
                                                                             <INPUT type="submit" name="submit" value="Удалить" style="width:100%">
                                                                         </form>
                                                                     </td>

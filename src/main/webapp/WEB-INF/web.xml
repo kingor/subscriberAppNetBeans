@@ -22,7 +22,8 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
-        <servlet-name>Subscribers</servlet-name>
+        <url-pattern>*.do</url-pattern>
+        <url-pattern>*.jsp</url-pattern>
     </filter-mapping>
     <servlet>
         <servlet-name>Subscribers</servlet-name>
@@ -34,7 +35,7 @@
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>by.telecom.subscriberapp.controller.LoginServlet</servlet-class>
+        <servlet-class>by.telecom.subscriberapp.controller.Login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SubscriberSearch</servlet-name>
@@ -116,13 +117,13 @@
         <servlet-name>DeletePhone</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.DeletePhone</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>Subscribers</servlet-name>
-        <url-pattern>/subscribers</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.Logout</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Users</servlet-name>
-        <url-pattern>/users</url-pattern>
+        <url-pattern>/users.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -130,83 +131,91 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SubscriberSearch</servlet-name>
-        <url-pattern>/subscriberSearch</url-pattern>
+        <url-pattern>/subscriberSearch.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Phones</servlet-name>
-        <url-pattern>/phones</url-pattern>
+        <url-pattern>/phones.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SubscriberFull</servlet-name>
-        <url-pattern>/subscriberFull</url-pattern>
+        <url-pattern>/subscriberFull.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PhoneSearch</servlet-name>
-        <url-pattern>/phoneSearch</url-pattern>
+        <url-pattern>/phoneSearch.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreateSubscriber</servlet-name>
-        <url-pattern>/createSubscriber</url-pattern>
+        <url-pattern>/createSubscriber.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreatePhone</servlet-name>
-        <url-pattern>/createPhone</url-pattern>
+        <url-pattern>/createPhone.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SubscriberSearchEdit</servlet-name>
-        <url-pattern>/subscriberSearchEdit</url-pattern>
+        <url-pattern>/subscriberSearchEdit.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteSubscriber</servlet-name>
-        <url-pattern>/deleteSubscriber</url-pattern>
+        <url-pattern>/deleteSubscriber.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditSubscriberView</servlet-name>
-        <url-pattern>/editSubscriberView</url-pattern>
+        <url-pattern>/editSubscriberView.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditSubscriber</servlet-name>
-        <url-pattern>/editSubscriber</url-pattern>
+        <url-pattern>/editSubscriber.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreateUser</servlet-name>
-        <url-pattern>/createUser</url-pattern>
+        <url-pattern>/createUser.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UserSearchEdit</servlet-name>
-        <url-pattern>/userSearchEdit</url-pattern>
+        <url-pattern>/userSearchEdit.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditUserView</servlet-name>
-        <url-pattern>/editUserView</url-pattern>
+        <url-pattern>/editUserView.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditUser</servlet-name>
-        <url-pattern>/editUser</url-pattern>
+        <url-pattern>/editUser.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeleteUser</servlet-name>
-        <url-pattern>/deleteUser</url-pattern>
+        <url-pattern>/deleteUser.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LogSearch</servlet-name>
-        <url-pattern>/logSearch</url-pattern>
+        <url-pattern>/logSearch.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PhoneSearchEdit</servlet-name>
-        <url-pattern>/phoneSearchEdit</url-pattern>
+        <url-pattern>/phoneSearchEdit.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditPhoneView</servlet-name>
-        <url-pattern>/editPhoneView</url-pattern>
+        <url-pattern>/editPhoneView.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditPhone</servlet-name>
-        <url-pattern>/editPhone</url-pattern>
+        <url-pattern>/editPhone.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DeletePhone</servlet-name>
-        <url-pattern>/deletePhone</url-pattern>
+        <url-pattern>/deletePhone.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Subscribers</servlet-name>
+        <url-pattern>/subscribers.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

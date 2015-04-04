@@ -61,7 +61,7 @@ public class CreateSubscriber extends HttpServlet {
             id = DaoFactory.getSubscriberDao().create(subscriber);
             request.setAttribute("subscriber", subscriber);
             
-            RequestDispatcher view = request.getRequestDispatcher("createPhone.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("createPhone.do.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

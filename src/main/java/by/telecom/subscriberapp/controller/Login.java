@@ -17,13 +17,13 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LoginServlet
  */
-public class LoginServlet extends HttpServlet {
+public class Login extends HttpServlet {
   private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public Login() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -67,18 +67,13 @@ public class LoginServlet extends HttpServlet {
     {
       user.Login(login);
       session.setAttribute("user", user);
-      if (user.getCategory()==0)
-          ResultPage = "/index.jsp";
-      else if (user.getCategory()==1)
-          ResultPage = "/index.jsp";
-      else if (user.getCategory()==2)
-          ResultPage = "/index.jsp";
+      ResultPage = "/index.jsp";
     }
     else
     {
       ResultPage = "/login.jsp";
       user.SetError("Incorrect user name - " + login);
-      session.setAttribute("user", user);
+      //session.setAttribute("user", user);
     } 
     
     ServletContext SC = getServletContext();
@@ -91,9 +86,9 @@ public class LoginServlet extends HttpServlet {
    */
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
   {
-    try
+   /* try
     {
-      String IsLogout = request.getParameter("logout");
+     /* String IsLogout = request.getParameter("logout");
       
       HttpSession session = request.getSession();
       
@@ -118,7 +113,7 @@ public class LoginServlet extends HttpServlet {
     catch (Throwable theException)
     {
       theException.printStackTrace();
-    }
+    }*/
   }
 
 }

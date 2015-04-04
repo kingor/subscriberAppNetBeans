@@ -35,31 +35,31 @@
                                     <table width=653 cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
-                                                <form name="form5" method="post" action="logSearch">
+                                                <form name="form5" method="post" action="logSearch.do">
                                                     <center>
                                                         <h2>Просмотр журнала событий:</h2>
                                                     </center>
                                                     <table class="AllWidth">
                                                         <tr>
-                                                            <th class="navu width25">
-                                                                <a href="logSearch?sort=name&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
-                                                                Пользователь
-                                                                <a href="logSearch?sort=name&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
+                                                            <th class="navu width15">
+                                                                <a href="logSearch.do.do?sort=name&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
+                                                                Имя
+                                                                <a href="logSearch.do?sort=name&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
                                                             </th>
                                                             <th class="navu width25">
-                                                                <a href="logSearch?sort=date&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
+                                                                <a href="logSearch.do?sort=date&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
                                                                 Дата
-                                                                <a href="logSearch?sort=date&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
+                                                                <a href="logSearch.do?sort=date&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
                                                             </th>
                                                             <th class="navu width10">
-                                                                <a href="logSearch?sort=type&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
+                                                                <a href="logSearch.do?sort=type&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
                                                                 Тип
-                                                                <a href="logSearch?sort=type&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
+                                                                <a href="logSearch.do?sort=type&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
                                                             </th>
-                                                            <th class="navu width25">
-                                                                <a href="logSearch?sort=comment&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
+                                                            <th class="navu width35">
+                                                                <a href="logSearch.do?sort=comment&order=desc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↓</a>
                                                                 Комментарий
-                                                                <a href="logSearch?sort=comment&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
+                                                                <a href="logSearch.do?sort=comment&order=asc&name=${name}&dateStart=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateStart}" />&dateEnd=<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />&type=${type}&comment=${comment}">↑</a>
                                                             </th>
                                                             <th class="navu width15"></th>
                                                         </tr>
@@ -77,11 +77,13 @@
                                                                 <INPUT type="text" name="comment" value="${comment}" class="AllHeight">
                                                             </td>
                                                             <td  rowspan="2">
-                                                                <INPUT type="submit" name="submit" value="Искать!" class="AllHeight">
+                                                                <INPUT type="submit" name="submit" value="Поиск" class="AllHeight">
                                                             </td>
                                                         </tr>
-                                                        <tr height="90%">
-                                                            <td ><INPUT type="date" name="dateEnd" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />" class="AllWidth"></td>
+                                                        <tr >
+                                                            <td >
+                                                                <INPUT type="date" name="dateEnd" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${dateEnd}" />" class="AllWidth" />
+                                                            </td>
                                                         </tr>
                                                     </table>     
                                                 </form>
@@ -90,12 +92,12 @@
                                                         <table class="AllWidth" border="1">
                                                             <c:forEach var="log" items="${logSearch}">
                                                                 <tr>
-                                                                    <td class="width25">${log.user.name}</td>
+                                                                    <td class="width15">${log.user.name}</td>
                                                                     <td class="width25">
                                                                         <fmt:formatDate pattern="dd.MM.yyyy --- hh:mm" value="${log.date}"/>
                                                                     </td>
                                                                     <td class="width10">${log.type}</td>
-                                                                    <td class="width40">${log.comment}</td>
+                                                                    <td class="width50">${log.comment}</td>
                                                                 </tr>
                                                             </c:forEach>
                                                         </table>

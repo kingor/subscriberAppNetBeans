@@ -17,7 +17,6 @@
         <META content="text/html; charset=windows-1251" http-equiv=Content-Type>
         <LINK href="style/main3.css" type=text/css 
               rel=stylesheet>
-  </style>
     </head>
     <body bgcolor="#e4e8ea">
         <div align="center">
@@ -37,14 +36,14 @@
                                             <td class="content">
                                                 <center>
                                                     <h2>Новый абонент:</h2>
-                                                    <form name="form5" method="post" action="createSubscriber">
+                                                    <form name="form5" method="post" action="createSubscriber.do">
                                                     <table width="500" >
                                                         <tr>
-                                                            <td width="25%">ФИО абонента:</th>
+                                                            <td width="25%">ФИО абонента:</td>
                                                             <td ><INPUT type="text" name="name" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td >Адрес:</th>
+                                                            <td >Адрес:</td>
                                                             <td><INPUT type="text" name="address" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
@@ -59,7 +58,10 @@
                                             </td>
                                         </tr>
 
-                                    </table></td></tr></table>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>

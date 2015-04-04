@@ -32,14 +32,14 @@
                                 </tr>
                                 <tr>
                                     <td >
-                                        <form name="form6" method="post" action="userSearchEdit">
+                                        <form name="form6" method="post" action="userSearchEdit.do">
                                         <INPUT type="submit" name="submit" value="Редактор пользователей" style="width:100%">
                                         </form>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <form name="form6" method="post" action="logSearch">
+                                        <form name="form6" method="post" action="logSearch.do">
                                         <INPUT type="submit" name="submit" value="Журнал событий" style="width:100%">
                                         </form>
                                     </td>

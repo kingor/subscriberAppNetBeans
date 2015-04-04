@@ -40,32 +40,32 @@
                                                     <table class="AllWidth">
                                                         <tr>
                                                             <th class="navu width25">
-                                                                <a href="userSearchEdit?sort=login&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
+                                                                <a href="userSearchEdit.do?sort=login&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
                                                                 Логин
-                                                                <a href="userSearchEdit?sort=login&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
+                                                                <a href="userSearchEdit.do?sort=login&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
                                                             </th> 
                                                             <th class="navu width25">
-                                                                <a href="userSearchEdit?sort=name&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
+                                                                <a href="userSearchEdit.do?sort=name&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
                                                                 Имя
-                                                                <a href="userSearchEdit?sort=name&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
+                                                                <a href="userSearchEdit.do?sort=name&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
                                                             </th>
                                                             <th class="navu width25">
-                                                                <a href="userSearchEdit?sort=category&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
+                                                                <a href="userSearchEdit.do?sort=category&order=desc&login=${login}&name=${name}&category=${category}">↓</a>
                                                                 Категория
-                                                                <a href="userSearchEdit?sort=category&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
+                                                                <a href="userSearchEdit.do?sort=category&order=asc&login=${login}&name=${name}&category=${category}">↑</a>
                                                             </th>
                                                             <th class="width25"></th>
                                                         </tr>
-                                                        <form name="form5" method="post" action="userSearchEdit">
-                                                        <tr> 
                                                         
+                                                        <tr> 
+                                                        <form name="form5" method="post" action="userSearchEdit.do">
                                                             <td><INPUT type="text" name="login" value="${login}" class="AllWidth"></td>
                                                             <td><INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
                                                             <td><INPUT type="text" name="category" value="${category}" class="AllWidth"></td>
                                                             <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
-                                                        
-                                                        </tr>
                                                         </form>
+                                                        </tr>
+                                                        
                                                     </table>     
                                                 
                                                 <center>
@@ -77,14 +77,14 @@
                                                                     <td class="width25">${userEdit.name}</td>
                                                                     <td class="width25">${userEdit.category}</td>
                                                                     <td >
-                                                                        <form name="form5" method="post" action="editUserView">
-                                                                            <input type="hidden" name="userSelect" value=${userEdit.id}>
+                                                                        <form name="form5" method="post" action="editUserView.do">
+                                                                            <input type="hidden" name="userSelect" value="${userEdit.id}"/>
                                                                             <INPUT type="submit" name="submit" value="Редактор" style="width:100%">
                                                                         </form>
                                                                     </td>
                                                                     <td>
-                                                                        <form name="form7" method="post" action="deleteUser">
-                                                                            <input type="hidden" name="userSelect" value=${userEdit.id}>
+                                                                        <form name="form7" method="post" action="deleteUser.do">
+                                                                            <input type="hidden" name="userSelect" value="${userEdit.id}"/>
                                                                             <INPUT type="submit" name="submit" value="Удалить" style="width:100%">
                                                                         </form>
                                                                     </td>

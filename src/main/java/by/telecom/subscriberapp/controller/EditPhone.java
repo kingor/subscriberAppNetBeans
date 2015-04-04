@@ -72,7 +72,7 @@ public class EditPhone extends HttpServlet {
             phone.setAdsl(adsl);
             DaoFactory.getPhoneDao().update(phone);
            
-            RequestDispatcher view = request.getRequestDispatcher("phoneSearchEdit");
+            RequestDispatcher view = request.getRequestDispatcher("phoneSearchEdit.do");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

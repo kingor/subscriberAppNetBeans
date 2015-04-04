@@ -38,7 +38,7 @@
                                             <td class="content">
                                                 <center>
                                                     <h2>Подробные данные:</h2>
-                                                    <form name="form5" method="post" action="editSubscriber">
+                                                    <form name="form5" method="post" action="editSubscriber.do">
                                                         <INPUT type="hidden" name="id" value="${subscriber.id}">
                                                     <table class=AllWidth>
                                                         <tr>
@@ -58,7 +58,6 @@
                                                 </center>
                                             </td>
                                         </tr>
-
                                     </table>
                                 </td>
                             </tr>

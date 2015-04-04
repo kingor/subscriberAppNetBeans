@@ -19,14 +19,7 @@ import javax.servlet.http.HttpSession;
  */
 public class LoginFilter implements Filter{
 
-    private static final String FILTERABLE_CONTENT_TYPE="application/x-www-form-urlencoded";
-
-    private static final String ENCODING_DEFAULT = "UTF-8";
-
-    private static final String ENCODING_INIT_PARAM_NAME = "encoding";
     private String errorPage;
-
-    private String encoding;
 
     public void destroy(){
     }
@@ -38,19 +31,25 @@ public class LoginFilter implements Filter{
         HttpServletResponse responseHttp = (HttpServletResponse) response;
         HttpSession session = requestHttp.getSession(false);
         User user = new User();
-        user = (User)session.getAttribute("user");
         if (session != null) {
-        if (user == null || user.getLogin()!="54" ) {
-            RequestDispatcher dispatcher = requestHttp.getRequestDispatcher("/login.jsp");
-			dispatcher.forward(request, response);
-                        System.out.println("filter 111111111111111111111111111111");
-            //return;
-        } 
-        }
-        else {
-          /*  RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
-			dispatcher.forward(request, response);*/
-        System.out.println("filter 22222222222222222222222222222222");
+            user = (User) session.getAttribute("user");
+            if (user == null) {
+
+                RequestDispatcher dispatcher = requestHttp.getRequestDispatcher("/login.jsp");
+                dispatcher.forward(request, response);
+                System.out.println("filter 111111111111111111111111111111");
+                return;
+            } else if (!user.IsLogin()) {
+                RequestDispatcher dispatcher = requestHttp.getRequestDispatcher("/login.jsp");
+                dispatcher.forward(request, response);
+                System.out.println("filter 121212121212121212121212121212121");
+                return;
+            }
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+            dispatcher.forward(request, response);
+            System.out.println("filter 22222222222222222222222222222222");
+            return;
         }
         System.out.println("filter 3333333333333333333333333333333333");    
         chain.doFilter(request, response);

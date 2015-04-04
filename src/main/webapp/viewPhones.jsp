@@ -40,42 +40,38 @@
                                                     <table class="navi AllWidth" border="1">
                                                         <tr>
                                                             <th class="width15">
-                                                                <a href="phones?sort=number&order=desc">↓</a>
+                                                                <a href="phones.do?sort=number&order=desc">↓</a>
                                                                 Номер
-                                                                <a href="phones?sort=number&order=asc">↑</a>
-                                                            </th>
-                                                            <th class="width25">
-                                                                <a href="phones?sort=band&order=desc">↓</a>
-                                                                Гром полоса
-                                                                <a href="phones?sort=band&order=asc">↑</a>
+                                                                <a href="phones.do?sort=number&order=asc">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phones?sort=security&order=desc">↓</a>
+                                                                <a href="phones.do?sort=band&order=desc">↓</a>
+                                                                Громпол.
+                                                                <a href="phones.do?sort=band&order=asc">↑</a>
+                                                            </th>
+                                                            <th class="width15">
+                                                                <a href="phones.do?sort=security&order=desc">↓</a>
                                                                 Защита
-                                                                <a href="phones?sort=security&order=asc">↑</a>
+                                                                <a href="phones.do?sort=security&order=asc">↑</a>
                                                             </th>                                                          
                                                             <th class="width15">
-                                                                <a href="phones?sort=adsl&order=desc">↓</a>
+                                                                <a href="phones.do?sort=adsl&order=desc">↓</a>
                                                                 Adsl
-                                                                <a href="phones?sort=adsl&order=asc">↑</a>
+                                                                <a href="phones.do?sort=adsl&order=asc">↑</a>
                                                             </th>
-                                                            <th class="width30">
-                                                                <a href="phones?sort=name&order=desc">↓</a>
+                                                            <th class="width40">
+                                                                <a href="phones.do?sort=name&order=desc">↓</a>
                                                                 ФИО
-                                                                <a href="phones?sort=name&order=asc">↑</a>
+                                                                <a href="phones.do?sort=name&order=asc">↑</a>
                                                             </th>
-                                                            
-
                                                         </tr>
                                                         <c:forEach var="phone" items="${phones}">
-                                                            <tr>
-                                                                
+                                                            <tr>                                                               
                                                                 <td>${phone.number}</td>
                                                                 <td>${phone.band}</td>
                                                                 <td>${phone.security}</td>
                                                                 <td>${phone.adsl}</td>
-                                                                <td>${phone.subscriber.name}</td>
-                         
+                                                                <td>${phone.subscriber.name}</td>                       
                                                             </tr>
                                                         </c:forEach>
                                                     </table>
@@ -83,7 +79,10 @@
                                             </td>
                                         </tr>
 
-                                    </table></td></tr></table>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>

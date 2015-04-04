@@ -47,7 +47,7 @@
                                                             <td class="textBold">${subscriber.address}</td></tr>
                                                     </table>
                                                         <h2>Технические параметры:</h2>
-                                                         <form name="form5" method="post" action="editPhone">
+                                                         <form name="form5" method="post" action="editPhone.do">
                                                         <input type="hidden" name="id" value="${phone.id}">
                                                     <table class="AllWidth">
                                                         <tr>

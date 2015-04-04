@@ -66,7 +66,7 @@ public class EditSubscriber extends HttpServlet {
             subscriber.setAddress(address);
             DaoFactory.getSubscriberDao().update(subscriber);
            
-            RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit");
+            RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit.do");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

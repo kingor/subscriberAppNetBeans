@@ -71,7 +71,7 @@
                                                     <table class="width20">
                                                         <tr>
                                                             <td>
-                                                                <form name="form5" method="post" action="subscribers">
+                                                                <form name="form5" method="post" action="subscribers.do">
                                                                     <INPUT class="AllWidth" type="submit" name="submit" value="Назад">
                                                                 </form>
                                                             </td>

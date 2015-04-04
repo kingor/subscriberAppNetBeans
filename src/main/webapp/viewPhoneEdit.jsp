@@ -35,36 +35,36 @@
                                     <table width=653 cellspacing=0 cellpadding=20 border=0>                          
                                         <tr>                                          
                                             <td class="content">
-                                                <form name="form5" method="post" action="phoneSearchEdit">
+                                                <form name="form5" method="post" action="phoneSearchEdit.do">
                                                     <center>
                                                         <h2>Поиск по техническим параметрам:</h2>
                                                     </center>
                                                     <table class="navu AllWidth">
                                                         <tr>
                                                             <th class="width15">
-                                                                <a href="phoneSearchEdit?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Номер
-                                                                <a href="phoneSearchEdit?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phoneSearchEdit?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Громпол.
-                                                                <a href="phoneSearchEdit?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phoneSearchEdit?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Защита
-                                                                <a href="phoneSearchEdit?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width10">
-                                                                <a href="phoneSearchEdit?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Adsl
-                                                                <a href="phoneSearchEdit?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width30">
-                                                                <a href="phoneSearchEdit?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
-                                                                <a href="phoneSearchEdit?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15"></th>
                                                         </tr>
@@ -74,7 +74,7 @@
                                                             <td > <INPUT type="text" name="security" value="${security}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="adsl" value="${adsl}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
-                                                            <td class="but24 AllHeight"> <INPUT type="image" name="submit" src="find.png" style="height: 24"></td>
+                                                            <td class="AllHeight"> <INPUT type="image" name="submit" value="Поиск" ></td>
                                                         </tr>
                                                     </table> 
                                                 </form>
@@ -88,13 +88,13 @@
                                                                     <td class="width10">${phone.adsl}</td>
                                                                     <td class="width30">${phone.subscriber.name}</td>
                                                                     <td class="but16 width10">
-                                                                        <form name="form5" method="post" action="editPhoneView">
+                                                                        <form name="form5" method="post" action="editPhoneView.do">
                                                                             <input type="hidden" name="phoneSelect" value="${phone.id}">               
                                                                             <INPUT type="image" name="submit" value="Редактор" src="gear.png">
                                                                         </form>
                                                                     </td>
                                                                     <td class="but16 width5">
-                                                                        <form name="form7" method="post" action="deletePhone">
+                                                                        <form name="form7" method="post" action="deletePhone.do">
                                                                             <input type="hidden" name="phoneSelect" value="${phone.id}">
                                                                             <INPUT type="image" name="submit" value="Удалить" src="delete2.png">
                                                                         </form>
