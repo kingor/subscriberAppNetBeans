@@ -38,31 +38,29 @@ public class CreateUser extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long id;
-        String login;
-        String password;
-        String name;
-        Integer category;
-        try {
-            HttpSession session = request.getSession();
+         try {
+            HttpSession session = request.getSession();                         //Получение сессии
             User user = new User();
-            user = (User)session.getAttribute("user");
+            user = (User)session.getAttribute("user");                          //Пользователь в сессии
             
-            login = request.getParameter("login");
-            password = request.getParameter("password");
-            name = request.getParameter("name");
-            category = Integer.parseInt(request.getParameter("category"));
+            String login = request.getParameter("login");
+            String password = request.getParameter("password");
+            String name = request.getParameter("name");
+            Integer category = Integer.parseInt(request.getParameter("category"));
+            
             User userNew = new User();
             userNew.setLogin(login);
             userNew.setPassword(password);
             userNew.setName(name);
-            userNew.setCategory(category);         
-            Log log = new Log();
+            userNew.setCategory(category);  
+            
+            Log log = new Log();                                                //Создание лога
             log.createUser(user, userNew.getLogin(),
                            userNew.getName(),userNew.getCategory());
             DaoFactory.getLogDao().create(log);
             
-            id = DaoFactory.getUserDao().create(userNew);
+            Long id = DaoFactory.getUserDao().create(userNew);
+            
             request.setAttribute("userNew", userNew);
             
             RequestDispatcher view = request.getRequestDispatcher("index.jsp");

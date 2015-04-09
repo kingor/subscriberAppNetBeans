@@ -84,6 +84,12 @@ table.navu th{
     text-align: middle;
 }
 
+.width960 {
+    width: 990;
+}
+.width753 {
+    width: 783;
+}
 .navu A:link {
     COLOR: #026cc4;
     text-decoration: none;
@@ -224,6 +230,9 @@ form {
 .width15 {
     width: 15%; /* Убираем отступы */
     height: 100%;
+}
+.width12 {
+    width: 12%; /* Убираем отступы */
 }
 .width20 {
     width: 20%; /* Убираем отступы */

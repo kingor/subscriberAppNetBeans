@@ -42,25 +42,21 @@ public class EditSubscriber extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Long id;
-        String name;
-        String address;
-        String comment = "";
         try {
             HttpSession session = request.getSession();
             User user = new User();
             user = (User)session.getAttribute("user");
 
             id = Long.parseLong(request.getParameter("id"));
-            name = request.getParameter("name");
-            address = request.getParameter("address");
+            String name = request.getParameter("name");
+            String address = request.getParameter("address");
             
             Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
 
-            DaoFactory.getLogDao()
-                    .create(Log
-                            .updateSubscriber(user, subscriber.getName(), name,
-                                              subscriber.getAddress(), address));
-            
+            Log log = new Log(); 
+            log.updateSubscriber(user, subscriber.getName(), name, 
+                    subscriber.getAddress(), address);
+            DaoFactory.getLogDao().create(log);            
             
             subscriber.setName(name);
             subscriber.setAddress(address);

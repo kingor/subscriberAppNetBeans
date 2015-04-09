@@ -24,16 +24,16 @@
         <div align="center">
             <%@include file="include/Header.jspf" %>
 
-            <table width=860 cellspacing=0 cellpadding=0 border=0>
+            <table class="width960" cellspacing=0 cellpadding=0 border=0>
                 <tr>
                     <%@include file="include/menu.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
-                    <td width=653  align="center">
-                        <table width=653 cellspacing=0 cellpadding=1 border=0>
+                    <td class="width753"  align="center">
+                        <table class="width753" cellspacing=0 cellpadding=1 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=653 cellspacing=0 cellpadding=20 border=0>
+                                    <table class="width753" cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
                                                 <center>

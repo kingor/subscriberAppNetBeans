@@ -41,10 +41,7 @@ public class EditPhone extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long id;
-        String name;
-        String address;
-        
+        Long id;   
         try {
             HttpSession session = request.getSession();
             User user = new User();
@@ -58,13 +55,11 @@ public class EditPhone extends HttpServlet {
             String adsl = request.getParameter("adsl");
             Subscriber subscriber = phone.getSubscriber();
 
-            DaoFactory.getLogDao()
-                    .create(Log.updatePhone(
-                            user, subscriber, phone.getNumber(),number,
-                            phone.getBand(), band, 
-                            phone.getSecurity(), security,
-                            phone.getAdsl(), adsl));
-            
+            Log log = new Log(); 
+            log.updatePhone(user, subscriber, phone.getNumber(), number, 
+                    phone.getBand(), band, phone.getSecurity(), security, 
+                    phone.getAdsl(), adsl);
+            DaoFactory.getLogDao().create(log);
             
             phone.setNumber(number);
             phone.setBand(band);

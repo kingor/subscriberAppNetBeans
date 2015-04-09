@@ -1,6 +1,7 @@
 package by.telecom.subscriberapp.controller;
 
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Log;
 import by.telecom.subscriberapp.User;
 import java.io.IOException;
 import java.util.Collection;
@@ -41,7 +42,11 @@ public class Logout extends HttpServlet {
         if (session != null) {
             User user = (User) session.getAttribute("user");
 
-            if (user != null) {
+            if (user != null) {              
+                String remoteAddr = request.getRemoteAddr();
+                Log log = new Log();               
+                log.logout(user, remoteAddr);
+                DaoFactory.getLogDao().create(log);
                 user.Logout();
                 session.setAttribute("user", user);
             } else {

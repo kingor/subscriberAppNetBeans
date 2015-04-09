@@ -15,7 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Log;
 import by.telecom.subscriberapp.Phone;
+import by.telecom.subscriberapp.User;
+import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 /**import by.telecom.subscriberapp.model.Phone;
 
@@ -36,14 +39,21 @@ public class DeleteSubscriber extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long id;
         try {
-            id = Long.parseLong(request.getParameter("subscriberSelect"));
+            HttpSession session = request.getSession();                         //Получение сессии
+            User user = new User();
+            user = (User)session.getAttribute("user");                          //Пользователь в сессии
+            
+            Long id = Long.parseLong(request.getParameter("subscriberSelect"));
             
             Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
-            //JOptionPane.showMessageDialog(, "Eggs are not supposed to be green.");
+            
+            Log log = new Log();                                                //Создание лога
+            log.deleteSubscriber(user, subscriber.getName(), 
+                    subscriber.getAddress());
+            DaoFactory.getLogDao().create(log);
+
             DaoFactory.getSubscriberDao().delete(subscriber);
-            //request.setAttribute("subscriber", subscriber);
             
             RequestDispatcher view = request.getRequestDispatcher("index.jsp");
             view.forward(request, response);

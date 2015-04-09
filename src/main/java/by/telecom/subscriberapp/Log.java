@@ -13,6 +13,8 @@ import java.util.Date;
 /**
  *
  * @author ASUP8
+ * @param id Уникальный номер лога
+ * @param user Пользователь 
  */
 public class Log implements Serializable {
     private Long id;
@@ -61,28 +63,12 @@ public class Log implements Serializable {
         comment = aComment;
     }
     
-    public static Log updateSubscriber(User user, String aName, 
+    public Log updateSubscriber(User user, String aName, 
             String aNameNew, String aAddress, String aAddressNew) {
-        String comment = "";
-        Log log = new Log();
-        log.createLog(log, user, "Update");
-        if (!aName.equals(aNameNew)) {
-            comment = comment.concat("ФИО: ")
-                    .concat(aName)
-                    .concat("--->")
-                    .concat(aNameNew)
-                    .concat("   ");
-
-        }
-        if (!aAddress.equals(aAddressNew)) {
-            comment = comment.concat("Адрес: ")
-                    .concat(aAddress)
-                    .concat("--->")
-                    .concat(aAddressNew)
-                    .concat("   ");
-        }
-        log.setComment(comment);
-        return log;
+        this.createLog(user, "Update");
+        comment = commentConcat(comment, "ФИО: ", aName, aNameNew);
+        comment = commentConcat(comment, "Адрес: ", aAddress, aAddressNew);
+        return this;
     }
     
     public  Log updatePhone(User user, Subscriber subscriber, 
@@ -90,44 +76,15 @@ public class Log implements Serializable {
             String aBand, String aBandNew,
             String aSecurity, String aSecurityNew,
             String aAdsl, String aAdslNew) {
-        String comment = "Абонент: ";
-        Log log = new Log();
-        log.createLog(log, user, "Update");
+        this.createLog(user, "Update");
         comment = comment.concat(subscriber.getName());
-        comment = log.commentConcat(comment, "Номер: ", aNumber, aNumberNew);
-        comment = log.commentConcat(comment, "Громполоса: ", aBand, aBandNew);
-        comment = log.commentConcat(comment, "Защита: ", aSecurity, aSecurityNew);
-        comment = log.commentConcat(comment, "ADSL: ", aAdsl, aAdslNew);
-
-        log.setComment(comment);
-        return log;
-    }
-    
-    public Log createSubscriber(User user, String aName, 
-            String aAddress) {
-        String comment = "";
-        Log log = new Log();
-        log.createLog(log, user, "Create");
-        comment = comment.concat("ФИО: ")
-                .concat(aName)
-                .concat("   ");
-
-        comment = comment.concat("Адрес: ")
-                .concat(aAddress)
-                .concat("   ");
-        log.setComment(comment);
-        return log;
-    }
-    
-    public  Log createUser(User user, String aLogin, 
-            String aName, Integer aCategory) {
-        this.createLog( user, "Create");
-        comment = commentConcat(comment, "Логин: ", aLogin, "   ");
-        comment = comment = commentConcat(comment, "Имя: ", aName, "   ");       
-        comment = commentConcat(comment, "Категория: ", aCategory.toString(), "   ");
+        comment = commentConcat(comment, "Номер: ", aNumber, aNumberNew);
+        comment = commentConcat(comment, "Громполоса: ", aBand, aBandNew);
+        comment = commentConcat(comment, "Защита: ", aSecurity, aSecurityNew);
+        comment = commentConcat(comment, "ADSL: ", aAdsl, aAdslNew);
         return this;
     }
-    
+       
     public Log updateUser(User user, 
             String aLogin, String aLoginNew, 
             String aPassword, String aPasswordNew,
@@ -137,18 +94,62 @@ public class Log implements Serializable {
         comment = commentConcat(comment, "Логин: ", aLogin, aLoginNew);
         comment = commentConcat(comment, "Пароль: ", aPassword, aPasswordNew);
         comment = commentConcat(comment, "Имя: ", aName, aNameNew);
-        comment = commentConcat(comment, "Категория: ", aCategory.toString(), aCategoryNew.toString());
+        comment = commentConcat(comment, "Категория: ", aCategory.toString(), 
+                aCategoryNew.toString());
         return this;
+    }
+    
+    public Log createSubscriber(User user, String aName,
+            String aAddress) {     
+        return this.updateSubscriber(user, aName, "   ", aAddress, "   ");
+    } 
+    
+    public  Log createUser(User user, String aLogin, 
+            String aName, Integer aCategory) {
+        return this.updateUser(user, aLogin, "   ", aName, "   ", "", "", -1, aCategory);
+    }
+    
+    public  Log createPhone(User user, Subscriber subscriber, String aNumber, 
+            String aBand, String aSecurity, String aAdsl) {
+        return this.updatePhone(user, subscriber, aNumber, "   ", 
+                aBand, "   ", aSecurity, "   ", aAdsl, "   ");
+    }
+    
+    public Log deleteSubscriber(User user, String aName, String aAddress) {       
+        return this.updateSubscriber(user, aName, "   ", aAddress, "   ");
+    }
+    
+    public Log deletePhone(User user, Subscriber subscriber, String aNumber, 
+            String aBand, String aSecurity, String aAdsl) {
+        
+        return this.updatePhone(user, subscriber, aNumber, "   ", 
+                aBand, "   ", aSecurity, "   ", aAdsl, "   ");
     }
     
     public Log deleteUser(User user, String aLogin, 
                                 String aName, Integer aCategory) {
         
-        this.createLog(user, "Delete");
-        comment = commentConcat(comment, "Логин: ", aLogin, "");
-        comment = commentConcat(comment, "Имя: ", aName, "");
-        comment = commentConcat(comment, "Категория: ", 
-                aCategory.toString(), "");              
+        return this.updateUser(user, aLogin, "   ", aName, "   ", "", "", -1, aCategory);
+    }
+    
+    public Log login(User user, 
+            String remoteAddr) {
+        this.createLog(user, "Login");
+        comment = commentConcat(comment, "Ip адрес: ", remoteAddr, "   "); 
+        return this;
+    }
+    
+    public Log logout(User user, 
+            String remoteAddr) {
+        this.createLog(user, "Logout");
+        comment = commentConcat(comment, "Ip адрес: ", remoteAddr, "   "); 
+        return this;
+    }
+    
+    public Log loginError(User user, 
+            String remoteAddr) {
+        this.createLog(user, "Login Error");
+        comment = commentConcat(comment, "Ip адрес: ", remoteAddr, "   "); 
         return this;
     }
     

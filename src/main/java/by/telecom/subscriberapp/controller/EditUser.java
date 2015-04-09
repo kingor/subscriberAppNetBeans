@@ -58,15 +58,14 @@ public class EditUser extends HttpServlet {
             category = Integer.parseInt(request.getParameter("category"));
             
             User userEdit = DaoFactory.getUserDao().read(id);
-
-            DaoFactory.getLogDao()
-                    .create(Log
-                            .updateUser(user, userEdit.getLogin(), login,
-                                        userEdit.getPassword(), password,
-                                        userEdit.getName(), name,
-                                        userEdit.getCategory(),category));
             
-            
+            Log log = new Log(); 
+            log.updateUser(user, userEdit.getLogin(), login, 
+                    userEdit.getPassword(), password, 
+                    userEdit.getName(), name, 
+                    userEdit.getCategory(), category);
+            DaoFactory.getLogDao().create(log);
+                       
             userEdit.setLogin(login);
             userEdit.setPassword(password);
             userEdit.setName(name);

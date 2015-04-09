@@ -18,13 +18,13 @@
         <div align="center">
             <%@include file="include/Header.jspf" %>
 
-            <table width=860 cellspacing=0 cellpadding=0 border=0>
+            <table class="width960" cellspacing=0 cellpadding=0 border=0>
                 <tr>
-                    <td width=860>
-                        <table width=860 cellspacing=1 cellpadding=0 border=0>
+                    <td class="width960">
+                        <table class="width960" cellspacing=1 cellpadding=0 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=860 border=0 cellpadding=0>
+                                    <table class="width960" border=0 cellpadding=0>
                                         <TR>
                                             <TD class=nav >&nbsp;</TD>
                                         </TR>
@@ -32,8 +32,8 @@
                                 </td>
                             </tr>
                         </table>
-                        <table width=860 border=0 cellpadding=0><tr><td bgcolor="#aaaaaa">
-                                    <table width=860 border=0 cellpadding=5>
+                        <table class="width960" border=0 cellpadding=0><tr><td bgcolor="#aaaaaa">
+                                    <table class="width960" border=0 cellpadding=5>
                                         <tr>
                                             <td class="login">
                                                 <table>
@@ -85,10 +85,10 @@
                 </tr>
             </table>
 
-            <table width=860 cellspacing=1 cellpadding=0 border=0>
+            <table class="width960" cellspacing=1 cellpadding=0 border=0>
                 <tr>
                     <td bgcolor="#aaaaaa">
-                        <table width=860 border=0 cellpadding=0>
+                        <table class="width960" border=0 cellpadding=0>
                             <TR><TD class=nav >&nbsp;</TD>
                             </TR></table>
                     </td>

@@ -15,7 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Log;
 import by.telecom.subscriberapp.Phone;
+import by.telecom.subscriberapp.User;
+import javax.servlet.http.HttpSession;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
@@ -35,17 +38,16 @@ public class CreatePhone extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long id;
-        String number;
-        String band;
-        String security;
-        String adsl;
         try {
-            id = Long.parseLong(request.getParameter("id"));
-            number = request.getParameter("number");
-            band = request.getParameter("band");
-            security = request.getParameter("security");
-            adsl = request.getParameter("adsl");
+            HttpSession session = request.getSession();                         //Получение сессии
+            User user = new User();
+            user = (User)session.getAttribute("user");                          //Пользователь в сессии
+            
+            Long id = Long.parseLong(request.getParameter("id"));
+            String number = request.getParameter("number");
+            String band = request.getParameter("band");
+            String security = request.getParameter("security");
+            String adsl = request.getParameter("adsl");
             
             Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
             Phone phone = new Phone();
@@ -55,11 +57,16 @@ public class CreatePhone extends HttpServlet {
             phone.setSecurity(security);
             phone.setAdsl(adsl);
             
+            Log log = new Log();                                                //Создание лога
+            log.createPhone(user, subscriber, number, band, security, adsl);
+            DaoFactory.getLogDao().create(log);
+            
             Long idPhone = DaoFactory.getPhoneDao().create(phone);
+            
             request.setAttribute("subscriber", subscriber);
             request.setAttribute("phone", phone);
             
-            RequestDispatcher view = request.getRequestDispatcher("createFull.do.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("createFull.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

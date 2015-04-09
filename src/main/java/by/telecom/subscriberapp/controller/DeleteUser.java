@@ -39,18 +39,20 @@ public class DeleteUser extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long id;
         try {
             HttpSession session = request.getSession();
             User user = new User();
             user = (User)session.getAttribute("user");
             
-            id = Long.parseLong(request.getParameter("userSelect"));
+            Long id = Long.parseLong(request.getParameter("userSelect"));
             
             User userDelete = DaoFactory.getUserDao().read(id);
+            
             Log log = new Log();
-            log.deleteUser(user, userDelete.getLogin(), userDelete.getName(), userDelete.getCategory());
+            log.deleteUser(user, userDelete.getLogin(), 
+                    userDelete.getName(), userDelete.getCategory());
             DaoFactory.getLogDao().create(log);
+            
             DaoFactory.getUserDao().delete(userDelete);
             
             RequestDispatcher view = request.getRequestDispatcher("index.jsp");

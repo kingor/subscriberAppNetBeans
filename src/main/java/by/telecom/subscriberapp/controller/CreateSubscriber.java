@@ -38,30 +38,28 @@ public class CreateSubscriber extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long id;
-        String name;
-        String address;
         try {
             HttpSession session = request.getSession();
             User user = new User();
             user = (User)session.getAttribute("user");
                                  
-            name = request.getParameter("name");
-            address = request.getParameter("address");
+            String name = request.getParameter("name");
+            String address = request.getParameter("address");
             Subscriber subscriber = new Subscriber();
             subscriber.setName(name);
             subscriber.setAddress(address);
             
         
-            String comment = "";
-             //user.setId(1L);
+            Log log = new Log();
+            log.createSubscriber(user, subscriber.getName(),
+                           subscriber.getAddress());
+            DaoFactory.getLogDao().create(log);
             
-            DaoFactory.getLogDao().create(Log.createSubscriber(user,subscriber.getName(), subscriber.getAddress()));
+            Long id = DaoFactory.getSubscriberDao().create(subscriber);
             
-            id = DaoFactory.getSubscriberDao().create(subscriber);
             request.setAttribute("subscriber", subscriber);
             
-            RequestDispatcher view = request.getRequestDispatcher("createPhone.do.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("createPhone.jsp");
             view.forward(request, response);
         } catch (IOException e) {
             e.printStackTrace();

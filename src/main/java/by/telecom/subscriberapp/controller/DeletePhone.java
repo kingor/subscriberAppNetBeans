@@ -15,7 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
+import by.telecom.subscriberapp.Log;
 import by.telecom.subscriberapp.Phone;
+import by.telecom.subscriberapp.User;
+import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 /**import by.telecom.subscriberapp.model.Phone;
 
@@ -36,11 +39,19 @@ public class DeletePhone extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Long id;
         try {
-            id = Long.parseLong(request.getParameter("phoneSelect"));
+            HttpSession session = request.getSession();                         //Получение сессии
+            User user = new User();
+            user = (User)session.getAttribute("user");                          //Пользователь в сессии
+            
+            Long id = Long.parseLong(request.getParameter("phoneSelect"));
             Phone phone = DaoFactory.getPhoneDao().read(id);
-            //JOptionPane.showMessageDialog(, "Eggs are not supposed to be green.");
+            
+            Log log = new Log();                                                //Создание лога
+            log.deletePhone(user, phone.getSubscriber(), phone.getNumber(), 
+                    phone.getBand(), phone.getSecurity(), phone.getAdsl());
+            DaoFactory.getLogDao().create(log);
+            
             DaoFactory.getPhoneDao().delete(phone);
             //request.setAttribute("subscriber", subscriber);
             

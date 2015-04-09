@@ -23,16 +23,16 @@
         <div align="center">
             <%@include file="include/Header.jspf" %>
 
-            <table width=860 cellspacing=0 cellpadding=0 border=0>
+            <table class="width960" cellspacing=0 cellpadding=0 border=0>
                 <tr>
                     <%@include file="include/menu.jspf" %>
 
                     <td width=7 bgcolor="#e4e8ea"></td>
-                    <td width=653  align="center">
-                        <table width=653 cellspacing=0 cellpadding=1 border=0>
+                    <td class="width753"  align="center">
+                        <table class="width753" cellspacing=0 cellpadding=1 border=0>
                             <tr>
                                 <td bgcolor="#aaaaaa">
-                                    <table width=653 cellspacing=0 cellpadding=20 border=0>                          
+                                    <table class="width753" cellspacing=0 cellpadding=20 border=0>                          
                                         <tr>                                          
                                             <td class="content">
                                                 <form name="form5" method="post" action="phoneSearchEdit.do">
@@ -41,9 +41,9 @@
                                                     </center>
                                                     <table class="navu AllWidth">
                                                         <tr>
-                                                            <th class="width15">
+                                                            <th class="width10">
                                                                 <a href="phoneSearchEdit.do?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
-                                                                Номер
+                                                                Ном.
                                                                 <a href="phoneSearchEdit.do?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
@@ -51,9 +51,9 @@
                                                                 Громпол.
                                                                 <a href="phoneSearchEdit.do?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="width15">
+                                                            <th class="width10">
                                                                 <a href="phoneSearchEdit.do?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
-                                                                Защита
+                                                                Защ.
                                                                 <a href="phoneSearchEdit.do?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width10">
@@ -61,12 +61,12 @@
                                                                 Adsl
                                                                 <a href="phoneSearchEdit.do?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="width30">
+                                                            <th class="width25">
                                                                 <a href="phoneSearchEdit.do?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
                                                                 <a href="phoneSearchEdit.do?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="width15"></th>
+                                                            <th ></th>
                                                         </tr>
                                                         <tr>
                                                             <td > <INPUT type="text" name="number" value="${number}" class="AllWidth"></td>
@@ -74,7 +74,7 @@
                                                             <td > <INPUT type="text" name="security" value="${security}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="adsl" value="${adsl}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
-                                                            <td class="AllHeight"> <INPUT type="image" name="submit" value="Поиск" ></td>
+                                                            <td > <INPUT type="submit" name="submit" value="Поиск" class="AllWidth"></td>
                                                         </tr>
                                                     </table> 
                                                 </form>
@@ -82,21 +82,21 @@
                                                         <table class="AllWidth" border="1">
                                                             <c:forEach var="phone" items="${phoneSearchEdit}">
                                                                 <tr>
-                                                                    <td class="width15">${phone.number}</td>
+                                                                    <td class="width10">${phone.number}</td>
                                                                     <td class="width15">${phone.band}</td>
-                                                                    <td class="width15">${phone.security}</td>
+                                                                    <td class="width10">${phone.security}</td>
                                                                     <td class="width10">${phone.adsl}</td>
-                                                                    <td class="width30">${phone.subscriber.name}</td>
-                                                                    <td class="but16 width10">
+                                                                    <td class="width25">${phone.subscriber.name}</td>
+                                                                    <td >
                                                                         <form name="form5" method="post" action="editPhoneView.do">
                                                                             <input type="hidden" name="phoneSelect" value="${phone.id}">               
-                                                                            <INPUT type="image" name="submit" value="Редактор" src="gear.png">
+                                                                            <INPUT type="submit" name="submit" value="Редактор" class="AllWidth">
                                                                         </form>
                                                                     </td>
-                                                                    <td class="but16 width5">
+                                                                    <td >
                                                                         <form name="form7" method="post" action="deletePhone.do">
                                                                             <input type="hidden" name="phoneSelect" value="${phone.id}">
-                                                                            <INPUT type="image" name="submit" value="Удалить" src="delete2.png">
+                                                                            <INPUT type="submit" name="submit" value="Удалить" class="AllWidth">
                                                                         </form>
                                                                     </td>
                                                                 </tr>
