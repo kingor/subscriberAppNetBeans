@@ -30,6 +30,6 @@ public interface GenericDao <T, PK extends Serializable> {
     /** Удалить объект из базы данных */
     void delete(T persistentObject);
     
-    List<T> getAll();
+    List<T> getAll(String sort, String orderType);
     
 }

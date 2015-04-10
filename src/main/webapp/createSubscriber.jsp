@@ -47,6 +47,10 @@
                                                                 <td><INPUT type="text" name="address" style="width:100%"></td>
                                                             </tr>
                                                             <tr>
+                                                                <td >Примечание:</td>
+                                                                <td><INPUT type="text" name="comment" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
                                                                 <th colspan="2" width="5%">
                                                                     <br>
                                                                     <INPUT type="submit" name="submit" value="Сохранить" style="width:20%">

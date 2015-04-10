@@ -21,113 +21,32 @@ import org.hibernate.criterion.Order;
  * @author ASUP8
  */
 public class PhoneDaoImpl implements PhoneDao {
+    
+    private GenericDaoImpl<Phone, Long> genDaoImpl = new GenericDaoImpl<>();
 
     @Override
     public Long create(Phone newInstance) {
-        Session session = null;
-        Long id = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            session.persist(newInstance);
-            id = newInstance.getId();
-            session.getTransaction().commit();
-            return id;
-        } catch (HibernateException e) {
-            session.getTransaction().rollback();
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
-        return 0L;
+        return genDaoImpl.create(newInstance);
     }
 
     @Override
     public Phone read(Long id) {
-        Session session = null;
-        Phone phone = new Phone();
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            phone = (Phone) session.createCriteria(Phone.class)
-                    .add(Restrictions.eq("id", id)).uniqueResult();
-            session.getTransaction().commit();
-        } catch (HibernateException e) {
-            e.printStackTrace();
-            session.getTransaction().rollback();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
-        return phone;
+        return genDaoImpl.read(Phone.class, id);
     }
 
     @Override
     public void update(Phone transientObject) {
-       Session session = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            session.update(transientObject);
-            session.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
+       genDaoImpl.update(transientObject);
     }
 
     @Override
     public void delete(Phone persistentObject) {
-        Session session = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            session.delete(persistentObject);
-            session.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
+        genDaoImpl.delete(persistentObject);
     }
 
     @Override
     public List<Phone> getAll(String sort, String orderType) {
-        Session session = null;
-        List<Phone> all = new ArrayList<Phone>();
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            Criteria criteria = session.createCriteria(Phone.class);
-            Order order = Order.asc(sort);
-            if (sort.equals("name"))
-                criteria = criteria.createCriteria("subscriber");
-            if(orderType.equals("desc"))
-                order = Order.desc(sort);
-            all = criteria
-                    .addOrder(order).list();
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
-        return all;
+        return genDaoImpl.getAll(Phone.class, sort, orderType);
     }
 
     @Override
@@ -152,7 +71,7 @@ public class PhoneDaoImpl implements PhoneDao {
 
     @Override
     public List<Phone> getByParameter(String number, String band, 
-            String security, String adsl, String name, String sort, String orderType) {
+        String security, String scv, String adsl, String name, String sort, String orderType) {
         Session session = null;
         List<Phone> phones = new ArrayList<Phone>();
         try {
@@ -162,6 +81,7 @@ public class PhoneDaoImpl implements PhoneDao {
                     .add(Restrictions.like("number", number + "%"))
                     .add(Restrictions.like("band", band + "%"))
                     .add(Restrictions.like("security", security + "%"))
+                    .add(Restrictions.like("scv", scv + "%"))
                     .add(Restrictions.like("adsl", adsl + "%"));
             Order order = Order.asc(sort);
             if(orderType.equals("desc"))
@@ -188,9 +108,5 @@ public class PhoneDaoImpl implements PhoneDao {
         return phones;    
     }
 
-    @Override
-    public List<Phone> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

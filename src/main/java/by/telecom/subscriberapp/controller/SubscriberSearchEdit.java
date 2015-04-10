@@ -51,11 +51,13 @@ public class SubscriberSearchEdit extends HttpServlet {
 
             String name = request.getParameter("name");
             String address = request.getParameter("address");
-            //System.out.println(search);
-            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getByParameter(name, address, sort, order);
+            String comment = request.getParameter("comment");
+
+            Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getByParameter(name, address, comment, sort, order);
             request.setAttribute("subscriberSearchEdit", listSubscriber);
             request.setAttribute("name", name);
             request.setAttribute("address", address);
+            request.setAttribute("comment", comment);
             RequestDispatcher view = request.getRequestDispatcher("viewSubscriberEdit.jsp");
             view.forward(request, response);
         } catch (IOException e) {

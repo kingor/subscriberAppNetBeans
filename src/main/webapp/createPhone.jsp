@@ -58,8 +58,12 @@
                                                                 <td ><INPUT type="text" name="band" style="width:100%"></td>
                                                             </tr>
                                                             <tr>
-                                                                <td >Защитная полоса:</td>
+                                                                <td >Охрана:</td>
                                                                 <td ><INPUT type="text" name="security" style="width:100%"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td >СЦВ:</td>
+                                                                <td ><INPUT type="text" name="scv" style="width:100%"></td>
                                                             </tr>
                                                             <tr>
                                                                 <td >ADSL:</td>

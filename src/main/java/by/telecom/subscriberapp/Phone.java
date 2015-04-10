@@ -19,6 +19,7 @@ public class Phone implements Serializable{
     private String number;
     private String band;
     private String security;
+    private String scv;
     private String adsl;
     
     public Long getId(){
@@ -51,6 +52,14 @@ public class Phone implements Serializable{
     
     public void setSecurity(String aSecurity){
         security = aSecurity;
+    }
+    
+    public String getScv(){
+        return scv;
+    }
+    
+    public void setScv(String aScv){
+        scv = aScv;
     }
     
     public String getAdsl(){

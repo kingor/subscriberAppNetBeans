@@ -38,12 +38,18 @@
                                                     <h2>Параметры для абонента:</h2>
                                                     <table width="600">
                                                         <tr>
-                                                            <td class="width25">ФИО абонента:</td> 
+                                                            <td class="width25">ФИО абонента:
+                                                                <input type="hidden" name="id" value="${subscriber.id}">
+                                                            </td> 
                                                             <td class="textBold">${subscriber.name}</td>
-                                                        <input type="hidden" name="id" value="${subscriber.id}">
+                                                        
                                                         </tr>
                                                         <tr><td>Адрес абонента:</td> 
-                                                            <td class="textBold">${subscriber.address}</td></tr>
+                                                            <td class="textBold">${subscriber.address}</td>
+                                                        </tr>
+                                                        <tr><td>Примечание:</td> 
+                                                            <td class="textBold">${subscriber.comment}</td>
+                                                        </tr>
                                                     </table>
                                                     <h2>Параметры:</h2>
                                                     <form name="form5" method="post" action="createSubscriber.do">
@@ -57,8 +63,12 @@
                                                             <td class="textBold">${phone.band}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td >Защитная полоса:</td>
+                                                            <td >Охрана:</td>
                                                             <td class="textBold">${phone.security}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td >СЦВ:</td>
+                                                            <td class="textBold">${phone.scv}</td>
                                                         </tr>
                                                         <tr>
                                                             <td >ADSL:</td>

@@ -24,81 +24,31 @@ import org.hibernate.criterion.Order;
  */
 public class LogDaoImpl implements LogDao {
 
+    private GenericDaoImpl<Log, Long> genDaoImpl = new GenericDaoImpl<Log, Long>();
+    
     @Override
     public Long create(Log newInstance) {
-        Session session = null;
-        Long id = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            session.persist(newInstance);
-            id = newInstance.getId();
-            session.getTransaction().commit();
-            return id;
-        } catch (HibernateException e) {
-            session.getTransaction().rollback();
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
-        return 0L;
+        return genDaoImpl.create(newInstance);
     }
 
     @Override
     public Log read(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return genDaoImpl.read(Log.class, id);
     }
 
     @Override
     public void update(Log transientObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        genDaoImpl.update(transientObject);
     }
 
     @Override
     public void delete(Log persistentObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        genDaoImpl.delete(persistentObject);
     }
 
     @Override
-    public List<Log> getAll() {
-        Session session = null;
-        List<Log> all = new ArrayList<Log>();
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            all = session.createCriteria(Log.class).list();
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
-        return all;
-    }
-
-    @Override
-    public List<Log> getByUser(User user) {
-        Session session = null;
-        List<Log> logs = new ArrayList<Log>();
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            logs = session.createCriteria(Log.class)
-                    .add(Restrictions.eq("user", user)).list();
-            session.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace(System.out);
-        } finally {
-            if (session != null && session.isOpen()) {
-                session.close();
-            }
-        }
-        return logs;
+    public List<Log> getAll(String sort, String orderType) {
+        return genDaoImpl.getAll(Log.class, sort, orderType);
     }
 
     @Override

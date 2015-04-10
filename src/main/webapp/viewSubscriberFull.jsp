@@ -44,7 +44,11 @@
                                                             <td class="textBold">${subscriber.name}</td>
                                                         </tr>
                                                         <tr><td>Адрес абонента:</td> 
-                                                            <td class="textBold">${subscriber.address}</td></tr>
+                                                            <td class="textBold">${subscriber.address}</td>
+                                                        </tr>
+                                                        <tr><td>Примечание:</td> 
+                                                            <td class="textBold">${subscriber.comment}</td>
+                                                        </tr>
                                                     </table>
                                                     <c:if test="${!phones.isEmpty()}">
                                                         <h2>Технические параметры:</h2>

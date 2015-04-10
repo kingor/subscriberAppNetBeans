@@ -45,9 +45,11 @@ public class CreateSubscriber extends HttpServlet {
                                  
             String name = request.getParameter("name");
             String address = request.getParameter("address");
+            String comment = request.getParameter("comment");
             Subscriber subscriber = new Subscriber();
             subscriber.setName(name);
             subscriber.setAddress(address);
+            subscriber.setComment(comment);
             
         
             Log log = new Log();

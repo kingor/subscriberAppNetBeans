@@ -42,36 +42,42 @@
                                                     <table class="navu AllWidth">
                                                         <tr>
                                                             <th class="width10">
-                                                                <a href="phoneSearchEdit.do?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=number&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Ном.
-                                                                <a href="phoneSearchEdit.do?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=number&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phoneSearchEdit.do?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=band&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Громпол.
-                                                                <a href="phoneSearchEdit.do?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=band&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width10">
-                                                                <a href="phoneSearchEdit.do?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
-                                                                Защ.
-                                                                <a href="phoneSearchEdit.do?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=security&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
+                                                                Охр.
+                                                                <a href="phoneSearchEdit.do?sort=security&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width10">
-                                                                <a href="phoneSearchEdit.do?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=scv&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
+                                                                СЦВ
+                                                                <a href="phoneSearchEdit.do?sort=scv&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
+                                                            </th>
+                                                            <th class="width10">
+                                                                <a href="phoneSearchEdit.do?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Adsl
-                                                                <a href="phoneSearchEdit.do?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width25">
-                                                                <a href="phoneSearchEdit.do?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearchEdit.do?sort=name&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
-                                                                <a href="phoneSearchEdit.do?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearchEdit.do?sort=name&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th ></th>
+                                                            <th class="width20"></th>
                                                         </tr>
                                                         <tr>
                                                             <td > <INPUT type="text" name="number" value="${number}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="band" value="${band}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="security" value="${security}" class="AllWidth"></td>
+                                                            <td > <INPUT type="text" name="scv" value="${scv}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="adsl" value="${adsl}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
                                                             <td > <INPUT type="submit" name="submit" value="Поиск" class="AllWidth"></td>
@@ -85,6 +91,7 @@
                                                                     <td class="width10">${phone.number}</td>
                                                                     <td class="width15">${phone.band}</td>
                                                                     <td class="width10">${phone.security}</td>
+                                                                    <td class="width10">${phone.scv}</td>
                                                                     <td class="width10">${phone.adsl}</td>
                                                                     <td class="width25">${phone.subscriber.name}</td>
                                                                     <td >

@@ -8,6 +8,7 @@
     <property column="number" name="number"/>
     <property column="band" name="band"/>
     <property column="security" name="security"/>
+    <property column="scv" name="scv"/>
     <property column="adsl" name="adsl"/>
     <many-to-one class="Subscriber" column="id_subscriber" lazy="false" name="subscriber"/>
   </class>

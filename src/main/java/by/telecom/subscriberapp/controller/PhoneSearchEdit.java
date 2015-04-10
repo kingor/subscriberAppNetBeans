@@ -51,13 +51,17 @@ public class PhoneSearchEdit extends HttpServlet {
            String number = request.getParameter("number");
            String band = request.getParameter("band");
            String security = request.getParameter("security");
+           String scv = request.getParameter("scv");
            String adsl = request.getParameter("adsl");
            String name = request.getParameter("name");
-            List<Phone> listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name, sort, order);
+            List<Phone> listPhone = DaoFactory.getPhoneDao()
+                    .getByParameter(number, band, security,
+                            scv, adsl, name, sort, order);
             request.setAttribute("phoneSearchEdit", listPhone);
             request.setAttribute("number", number);
             request.setAttribute("band", band);
             request.setAttribute("security", security);
+            request.setAttribute("scv", scv);
             request.setAttribute("adsl", adsl);
             request.setAttribute("name", name);
             RequestDispatcher view = request.getRequestDispatcher("viewPhoneEdit.jsp");

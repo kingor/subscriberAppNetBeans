@@ -41,17 +41,23 @@
                                                             ФИО абонента
                                                             <a href="subscribers.do?sort=name&order=asc">↑</a>
                                                         </th>
-                                                        <th >
+                                                        <th class="width35">
                                                             <a href="subscribers.do?sort=address&order=desc">↓</a>
                                                             Адрес абонента
                                                             <a href="subscribers.do?sort=address&order=asc">↑</a>
                                                         </th>
-                                                        <th class="width15">Подробнее</th>
+                                                        <th class="width15">
+                                                            <a href="subscribers.do?sort=comment&order=desc">↓</a>
+                                                            Примечание
+                                                            <a href="subscribers.do?sort=comment&order=asc">↑</a>
+                                                        </th>
+                                                        <th class="width10">Подробнее</th>
                                                     </tr>
                                                     <c:forEach var="subscriber" items="${subscribers}">
                                                         <tr>
                                                             <td>${subscriber.name}</td>
                                                             <td>${subscriber.address}</td>
+                                                            <td>${subscriber.comment}</td>
                                                             <td>
                                                                 <form name="form5" method="post" action="subscriberFull.do">
                                                                     <input type="hidden" name="subscriberSelect" value="${subscriber.id}">

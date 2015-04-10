@@ -14,7 +14,5 @@ import by.telecom.subscriberapp.Subscriber;
  * @author ASUP8
  */
 public interface SubscriberDao  extends GenericDao<Subscriber, Long>{
-    Collection<Subscriber> findByName(String name);
-    Collection<Subscriber> getByParameter(String name, String address, String sort, String orderType);
-    Collection<Subscriber> getAll(String sort, String orderType);
+    Collection<Subscriber> getByParameter(String name, String address, String comment, String sort, String orderType);
 }

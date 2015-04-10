@@ -40,7 +40,8 @@ public class Phones extends HttpServlet {
             sort = request.getParameter("sort");
             order = request.getParameter("order");
             if(!"number".equals(sort) && !"band".equals(sort) 
-                    && !"security".equals(sort) && !"adsl".equals(sort) && !"name".equals(sort))
+                    && !"security".equals(sort) && !"scv".equals(sort) 
+                    && !"adsl".equals(sort) && !"name".equals(sort))
                 sort = "number";
             if(!"asc".equals(order) && !"desc".equals(order))
                 order = "asc";

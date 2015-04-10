@@ -52,6 +52,7 @@ public class EditPhone extends HttpServlet {
             String number = request.getParameter("number");
             String band = request.getParameter("band");
             String security = request.getParameter("security");
+            String scv = request.getParameter("scv");
             String adsl = request.getParameter("adsl");
             Subscriber subscriber = phone.getSubscriber();
 
@@ -64,6 +65,7 @@ public class EditPhone extends HttpServlet {
             phone.setNumber(number);
             phone.setBand(band);
             phone.setSecurity(security);
+            phone.setScv(scv);
             phone.setAdsl(adsl);
             DaoFactory.getPhoneDao().update(phone);
            

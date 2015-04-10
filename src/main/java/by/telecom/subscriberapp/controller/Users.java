@@ -35,7 +35,16 @@ public class Users extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            Collection<User> listCustomer = DaoFactory.getUserDao().getAll();
+            String sort = "";
+            String order = "";
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+            if(!"name".equals(sort) && !"login".equals(sort) 
+                    && !"category".equals(sort) )
+                sort = "name";
+            if(!"asc".equals(order) && !"desc".equals(order))
+                order = "asc";
+            Collection<User> listCustomer = DaoFactory.getUserDao().getAll(sort, order);
             request.setAttribute("users", listCustomer);
             RequestDispatcher view = request.getRequestDispatcher("viewUsers.jsp");
             view.forward(request, response);

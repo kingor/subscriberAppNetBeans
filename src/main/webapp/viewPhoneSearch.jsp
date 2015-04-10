@@ -41,37 +41,43 @@
                                                     </center>
                                                     <table class="navu AllWidth">
                                                         <tr>
-                                                            <th class="width15">
-                                                                <a href="phoneSearch.do?sort=number&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                            <th class="width10">
+                                                                <a href="phoneSearch.do?sort=number&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Номер
-                                                                <a href="phoneSearch.do?sort=number&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=number&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phoneSearch.do?sort=band&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                                <a href="phoneSearch.do?sort=band&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Громпол.
-                                                                <a href="phoneSearch.do?sort=band&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=band&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="phoneSearch.do?sort=security&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
-                                                                Защита
-                                                                <a href="phoneSearch.do?sort=security&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=security&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
+                                                                Охрана
+                                                                <a href="phoneSearch.do?sort=security&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="width15">
-                                                                <a href="phoneSearch.do?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                            <th class="width10">
+                                                                <a href="phoneSearch.do?sort=scv&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
+                                                                СЦВ
+                                                                <a href="phoneSearch.do?sort=scv&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
+                                                            </th>
+                                                            <th class="width10">
+                                                                <a href="phoneSearch.do?sort=adsl&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
                                                                 Adsl
-                                                                <a href="phoneSearch.do?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=adsl&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width35">
-                                                                <a href="phoneSearch.do?sort=name&order=desc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↓</a>
+                                                            <th class="navu width30">
+                                                                <a href="phoneSearch.do?sort=name&order=desc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↓</a>
                                                                 ФИО
-                                                                <a href="phoneSearch.do?sort=name&order=asc&number=${number}&band=${band}&security=${security}&adsl=${adsl}&name=${name}">↑</a>
+                                                                <a href="phoneSearch.do?sort=name&order=asc&number=${number}&band=${band}&security=${security}&scv=${scv}&adsl=${adsl}&name=${name}">↑</a>
                                                             </th>
-                                                            <th class="navu width15"></th>
+                                                            <th class="navu width10"></th>
                                                         </tr>
                                                         <tr>
                                                             <td > <INPUT type="text" name="number" value="${number}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="band" value="${band}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="security" value="${security}" class="AllWidth"></td>
+                                                            <td > <INPUT type="text" name="scv" value="${scv}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="adsl" value="${adsl}" class="AllWidth"></td>
                                                             <td > <INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
                                                             <td><INPUT type="submit" name="submit" value="Искать!" class="AllWidth"></td>
@@ -82,10 +88,11 @@
                                                         <table class="AllWidth" border="1">
                                                             <c:forEach var="phone" items="${phoneSearch}">
                                                                 <tr>
-                                                                    <td class="width15">${phone.number}</td>
+                                                                    <td class="width10">${phone.number}</td>
                                                                     <td class="width15">${phone.band}</td>
                                                                     <td class="width15">${phone.security}</td>
-                                                                    <td class="width15">${phone.adsl}</td>
+                                                                    <td class="width10">${phone.scv}</td>
+                                                                    <td class="width10">${phone.adsl}</td>
                                                                     <td class="width40">${phone.subscriber.name}</td>
                                                                 </tr>
                                                             </c:forEach>

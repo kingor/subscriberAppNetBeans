@@ -39,7 +39,7 @@
                                                     <h2>Технические параметры абонентов:</h2>
                                                     <table class="navi AllWidth" border="1">
                                                         <tr>
-                                                            <th class="width15">
+                                                            <th class="width10">
                                                                 <a href="phones.do?sort=number&order=desc">↓</a>
                                                                 Номер
                                                                 <a href="phones.do?sort=number&order=asc">↑</a>
@@ -49,12 +49,17 @@
                                                                 Громпол.
                                                                 <a href="phones.do?sort=band&order=asc">↑</a>
                                                             </th>
-                                                            <th class="width15">
+                                                            <th class="width10">
                                                                 <a href="phones.do?sort=security&order=desc">↓</a>
-                                                                Защита
+                                                                Охрана
                                                                 <a href="phones.do?sort=security&order=asc">↑</a>
-                                                            </th>                                                          
-                                                            <th class="width15">
+                                                            </th>      
+                                                            <th class="width10">
+                                                                <a href="phones.do?sort=scv&order=desc">↓</a>
+                                                                СЦВ
+                                                                <a href="phones.do?sort=scv&order=asc">↑</a>
+                                                            </th>
+                                                            <th class="width10">
                                                                 <a href="phones.do?sort=adsl&order=desc">↓</a>
                                                                 Adsl
                                                                 <a href="phones.do?sort=adsl&order=asc">↑</a>
@@ -70,6 +75,7 @@
                                                                 <td>${phone.number}</td>
                                                                 <td>${phone.band}</td>
                                                                 <td>${phone.security}</td>
+                                                                <td>${phone.scv}</td>
                                                                 <td>${phone.adsl}</td>
                                                                 <td>${phone.subscriber.name}</td>                       
                                                             </tr>

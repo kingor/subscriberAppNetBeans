@@ -15,18 +15,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import by.telecom.subscriberapp.Subscriber;
 import by.telecom.subscriberapp.DAO.DaoFactory;
-import by.telecom.subscriberapp.Log;
-import by.telecom.subscriberapp.Phone;
-import by.telecom.subscriberapp.User;
-import javax.servlet.http.HttpSession;
 /**import by.telecom.subscriberapp.model.Phone;
 
 /**
  *
  * @author ASUP8
  */
-public class CreatePhone extends HttpServlet {
-
+public class GenericServlet extends HttpServlet {
+    
+    private String sort = "";
+    private String order = "";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,39 +36,11 @@ public class CreatePhone extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            HttpSession session = request.getSession();                         //Получение сессии
-            User user = new User();
-            user = (User)session.getAttribute("user");                          //Пользователь в сессии
-            
-            Long id = Long.parseLong(request.getParameter("id"));
-            String number = request.getParameter("number");
-            String band = request.getParameter("band");
-            String security = request.getParameter("security");
-            String scv = request.getParameter("scv");
-            String adsl = request.getParameter("adsl");
-            
-            Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
-            Phone phone = new Phone();
-            phone.setSubscriber(subscriber);
-            phone.setNumber(number);
-            phone.setBand(band);
-            phone.setSecurity(security);
-            phone.setScv(scv);
-            phone.setAdsl(adsl);
-            
-            Log log = new Log();                                                //Создание лога
-            log.createPhone(user, subscriber, number, band, security, adsl);
-            DaoFactory.getLogDao().create(log);
-            
-            Long idPhone = DaoFactory.getPhoneDao().create(phone);
-            
-            request.setAttribute("subscriber", subscriber);
-            request.setAttribute("phone", phone);
-            
-            RequestDispatcher view = request.getRequestDispatcher("createFull.jsp");
-            view.forward(request, response);
-        } catch (IOException e) {
+        try {            
+            sort = request.getParameter("sort");
+            order = request.getParameter("order");
+          
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

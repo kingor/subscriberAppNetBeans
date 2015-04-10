@@ -41,20 +41,25 @@ public class PhoneSearch extends HttpServlet {
             sort = request.getParameter("sort");
             order = request.getParameter("order");
             if(!"number".equals(sort) && !"band".equals(sort) 
-                    && !"security".equals(sort) && !"adsl".equals(sort) && !"name".equals(sort))
+                    && !"security".equals(sort) && !"scv".equals(sort) 
+                    && !"adsl".equals(sort) && !"name".equals(sort))
                 sort = "number";
             if(!"asc".equals(order) && !"desc".equals(order))
                 order = "asc";
            String number = request.getParameter("number");
            String band = request.getParameter("band");
            String security = request.getParameter("security");
+           String scv = request.getParameter("scv");
            String adsl = request.getParameter("adsl");
            String name = request.getParameter("name");
-            List<Phone> listPhone = DaoFactory.getPhoneDao().getByParameter(number, band, security, adsl, name, sort, order);
+            List<Phone> listPhone = DaoFactory.getPhoneDao()
+                    .getByParameter(number, band, security, 
+                            scv, adsl, name, sort, order);
             request.setAttribute("phoneSearch", listPhone);
             request.setAttribute("number", number);
             request.setAttribute("band", band);
             request.setAttribute("security", security);
+            request.setAttribute("scv", scv);
             request.setAttribute("adsl", adsl);
             request.setAttribute("name", name);
             RequestDispatcher view = request.getRequestDispatcher("viewPhoneSearch.jsp");

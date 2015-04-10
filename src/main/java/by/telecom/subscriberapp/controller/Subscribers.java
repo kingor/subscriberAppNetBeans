@@ -39,12 +39,10 @@ public class Subscribers extends HttpServlet {
             String order = "";
             sort = request.getParameter("sort");
             order = request.getParameter("order");
-            if(!"name".equals(sort) && !"address".equals(sort))
+            if(!"name".equals(sort) && !"address".equals(sort) && !"comment".equals(sort))
                 sort = "name";
             if(!"asc".equals(order) && !"desc".equals(order))
                 order = "asc";
-            System.out.println(sort);
-            System.out.println(order);
             Collection<Subscriber> listSubscriber = DaoFactory.getSubscriberDao().getAll(sort, order);
             request.setAttribute("subscribers", listSubscriber);
             RequestDispatcher view = request.getRequestDispatcher("viewSubscribers.jsp");

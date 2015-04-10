@@ -7,5 +7,6 @@
     </id>
     <property column="name" name="name"/>
     <property column="address" name="address"/>
+    <property column="comment" name="comment"/>
   </class>
 </hibernate-mapping>

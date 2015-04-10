@@ -41,23 +41,29 @@
                                                     <table class="navu AllWidth">
                                                         <tr>
                                                             <th class="width40">
-                                                                <a href="subscriberSearch.do?sort=name&order=desc&name=${name}&address=${address}">↓</a>
+                                                                <a href="subscriberSearch.do?sort=name&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
                                                                 ФИО абонента
-                                                                <a href="subscriberSearch.do?sort=name&order=asc&name=${name}&address=${address}">↑</a>
+                                                                <a href="subscriberSearch.do?sort=name&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
                                                             </th>
-                                                            <th class="width40">
-                                                                <a href="subscriberSearch.do?sort=address&order=desc&name=${name}&address=${address}">↓</a>
+                                                            <th class="width35">
+                                                                <a href="subscriberSearch.do?sort=address&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
                                                                 Адрес абонента
-                                                                <a href="subscriberSearch.do?sort=address&order=asc&name=${name}&address=${address}">↑</a>
+                                                                <a href="subscriberSearch.do?sort=address&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
                                                             </th>
-                                                            <th class="width20"></th>
+                                                            <th class="width15">
+                                                                <a href="subscriberSearch.do?sort=comment&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
+                                                                Примечание
+                                                                <a href="subscriberSearch.do?sort=comment&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
+                                                            </th>
+                                                            <th class="width10"></th>
                                                         </tr>
                                                         <tr>        
                                                             <td><INPUT type="text" name="name" value="${name}" class="AllWidth"></td>
                                                             <td><INPUT type="text" name="address" value="${address}" class="AllWidth"></td>
+                                                            <td><INPUT type="text" name="comment" value="${comment}" class="AllWidth"></td>
                                                             <td class="but16"> 
-                                                                <INPUT type="submit" name="submit" value="Поиск" class="button15 AllWidth">
-
+                                                                <INPUT type="submit" name="submit" value="Поиск" class="AllWidth">
+                                                             
                                                             </td>
                                                         </tr>
                                                     </table>     
@@ -69,8 +75,9 @@
                                                             <c:forEach var="subscriber" items="${subscriberSearch}">
                                                                 <tr >
                                                                     <td class="width40">${subscriber.name}</td>
-                                                                    <td class="width40">${subscriber.address}</td>
-                                                                    <td class="width20">
+                                                                    <td class="width35">${subscriber.address}</td>
+                                                                    <td class="width15">${subscriber.comment}</td>
+                                                                    <td class="width10">
                                                                         <form name="form7" method="post" action="subscriberFull.do">
                                                                             <input type="hidden" name="subscriberSelect" value="${subscriber.id}">
                                                                             <INPUT type="submit" name="submit" value="Подробнее" class="AllWidth">

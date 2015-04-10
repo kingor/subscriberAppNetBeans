@@ -49,6 +49,10 @@
                                                             <td>Адрес абонента:</td> 
                                                             <td class="textBold"><INPUT type="text" name="address" value="${subscriber.address}" style="width:100%" ></td>
                                                         </tr>
+                                                        <tr>
+                                                            <td>Примечание:</td> 
+                                                            <td class="textBold"><INPUT type="text" name="comment" value="${subscriber.comment}" style="width:100%" ></td>
+                                                        </tr>
                                                         <th colspan="2" width="5%">
                                                                 <br>
                                                                 <INPUT type="submit" name="submit" value="Сохранить" style="width:20%">

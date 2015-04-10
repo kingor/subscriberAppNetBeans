@@ -13,9 +13,10 @@ import java.io.Serializable;
  * @author Family_P
  */
 public class Subscriber implements Serializable{
-    private Long id;
+    private Long id;                                
     private String name;
     private String address;
+    private String comment;
     
     public Subscriber(){
         
@@ -43,5 +44,13 @@ public class Subscriber implements Serializable{
     
     public void setAddress(String aAddress){
         address = aAddress;
+    }
+    
+    public String getComment(){
+        return comment;
+    }
+    
+    public void setComment(String aComment){
+        comment = aComment;
     }
 }

@@ -37,6 +37,13 @@
                                         </form>
                                     </td>
                                 </tr>
+                                <tr >
+                                    <td>
+                                        <form name="form5" method="post" action="createPhone1.jsp">
+                                            <INPUT type="submit" name="submit" value="Новый телефон" style="width:100%">
+                                        </form>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td >
                                         <form name="form6" method="post" action="phoneSearchEdit.do">

@@ -44,7 +44,11 @@
                                                             <td class="textBold">${subscriber.name}</td>
                                                         </tr>
                                                         <tr><td>Адрес абонента:</td> 
-                                                            <td class="textBold">${subscriber.address}</td></tr>
+                                                            <td class="textBold">${subscriber.address}</td>
+                                                        </tr>
+                                                        <tr><td>Примечание:</td> 
+                                                            <td class="textBold">${subscriber.comment}</td>
+                                                        </tr>
                                                     </table>
                                                         <h2>Технические параметры:</h2>
                                                          <form name="form5" method="post" action="editPhone.do">
@@ -59,8 +63,12 @@
                                                             <td ><INPUT type="text" name="band" value="${phone.band}" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
-                                                            <td >Защитная полоса:</td>
+                                                            <td >Охрана:</td>
                                                             <td ><INPUT type="text" name="security" value="${phone.security}" style="width:100%"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td >СЦВ:</td>
+                                                            <td ><INPUT type="text" name="scv" value="${phone.scv}" style="width:100%"></td>
                                                         </tr>
                                                         <tr>
                                                             <td >ADSL:</td>

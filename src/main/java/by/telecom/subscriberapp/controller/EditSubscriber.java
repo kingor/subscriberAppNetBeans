@@ -50,6 +50,7 @@ public class EditSubscriber extends HttpServlet {
             id = Long.parseLong(request.getParameter("id"));
             String name = request.getParameter("name");
             String address = request.getParameter("address");
+            String comment = request.getParameter("comment");
             
             Subscriber subscriber = DaoFactory.getSubscriberDao().read(id);
 
@@ -60,6 +61,7 @@ public class EditSubscriber extends HttpServlet {
             
             subscriber.setName(name);
             subscriber.setAddress(address);
+            subscriber.setComment(comment);
             DaoFactory.getSubscriberDao().update(subscriber);
            
             RequestDispatcher view = request.getRequestDispatcher("subscriberSearchEdit.do");
