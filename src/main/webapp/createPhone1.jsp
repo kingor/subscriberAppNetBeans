@@ -34,26 +34,26 @@
                                     <table class="width753" cellspacing=0 cellpadding=20 border=0>
                                         <tr>
                                             <td class="content">
-                                                <form name="form3" method="post" action="subscriberSearch.do">
+                                                <form name="form3" method="post" action="subscriberSearchPhone.do">
                                                     <center>
                                                         <h2>Поиск абонентов:</h2>
                                                     </center>
                                                     <table class="navu AllWidth">
                                                         <tr>
                                                             <th class="width40">
-                                                                <a href="subscriberSearch.do?sort=name&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
+                                                                <a href="subscriberSearchPhone.do?sort=name&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
                                                                 ФИО абонента
-                                                                <a href="subscriberSearch.do?sort=name&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
+                                                                <a href="subscriberSearchPhone.do?sort=name&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
                                                             </th>
                                                             <th class="width35">
-                                                                <a href="subscriberSearch.do?sort=address&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
+                                                                <a href="subscriberSearchPhone.do?sort=address&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
                                                                 Адрес абонента
-                                                                <a href="subscriberSearch.do?sort=address&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
+                                                                <a href="subscriberSearchPhone.do?sort=address&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
                                                             </th>
                                                             <th class="width15">
-                                                                <a href="subscriberSearch.do?sort=comment&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
+                                                                <a href="subscriberSearchPhone.do?sort=comment&order=desc&name=${name}&address=${address}&comment=${comment}">↓</a>
                                                                 Примечание
-                                                                <a href="subscriberSearch.do?sort=comment&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
+                                                                <a href="subscriberSearchPhone.do?sort=comment&order=asc&name=${name}&address=${address}&comment=${comment}">↑</a>
                                                             </th>
                                                             <th class="width10"></th>
                                                         </tr>
@@ -79,7 +79,7 @@
                                                                     <td class="width15">${subscriber.comment}</td>
                                                                     <td class="width10">
                                                                         <form name="form7" method="post" action="createPhone.jsp">
-                                                                            <input type="hidden" name="subscriberSelect" value="${subscriber.id}">
+                                                                            <input type="hidden" name="id" value="${subscriber.id}">
                                                                             <INPUT type="submit" name="submit" value="Новый тел." class="AllWidth">
                                                                         </form>
                                                                     </td>

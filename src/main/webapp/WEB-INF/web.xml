@@ -121,6 +121,10 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>by.telecom.subscriberapp.controller.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SubscriberSearchPhone</servlet-name>
+        <servlet-class>by.telecom.subscriberapp.controller.SubscriberSearchPhone</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Users</servlet-name>
         <url-pattern>/users.do</url-pattern>
@@ -216,6 +220,10 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubscriberSearchPhone</servlet-name>
+        <url-pattern>/subscriberSearchPhone.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
