@@ -56,7 +56,8 @@
                                                             <tr>
                                                                 <th>Номер</th>
                                                                 <th>Гром полоса</th>
-                                                                <th>Защитная полоса</th>
+                                                                <th>Охрана</th>
+                                                                <th>СЦВ</th>
                                                                 <th>ADSL</th>
                                                             </tr>
                                                             <c:forEach var="phone" items="${phones}">
@@ -64,6 +65,7 @@
                                                                     <td>${phone.number}</td>
                                                                     <td>${phone.band}</td>
                                                                     <td>${phone.security}</td>
+                                                                    <td>${phone.scv}</td>
                                                                     <td>${phone.adsl}</td>
                                                                 </tr>
                                                             </c:forEach>

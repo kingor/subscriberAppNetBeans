@@ -78,7 +78,7 @@
                                                                     <td class="width35">${subscriber.address}</td>
                                                                     <td class="width15">${subscriber.comment}</td>
                                                                     <td class="width10">
-                                                                        <form name="form7" method="post" action="createPhone.jsp">
+                                                                        <form name="form7" method="post" action="addPhone.do">
                                                                             <input type="hidden" name="id" value="${subscriber.id}">
                                                                             <INPUT type="submit" name="submit" value="Новый тел." class="AllWidth">
                                                                         </form>

@@ -46,7 +46,27 @@ public class PhoneDaoImpl implements PhoneDao {
 
     @Override
     public List<Phone> getAll(String sort, String orderType) {
-        return genDaoImpl.getAll(Phone.class, sort, orderType);
+          Session session = null;
+        List<Phone> all = new ArrayList<Phone>();
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Criteria criteria = session.createCriteria(Phone.class);
+            Order order = Order.asc(sort);
+            if (sort.equals("name"))
+                criteria = criteria.createCriteria("subscriber");
+            if(orderType.equals("desc"))
+                order = Order.desc(sort);
+            all = criteria
+                    .addOrder(order).list();
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+    }
+        return all;
     }
 
     @Override

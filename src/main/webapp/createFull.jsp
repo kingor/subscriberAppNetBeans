@@ -52,7 +52,6 @@
                                                         </tr>
                                                     </table>
                                                     <h2>Параметры:</h2>
-                                                    <form name="form5" method="post" action="createSubscriber.do">
                                                     <table width="600" >
                                                         <tr>
                                                             <td width="25%">Номер телефона:</td>
@@ -73,6 +72,14 @@
                                                         <tr>
                                                             <td >ADSL:</td>
                                                             <td class="textBold">${phone.adsl}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            <form name="form7" method="post" action="addPhone.do">
+                                                                <input type="hidden" name="id" value="${subscriber.id}">
+                                                                <INPUT type="submit" name="submit" value="Новый тел." class="AllWidth">
+                                                            </form>
+                                                            </td>
                                                         </tr>
                                                     </table>
                                                 </center>
