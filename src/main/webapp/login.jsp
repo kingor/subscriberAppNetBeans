@@ -36,20 +36,18 @@
                                     <table class="width960" border=0 cellpadding=5>
                                         <tr>
                                             <td class="login">
+                                                <center>
                                                 <table>
                                                     <tr>
-                                                        <td width="270">&nbsp;</td>
                                                         <td width="300">&nbsp;</td>
                                                     </tr>
                                                     <tr>
-                                                        <td width="230">&nbsp;</td>
                                                         <td width="300" class="contentText1"><center>Введите логин и пароль:</center></td>
                                                     </tr>
                                                     <tr>
-                                                        <td width="230">&nbsp;</td>
                                                         <td width="300">
                                                             <form name="form5" method="post" action="LoginServlet">
-                                                                <center>
+                                                                
                                                                     <table width="300">
                                                                         <tr>
                                                                             <td>
@@ -70,11 +68,12 @@
                                                                             </td>
                                                                         </tr>
                                                                     </table>
-                                                                    
+                                                          
                                                             </form>
                                                         </td>
                                                     </tr>
                                                 </table>
+                                                </center>
                                                 <p>&nbsp;</p></td>
                                         </tr>
                                     </table>
